@@ -1,7 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BattagliaNavale;
+using CommunityToolkit.Maui;
+using MauiIcons.FontAwesome.Solid;
+using Microsoft.Extensions.Logging;
 
-namespace BattagliaNavale
+namespace DemoPWMaui
 {
+    //punto di ingresso dell'applicazione, qui viene costruita e ne vengono configurati vari aspetti
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
@@ -9,6 +13,9 @@ namespace BattagliaNavale
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                // Initialize the .NET MAUI Community Toolkit by adding the below line of code
+                .UseMauiCommunityToolkit()
+                .UseFontAwesomeSolidMauiIcons()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -16,7 +23,7 @@ namespace BattagliaNavale
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
