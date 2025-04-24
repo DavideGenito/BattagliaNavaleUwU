@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace BattagliaNavale.Models
 {
-    public class Player
+    public class Bot
     {
-        public StatoTentativo[,] Campo {  get; private set; }
+        public StatoTentativo[,] Campo { get; private set; }
         public bool[,] CampoFeedback { get; private set; }
-       public Player(StatoTentativo[,] campo, bool[,] campoFeedback)
+        public Bot(StatoTentativo[,] campo, bool[,] campoFeedback)
         {
             Campo = campo;
             CampoFeedback = campoFeedback;
-        }   
+        }
+        public void Strategia()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

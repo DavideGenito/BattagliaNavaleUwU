@@ -10,33 +10,12 @@ namespace BattagliaNavale.Models
     {
         public Player Giocatore { get; private set; }
         public Player Bot { get; private set; }
-
-        public void TraslaADestra()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void TraslaSinistra()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void TraslaSu()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void TraslaGiu()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RuotaNave()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void VerificaVincitore()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public StatoTentativo VerificaTentativo()
         {
             throw new System.NotImplementedException();
         }
