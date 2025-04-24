@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="BattagliaNavale.Models.GameManager">
+    <Position X="4" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAIAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattagliaNavale.Models.Player">
+    <Position X="11" Y="3.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAA=</HashCode>
+      <FileName>Models\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattagliaNavale.Models.RandomGenerator">
+    <Position X="6.75" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RandomGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BattagliaNavale.Models.IGenerator">
+    <Position X="10.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BattagliaNavale.Models.StatoTentativo">
+    <Position X="6.75" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAABAAAAAAAAAAAAAQAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\StatoTentativo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
