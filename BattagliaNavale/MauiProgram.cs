@@ -3,7 +3,7 @@ using CommunityToolkit.Maui;
 using MauiIcons.FontAwesome.Solid;
 using Microsoft.Extensions.Logging;
 
-namespace DemoPWMaui
+namespace BattagliaNavale
 {
     //punto di ingresso dell'applicazione, qui viene costruita e ne vengono configurati vari aspetti
     public static class MauiProgram

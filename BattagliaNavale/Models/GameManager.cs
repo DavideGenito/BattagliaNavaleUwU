@@ -9,13 +9,15 @@ namespace BattagliaNavale.Models
     public class GameManager
     {
         public Player Giocatore { get; private set; }
-        public Player Bot { get; private set; }
-        public void VerificaVincitore()
+        public Bot Bot { get; private set; }
+
+        public GameManager(Player giocatore, Bot bot)
         {
-            throw new System.NotImplementedException();
+            Giocatore = giocatore;
+            Bot = bot;
         }
 
-        public StatoTentativo VerificaTentativo()
+        public void VerificaVincitore(Tentativo tentativoBot, Tentativo tentativoPlayer)
         {
             throw new System.NotImplementedException();
         }

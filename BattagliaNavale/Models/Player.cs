@@ -8,12 +8,15 @@ namespace BattagliaNavale.Models
 {
     public class Player
     {
-        public StatoTentativo[,] Campo {  get; private set; }
-        public bool[,] CampoFeedback { get; private set; }
-       public Player(StatoTentativo[,] campo, bool[,] campoFeedback)
+        public StatoCampo[,] CampoPlayer {  get; private set; }
+        public Player(StatoCampo[,] campo)
         {
-            Campo = campo;
-            CampoFeedback = campoFeedback;
-        }   
+            CampoPlayer = campo;
+        }
+
+        public Tentativo FaiMossa(int x, int y)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

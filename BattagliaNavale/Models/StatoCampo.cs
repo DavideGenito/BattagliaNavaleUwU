@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BattagliaNavale.Models
 {
-    public enum StatoTentativo
+    public enum StatoCampo
     {
         ACQUA,
-        NAVECOLPITA,
-        NAVEAFFONDATA,
+        ACQUA_COLPITA,
+        NAVE_COLPITA,
         NAVE,
     }
 }

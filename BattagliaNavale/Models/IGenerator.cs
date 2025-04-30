@@ -8,7 +8,9 @@ namespace BattagliaNavale.Models
 {
     public interface IGenerator
     {
-        public int GeneraMossa(int maxX, int maxY);
+        public int GeneraMossaX (int maxX);
+
+        public int GeneraMossaY (int maxY);
 
     }
 }
