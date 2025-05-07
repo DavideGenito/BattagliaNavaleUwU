@@ -9,13 +9,19 @@ namespace BattagliaNavale.Models
     public class Bot
     {
         public StatoCampo[,] Campo { get; private set; }
-        public Bot(StatoCampo[,] campo)
+        public IGenerator Generator { get; private set; }
+        public Bot(StatoCampo[,] campo, BattagliaNavale.Models.IGenerator? generator = null)
         {
             Campo = campo;
+            if (generator == null)
+            {
+                Generator = new RandomGenerator();
+            }
         }
-        public Tentativo FaiMossa(BattagliaNavale.Models.IGenerator? generator = null)
+        public Tentativo FaiMossa(IGenerator tentativo)
         {
-            throw new System.NotImplementedException();
+            
+
         }
     }
 }

@@ -1,1 +1,3 @@
-values\colors;values\colors
+gif\fire;gif\fire
+images\logo_battaglia_navale;images\logo_battaglia_navale
+raw\aboutassets;raw\AboutAssets
