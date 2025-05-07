@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BattagliaNavale.Views.Home"
+             Title="Home">
+    <Grid>
+        <Image
+        Source="../Resources/Images/sfondo_mare.jpg"
+        Aspect="AspectFill"
+        />
+        <VerticalStackLayout
+            Margin="40, 5"
+            Spacing="20"
+            VerticalOptions="Center">
+            <Button
+                    x:Name="btn_gioca"
+                    BackgroundColor="#92D36E"
+                    BorderColor="#629C44"
+                    Text="Gioca ora!"
+                    FontFamily="Poppins"
+                    FontSize="14"
+                    TextColor="#000000"
+                    />
+            <!--Clicked="btn_gioca_click"-->
+            <Button
+                    x:Name="btn_regolamento"
+                    BackgroundColor="#91E4FB"
+                    BorderColor="#008DB1"
+                    Text="Regolamento"
+                    FontFamily="Poppins"
+                    FontSize="14"
+                    TextColor="#000000"
+                    />
+            <!--Clicked="btn_regolamento_click"-->
+            <Button
+                    x:Name="btn_esci"
+                    BackgroundColor="#FF8A84"
+                    BorderColor="#E61610"
+                    Text="Esci"
+                    FontFamily="Poppins"
+                    FontSize="14"
+                    TextColor="#000000"
+                    />
+            <!--Clicked="btn_esci_click"-->
+        </VerticalStackLayout>
+    </Grid>
+    
+</ContentPage>

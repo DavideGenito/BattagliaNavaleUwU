@@ -1,4 +1,6 @@
-﻿namespace BattagliaNavale
+﻿using BattagliaNavale.Views;
+
+namespace BattagliaNavale
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new Home();
         }
     }
 }
