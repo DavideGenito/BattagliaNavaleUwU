@@ -8,19 +8,27 @@ namespace BattagliaNavale.Models
 {
     public class Bot
     {
-        public StatoCampo[,] Campo { get; private set; }
+        public StatoCampo[,] ZonaDiAttacco {  get; private set; }
+        public StatoCampo[,] CampoBot { get; private set; }
         public IGenerator Generator { get; private set; }
         public Bot(StatoCampo[,] campo, BattagliaNavale.Models.IGenerator? generator = null)
         {
-            Campo = campo;
+            CampoBot = campo;
             if (generator == null)
             {
                 Generator = new RandomGenerator();
             }
         }
-        public Tentativo FaiMossa(IGenerator tentativo)
+        public Tentativo FaiMossaBot(IGenerator x,IGenerator y)
         {
-            
+            Tentativo tentativoDaRitornare= new Tentativo();
+            x.GeneraMossaX(CampoBot.GetLength(1));
+            y.GeneraMossaY(CampoBot.GetLength(0));
+            x = int.Parse(GeneraMossaX(CampoBot.GetLength(1)));
+            if (CampoBot[x,y]==StatoCampo.ACQUA)
+            {
+
+            }
 
         }
     }

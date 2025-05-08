@@ -20,3 +20,45 @@ build_property.RootNamespace = BattagliaNavale
 build_property.ProjectDir = C:\Users\raffaele.filomena\Desktop\BattagliaNavaleUwU\BattagliaNavale\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/Gioco.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.Gioco.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Gioco.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Gioco.xaml
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/Home.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.Home.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Home.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Home.xaml
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/PosizionaNavi.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.PosizionaNavi.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PosizionaNavi.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PosizionaNavi.xaml
+
+[C:/Users/raffaele.filomena/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/Regolamento.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.Regolamento.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Regolamento.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Regolamento.xaml

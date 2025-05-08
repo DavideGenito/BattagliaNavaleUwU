@@ -8,7 +8,8 @@ namespace BattagliaNavale.Models
     public enum Tentativo
     {
         VINTO,
-        COLPITO,
-        ACQUA
+        COLPITA,    
+        ACQUA,
+
     }
 }
