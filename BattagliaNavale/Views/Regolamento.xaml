@@ -3,11 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BattagliaNavale.Views.Regolamento"
              Title="Regolamento">
-    <VerticalStackLayout>
-        <Button
-            x:Name="btn_tornaAllaHome"
-            Text="Torna alla home"
+    <Grid>
+        <Image
+            Source="../Resources/Images/sfondo_mare.jpg"
+            Aspect="AspectFill"
             />
-        <!--Clicked="btn_tornaAllaHome_click"-->
-    </VerticalStackLayout>
+        <VerticalStackLayout
+            Margin="40, 5"
+            Spacing="20"
+            VerticalOptions="Start">
+            <Image
+                Source="../Resources/Images/battaglia_navale_img.png"
+                Margin="5,60"
+                />
+            <Button
+                x:Name="btn_tornaAllaHome"
+                HeightRequest="20"
+                BackgroundColor="#92D36E"
+                BorderColor="#629C44"
+                BorderWidth="2"
+                Text="Torna alla home"
+                FontFamily="Poppins"
+                FontSize="14"
+                TextColor="#000000"
+                />
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>
