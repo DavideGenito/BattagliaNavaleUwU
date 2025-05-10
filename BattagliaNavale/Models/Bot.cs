@@ -19,16 +19,29 @@ namespace BattagliaNavale.Models
                 Generator = new RandomGenerator();
             }
         }
-        public Tentativo FaiMossaBot(IGenerator x,IGenerator y)
+        public Tentativo FaiMossaBot()
         {
             Tentativo tentativoDaRitornare= new Tentativo();
-            x.GeneraMossaX(CampoBot.GetLength(1));
-            y.GeneraMossaY(CampoBot.GetLength(0));
-            x = int.Parse(GeneraMossaX(CampoBot.GetLength(1)));
+            int? ultimaX = null;
+            int? ultimaY = null;
+            int x = Generator.GeneraMossaX(CampoBot.GetLength(1));
+            int y = Generator.GeneraMossaX(CampoBot.GetLength(0));           
             if (CampoBot[x,y]==StatoCampo.ACQUA)
             {
-
+                tentativoDaRitornare=Tentativo.ACQUA;
             }
+            else
+            {
+                if (CampoBot[x, y] == StatoCampo.NAVECOLPITA)
+                {
+                    tentativoDaRitornare = Tentativo.COLPITA;
+                    ultimaX = x;
+                    ultimaY = y;
+
+                }                
+                
+            }
+            return tentativoDaRitornare;
 
         }
     }

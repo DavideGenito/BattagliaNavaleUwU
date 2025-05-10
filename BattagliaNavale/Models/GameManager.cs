@@ -17,9 +17,9 @@ namespace BattagliaNavale.Models
             Bot = bot;
         }
 
-        public void VerificaVincitore(Tentativo tentativoBot, Tentativo tentativoPlayer)
+        public void VerificaVincitore()
         {
-            throw new System.NotImplementedException();
+           
         }
     }
 }
