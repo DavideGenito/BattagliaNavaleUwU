@@ -13,7 +13,7 @@
             Spacing="20"
             VerticalOptions="Start">
             <Image
-                Source="../Resources/Images/battaglia_navale_img.png"
+                Source="../Resources/Images/regolamento_img.png"
                 Margin="5,60"
                 />
             <Button
@@ -26,6 +26,31 @@
                 FontFamily="Poppins"
                 FontSize="14"
                 TextColor="#000000"
+                />
+            <Label
+                x:Name="lblIndicazioni1"
+                Text="Per prima cosa posiziona le tue navi nel campo da gioco. Attento a non piazzarle vicine!"
+                />
+            <Image
+                Source="../Resources/Images/esempio_img.png"
+                />
+            <Label
+                x:Name="lblIndicazioni2"
+                Text="A turni tu e il computer dovrete fare un tentativo per trovare le navi avversarie, indicando un paio di coordinate."
+                />
+            <Image
+                Source="../Resources/Images/conversazione_img.png"
+                />
+            <Label
+                x:Name="lblIndicazioni3"
+                Text="Ogni tentativo verrà accompagnato da un risultato, che può essere:acqua, nave colpita e nave affondata."
+                />
+            <Image
+                Source="../Resources/Images/esempio2_img.png"
+                />
+            <Label
+                x:Name="lblIndicazioni4"
+                Text="Vince il primo che affonda tutte le navi nemiche!"
                 />
         </VerticalStackLayout>
     </Grid>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:local="clr-namespace:BattagliaNavale"
+             xmlns:models="clr-namespace:BattagliaNavale.Models"
+             xmlns:views="clr-namespace:BattagliaNavale.Views"
              x:Class="BattagliaNavale.Views.Home"
              Title="Home">
     <Grid>
@@ -27,7 +32,6 @@
                 FontSize="17"
                 TextColor="#000000"
                 />
-            <!--Clicked="btn_gioca_click"-->
             <Button
                 x:Name="btn_regolamento"
                 HeightRequest="60"
@@ -38,9 +42,8 @@
                 FontFamily="Poppins"
                 FontSize="17"
                 TextColor="#000000"
-                Clicked="OpenRegolamento"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type views:Home}}, Path=OpenRegolamentoCommand}"
                 />
-            <!--Command="{Binding Source={RelativeSource AncestorType={x:Type }}}"-->
             <Button
                 x:Name="btn_esci"
                 HeightRequest="60"
@@ -52,7 +55,6 @@
                 FontSize="17"
                 TextColor="#000000"
                 />
-            <!--Clicked="btn_esci_click"-->
         </VerticalStackLayout>
     </Grid>
     
