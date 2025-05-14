@@ -12,5 +12,8 @@ namespace BattagliaNavale.Models
 
         public int GeneraMossaY (int maxY);
 
+        public bool GeneraOrientamentoBarca();
+
+        public int GeneraOrientamentoMossa();
     }
 }

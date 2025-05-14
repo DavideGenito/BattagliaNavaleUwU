@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattagliaNavale.Models
+﻿namespace BattagliaNavale.Models
 {
     public class GameManager
     {
@@ -17,9 +11,24 @@ namespace BattagliaNavale.Models
             Bot = bot;
         }
 
-        public void VerificaVincitore(Tentativo tentativoBot, Tentativo tentativoPlayer)
+        public void VerificaVincitore()
         {
-            throw new System.NotImplementedException();
+            int[] mossaBot = Bot.FaiMossa();
+            if (Giocatore.CampoPlayer[mossaBot[0], mossaBot[1]] == StatoCampo.NAVE)
+            {
+                Giocatore.CampoPlayer[mossaBot[0], mossaBot[1]] = StatoCampo.NAVE_COLPITA;
+                Bot.Contatore--;
+                if()
+                Bot.ultimaMossa = new int[] { mossaBot[0], mossaBot[1], 0 };
+            }
+            else
+            {
+                if (Bot.ultimaMossa != null)
+                {
+                    if (Bot.ultimaMossa[2] == 3) Bot.ultimaMossa = null;
+                    else Bot.ultimaMossa[2]++;
+                }
+            }
         }
     }
 }
