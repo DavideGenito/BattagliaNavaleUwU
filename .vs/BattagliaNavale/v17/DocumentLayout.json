@@ -1,56 +1,56 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\",
+  "WorkspaceRootPath": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\views\\regolamento.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\regolamento.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\views\\regolamento.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\views\\regolamento.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\regolamento.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\gioco.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\tentativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\views\\regolamento.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\regolamento.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\tentativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\tentativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\w10\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\buildTransitive\\CommunityToolkit.Mvvm.WindowsSdk.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\nuova cartella\\battaglianavaleuwu\\battaglianavale\\battaglianavale.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\anna.tassinari\\desktop\\dds\\battaglianavaleuwu\\battaglianavale\\battaglianavale.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\battaglianavale.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -65,65 +65,38 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PosizionaNavi.xaml",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BattagliaNavale\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-08T08:40:51.361Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-07T10:29:37.237Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml.cs",
-              "RelativeDocumentMoniker": "BattagliaNavale\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml.cs",
-              "RelativeToolTip": "BattagliaNavale\\App.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T10:29:54.064Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Properties\\launchSettings.json",
-              "RelativeToolTip": "BattagliaNavale\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-07T10:29:37.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Regolamento.xaml",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Regolamento.xaml",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml",
               "RelativeToolTip": "BattagliaNavale\\Views\\Regolamento.xaml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAADcAAAALAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-07T09:35:36.872Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Home.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml.cs",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
               "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T09:32:14.419Z",
               "EditorCaption": ""
@@ -132,24 +105,24 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Home.xaml",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
               "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACwAAABlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-07T09:17:44.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "Gioco.xaml",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
               "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-07T09:14:28.702Z",
               "EditorCaption": ""
@@ -158,14 +131,13 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Tentativo.cs",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Tentativo.cs",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Tentativo.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Tentativo.cs",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Tentativo.cs",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Tentativo.cs",
               "RelativeToolTip": "BattagliaNavale\\Tentativo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T09:13:51.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T09:13:51.773Z"
             },
             {
               "$type": "Document",
@@ -177,16 +149,15 @@
               "RelativeToolTip": "..\\..\\..\\..\\w10\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\buildTransitive\\CommunityToolkit.Mvvm.WindowsSdk.targets",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-04-23T10:30:37.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T10:30:37.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml",
               "RelativeDocumentMoniker": "BattagliaNavale\\App.xaml",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml",
               "RelativeToolTip": "BattagliaNavale\\App.xaml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -195,42 +166,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Regolamento.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Regolamento.xaml.cs",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml.cs",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Regolamento.xaml.cs",
               "RelativeToolTip": "BattagliaNavale\\Views\\Regolamento.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T06:48:42.445Z",
+              "WhenOpened": "2025-05-10T06:48:42.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PosizionaNavi.xaml",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-08T08:40:51.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\App.xaml.cs",
+              "RelativeToolTip": "BattagliaNavale\\App.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T10:29:54.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\MauiProgram.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\MauiProgram.cs",
               "RelativeToolTip": "BattagliaNavale\\MauiProgram.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:14:00.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T10:14:00.488Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "BattagliaNavale.csproj",
-              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\BattagliaNavale.csproj",
+              "DocumentMoniker": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\BattagliaNavale.csproj",
               "RelativeDocumentMoniker": "BattagliaNavale\\BattagliaNavale.csproj",
-              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\Nuova cartella\\BattagliaNavaleUwU\\BattagliaNavale\\BattagliaNavale.csproj",
+              "ToolTip": "C:\\Users\\anna.tassinari\\Desktop\\dds\\BattagliaNavaleUwU\\BattagliaNavale\\BattagliaNavale.csproj",
               "RelativeToolTip": "BattagliaNavale\\BattagliaNavale.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-23T10:11:42.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T10:11:42.214Z"
             }
           ]
         }

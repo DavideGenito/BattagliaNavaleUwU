@@ -9,12 +9,74 @@
             Aspect="AspectFill"
             />
         <VerticalStackLayout
-            Margin="40, 5"
+            Margin="0, 0"
             Spacing="20"
-            VerticalOptions="Start">
+            VerticalOptions="Start"
+            HorizontalOptions="Center">
             <Image
                 Source="../Resources/Images/regolamento_img.png"
-                Margin="5,60"
+                Margin="30,30"
+                Aspect="AspectFit"
+                />
+            <HorizontalStackLayout 
+                Spacing="10"
+                Margin="0,0"
+                HorizontalOptions="Center">
+                <Label 
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Start"
+                LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Per prima cosa posiziona 
+                        le tue navi nel campo 
+                        da gioco. Attento a non 
+                        piazzarle vicine!
+                    </Label.Text>
+                </Label>
+                <Image
+                    Source="../Resources/Images/esempio_img.png"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    />
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout>
+                <Label>
+                    <Label.Text>
+                        A turni tu e il computer dovrete
+                        fare un tentativo per trovare le
+                        navi avversarie, indicando un
+                        paio di coordinate.
+                    </Label.Text>
+                </Label>
+                <Image
+                    Source="../Resources/Images/conversazione_img.png"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    />
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout>
+                <Label>
+                    <Label.Text>
+                        Ogni tentativo verrà
+                        accompagnato da un 
+                        risultato, che può essere: 
+                        acqua, nave colpita e 
+                        nave affondata.
+                    </Label.Text>
+                </Label>
+                <Image
+                    Source="../Resources/Images/esempio2_img.png"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    />
+            </HorizontalStackLayout>
+            
+            <Label
+                x:Name="lblIndicazioni4"
+                Text="Vince il primo che affonda tutte le navi nemiche!"
+                VerticalOptions="Center"
                 />
             <Button
                 x:Name="btn_tornaAllaHome"
@@ -26,31 +88,6 @@
                 FontFamily="Poppins"
                 FontSize="14"
                 TextColor="#000000"
-                />
-            <Label
-                x:Name="lblIndicazioni1"
-                Text="Per prima cosa posiziona le tue navi nel campo da gioco. Attento a non piazzarle vicine!"
-                />
-            <Image
-                Source="../Resources/Images/esempio_img.png"
-                />
-            <Label
-                x:Name="lblIndicazioni2"
-                Text="A turni tu e il computer dovrete fare un tentativo per trovare le navi avversarie, indicando un paio di coordinate."
-                />
-            <Image
-                Source="../Resources/Images/conversazione_img.png"
-                />
-            <Label
-                x:Name="lblIndicazioni3"
-                Text="Ogni tentativo verrà accompagnato da un risultato, che può essere:acqua, nave colpita e nave affondata."
-                />
-            <Image
-                Source="../Resources/Images/esempio2_img.png"
-                />
-            <Label
-                x:Name="lblIndicazioni4"
-                Text="Vince il primo che affonda tutte le navi nemiche!"
                 />
         </VerticalStackLayout>
     </Grid>

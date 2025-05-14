@@ -15,4 +15,16 @@ public partial class Home : ContentPage
 	{
 		await Navigation.PushAsync(new Regolamento());
 	}
+
+    [RelayCommand]
+    public async Task OpenGioco()
+    {
+        await Navigation.PushAsync(new PosizionaNavi());
+    }
+
+    [RelayCommand]
+    public async Task Esci()
+    {
+        await Navigation.PushAsync(new PosizionaNavi());
+    }
 }
