@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BattagliaNavale.ViewModels
 {
-    internal class PosizionaNaviViewModel
+    public partial class PosizionaNaviViewModel
     {
+
     }
 }

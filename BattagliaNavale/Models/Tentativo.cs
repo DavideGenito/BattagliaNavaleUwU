@@ -10,6 +10,7 @@ namespace BattagliaNavale.Models
         VINTO,
         COLPITA,    
         ACQUA,
+        PERSO,
 
     }
 }
