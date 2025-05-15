@@ -2,11 +2,114 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BattagliaNavale.Views.PosizionaNavi"
+             xmlns:vm="clr-namespace:BattagliaNavale.ViewModels"
              Title="PosizionaNavi">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid>
+        <Image
+        Source="../Resources/Images/sfondo_mare.jpg"
+        Aspect="AspectFill"
+        />
+        <VerticalStackLayout>
+            <Grid
+                x:Name="grigliaPosizionaNavi">
+                <Image
+                    x:Name="imgPrimaNave"
+                    Source="../Resources/Images/barca3.png"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="2"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding SelezionaNaveCommand}"
+                            CommandParameter="0"
+                            />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="imgSecondaNave"
+                    Source="../Resources/Images/barca1.png"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="3"
+                    >       
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding SelezionaNaveCommand}"
+                            CommandParameter="1"
+                            />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="imgTerzaNave"
+                    Source="../Resources/Images/barca4.png"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Grid.RowSpan="3"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding SelezionaNaveCommand}"
+                        CommandParameter="2"
+                        />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="imgQuartaNave"
+                    Source="../Resources/Images/barca2.png"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Grid.RowSpan="4"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding SelezionaNaveCommand}"
+                        CommandParameter="3"
+                        />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Image
+                Source="../Resources/Images/posiziona_navi.png"
+                />
+            <HorizontalStackLayout>
+                <!--su-->
+                <Button
+                    x:Name="btnSu"
+                    Command="{Binding PosizionaNaveCommand}"
+                    />
+                <!--giu-->
+                <Button
+                    x:Name="btnGiu"
+                    Command="{Binding PosizionaNaveCommand}"
+                    />
+                <!--sinistra-->
+                <Button
+                    x:Name="btnSinistra"
+                    Command="{Binding PosizionaNaveCommand}"
+                    />
+                <!--destra-->
+                <Button
+                    x:Name="btnDestra"
+                    Command="{Binding PosizionaNaveCommand}"
+                    />
+                <!--gira-->
+                <Button
+                    Command="{Binding RuotaNaveCommand}"
+                    />  
+            </HorizontalStackLayout>
+            <Button
+                x:Name="btn_gioca"
+                HeightRequest="60"
+                BackgroundColor="#92D36E"
+                BorderColor="#629C44"
+                BorderWidth="2"
+                Text="Gioca ora!"
+                FontFamily="Poppins"
+                FontSize="17"
+                TextColor="#000000"
+                Command="{Binding ConfermaPosizionamentoCommand}"
+                />
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

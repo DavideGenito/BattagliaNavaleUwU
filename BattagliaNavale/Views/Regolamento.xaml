@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:local="clr-namespace:BattagliaNavale"
+             xmlns:models="clr-namespace:BattagliaNavale.Models"
+             xmlns:views="clr-namespace:BattagliaNavale.Views"
              x:Class="BattagliaNavale.Views.Regolamento"
              Title="Regolamento">
     <Grid>
@@ -9,12 +14,75 @@
             Aspect="AspectFill"
             />
         <VerticalStackLayout
-            Margin="40, 5"
-            Spacing="20"
-            VerticalOptions="Start">
+            Margin="0, 0"
+            Spacing="10"
+            VerticalOptions="Start"
+            HorizontalOptions="Center">
             <Image
                 Source="../Resources/Images/regolamento_img.png"
-                Margin="5,60"
+                Margin="30,30"
+                Aspect="AspectFit"
+                HeightRequest="250"
+                WidthRequest="250"
+                />
+            <HorizontalStackLayout 
+                Spacing="10"
+                Margin="0,0"
+                HorizontalOptions="Center">
+                <Label 
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Start"
+                LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Per prima cosa posiziona 
+                        le tue navi nel campo 
+                        da gioco. Attento a non 
+                        piazzarle vicine!
+                    </Label.Text>
+                </Label>
+                <Image
+                    Source="../Resources/Images/esempio_img.png"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    />
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout>
+                <Label>
+                    <Label.Text>
+                        A turni tu e il computer dovrete
+                        fare un tentativo per trovare le
+                        navi avversarie, indicando un
+                        paio di coordinate.
+                    </Label.Text>
+                </Label>
+                <Image
+                    Source="../Resources/Images/conversazione_img.png"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label>
+                    <Label.Text>
+                        Ogni tentativo verrà
+                        accompagnato da un 
+                        risultato, che può essere: 
+                        acqua, nave colpita e 
+                        nave affondata.
+                    </Label.Text>
+                </Label>
+                <Image
+                    Source="../Resources/Images/esempio2_img.png"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    />
+            </HorizontalStackLayout>
+            <Label
+                x:Name="lblIndicazioni4"
+                Text="Vince il primo che affonda tutte le navi nemiche!"
+                VerticalOptions="Center"
                 />
             <Button
                 x:Name="btn_tornaAllaHome"
@@ -26,31 +94,7 @@
                 FontFamily="Poppins"
                 FontSize="14"
                 TextColor="#000000"
-                />
-            <Label
-                x:Name="lblIndicazioni1"
-                Text="Per prima cosa posiziona le tue navi nel campo da gioco. Attento a non piazzarle vicine!"
-                />
-            <Image
-                Source="../Resources/Images/esempio_img.png"
-                />
-            <Label
-                x:Name="lblIndicazioni2"
-                Text="A turni tu e il computer dovrete fare un tentativo per trovare le navi avversarie, indicando un paio di coordinate."
-                />
-            <Image
-                Source="../Resources/Images/conversazione_img.png"
-                />
-            <Label
-                x:Name="lblIndicazioni3"
-                Text="Ogni tentativo verrà accompagnato da un risultato, che può essere:acqua, nave colpita e nave affondata."
-                />
-            <Image
-                Source="../Resources/Images/esempio2_img.png"
-                />
-            <Label
-                x:Name="lblIndicazioni4"
-                Text="Vince il primo che affonda tutte le navi nemiche!"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type views:Regolamento}}, Path=OpenHomeCommand}"
                 />
         </VerticalStackLayout>
     </Grid>

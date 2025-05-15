@@ -1,4 +1,5 @@
 ﻿using BattagliaNavale.Models;
+using BattagliaNavale.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -14,6 +15,8 @@ namespace BattagliaNavale.ViewModels
     {
         private const int GrigliaDimensione = 10;
 
+        private readonly INavigation _navigation;
+
         public ObservableCollection<ObservableCollection<StatoCampo>> Campo { get; set; }
 
         [ObservableProperty]
@@ -26,7 +29,7 @@ namespace BattagliaNavale.ViewModels
 
         private StatoCampo[,] campoLogico;
 
-        public PosizionaNaviViewModel()
+        public PosizionaNaviViewModel(INavigation navigation)
         {
             campoLogico = new StatoCampo[GrigliaDimensione, GrigliaDimensione];
             Campo = new ObservableCollection<ObservableCollection<StatoCampo>>();
@@ -38,6 +41,8 @@ namespace BattagliaNavale.ViewModels
                     Campo[i].Add(StatoCampo.ACQUA);
                 }
             }
+
+            _navigation = navigation;
         }
 
         [RelayCommand]
@@ -53,13 +58,13 @@ namespace BattagliaNavale.ViewModels
         }
 
         [RelayCommand]
-        private void PosizionaNave((int x, int y) cella)
+        private void PosizionaNave(Point spostamento)
         {
             if (NaveCorrente >= NaviDisponibili.Count) return;
 
             int lunghezza = NaviDisponibili[NaveCorrente];
-            int x = cella.x;
-            int y = cella.y;
+            int x = Convert.ToInt32(spostamento.X);
+            int y = Convert.ToInt32(spostamento.Y);
 
             bool spazioDisponibile = true;
 
@@ -98,7 +103,7 @@ namespace BattagliaNavale.ViewModels
                 return;
             }
 
-            // Vai alla schermata successiva e passa `campoLogico`
+            await _navigation.PushAsync(new Gioco());
         }
     }
 }

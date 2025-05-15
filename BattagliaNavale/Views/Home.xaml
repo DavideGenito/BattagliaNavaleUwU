@@ -10,9 +10,9 @@
              Title="Home">
     <Grid>
         <Image
-        Source="../Resources/Images/sfondo_mare.jpg"
-        Aspect="AspectFill"
-        />
+            Source="../Resources/Images/sfondo_mare.jpg"
+            Aspect="AspectFill"
+            />
         <VerticalStackLayout
             Margin="40, 5"
             Spacing="20"
@@ -31,6 +31,7 @@
                 FontFamily="Poppins"
                 FontSize="17"
                 TextColor="#000000"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type views:Home}}, Path=OpenGiocoCommand}"
                 />
             <Button
                 x:Name="btn_regolamento"
@@ -54,6 +55,7 @@
                 FontFamily="Poppins"
                 FontSize="17"
                 TextColor="#000000"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type views:Home}}, Path=EsciCommand}"
                 />
         </VerticalStackLayout>
     </Grid>

@@ -1,3 +1,5 @@
+using CommunityToolkit.Mvvm.Input;
+
 namespace BattagliaNavale.Views;
 
 public partial class Regolamento : ContentPage
@@ -6,4 +8,11 @@ public partial class Regolamento : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    [RelayCommand]
+    public async Task OpenHome()
+    {
+        await Navigation.PushAsync(new Home());
+    }
+
 }
