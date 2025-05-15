@@ -11,24 +11,46 @@
             Bot = bot;
         }
 
-        public void VerificaVincitore()
+        public Risultato VerificaVincitore(int playerX, int playerY)
         {
-            int[] mossaBot = Bot.FaiMossa();
-            if (Giocatore.CampoPlayer[mossaBot[0], mossaBot[1]] == StatoCampo.NAVE)
+            bool mossaGiusta = false;
+            while (!mossaGiusta)
             {
-                Giocatore.CampoPlayer[mossaBot[0], mossaBot[1]] = StatoCampo.NAVE_COLPITA;
-                Bot.Contatore--;
-                if()
-                Bot.ultimaMossa = new int[] { mossaBot[0], mossaBot[1], 0 };
-            }
-            else
-            {
-                if (Bot.ultimaMossa != null)
+                int[] mossaBot = Bot.FaiMossa();
+                if (Giocatore.Campo[mossaBot[0], mossaBot[1]] == StatoCampo.NAVE)
                 {
-                    if (Bot.ultimaMossa[2] == 3) Bot.ultimaMossa = null;
-                    else Bot.ultimaMossa[2]++;
+                    mossaGiusta = true;
+                    Giocatore.Campo[mossaBot[0], mossaBot[1]] = StatoCampo.NAVE_COLPITA;
+                    Bot.Contatore--;
+                    if (Bot.Contatore == 0) return Risultato.VINTO_BOT;
+                    Bot.ultimaMossa = new int[] { mossaBot[0], mossaBot[1], 0 };
+                }
+                else if (Giocatore.Campo[mossaBot[0], mossaBot[1]] == StatoCampo.ACQUA)
+                {
+                    mossaGiusta = true;
+                    Giocatore.Campo[mossaBot[0], mossaBot[1]] = StatoCampo.ACQUA_COLPITA;
+                    if (Bot.ultimaMossa != null)
+                    {
+                        if (Bot.ultimaMossa[2] == 3) Bot.ultimaMossa = null;
+                        else Bot.ultimaMossa[2]++;
+                    }
                 }
             }
+
+            int[] mossaPlayer = Giocatore.FaiMossa(playerX, playerY);
+
+            if (Bot.Campo[mossaPlayer[0], mossaPlayer[1]] == StatoCampo.NAVE)
+            {
+                Bot.Campo[mossaPlayer[0], mossaPlayer[1]] = StatoCampo.NAVE_COLPITA;
+                Giocatore.Contatore--;
+                if(Giocatore.Contatore == 0) return Risultato.VINTO_PLAYER;
+            }
+            else if (Bot.Campo[mossaPlayer[0], mossaPlayer[1]] == StatoCampo.ACQUA)
+            {
+                Bot.Campo[mossaPlayer[0], mossaPlayer[1]] = StatoCampo.ACQUA_COLPITA;
+            }
+        
+            return Risultato.SOSPESO;
         }
     }
 }

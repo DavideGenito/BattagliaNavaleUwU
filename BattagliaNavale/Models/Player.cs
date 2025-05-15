@@ -8,15 +8,30 @@ namespace BattagliaNavale.Models
 {
     public class Player
     {
-        public StatoCampo[,] CampoPlayer {  get; private set; }
-        public Player(StatoCampo[,] campo)
+        public int Contatore { get; set; }
+        public IGenerator Generator { get; set; }
+        public StatoCampo[,] Campo {  get; private set; }
+        public Player(StatoCampo[,] campo, IGenerator? generator = null)
         {
-            CampoPlayer = campo;
+            Campo = campo;
+            Contatore = 12;
+
+            if (generator != null)
+            {
+                Generator = generator;
+            }
+            else
+            {
+                Generator = new RandomGenerator();
+            }
         }
 
-        public Tentativo FaiMossa(int x, int y)
+        public int[] FaiMossa(int x, int y)
         {
-            throw new System.NotImplementedException();
+            if (x > Campo.GetLength(0) || x < 0) throw new ArgumentOutOfRangeException("immetti una x valida");
+            if (y > Campo.GetLength(1) || y < 0) throw new ArgumentOutOfRangeException("immetti una y valida");
+
+            return new int[] { x, y };
         }
     }
 }

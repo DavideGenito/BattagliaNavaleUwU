@@ -26,7 +26,7 @@
             PosizionaBarca(3);
             PosizionaBarca(4);
         }
-        public int[]? FaiMossa()
+        public int[] FaiMossa()
         { 
             if (ultimaMossa != null)
             {
@@ -62,6 +62,7 @@
             {
                 int x = Generator.GeneraMossaX(Campo.GetLength(0));
                 int y = Generator.GeneraMossaY(Campo.GetLength(1));
+
                 return new int[] { x, y };
             }    
         }
