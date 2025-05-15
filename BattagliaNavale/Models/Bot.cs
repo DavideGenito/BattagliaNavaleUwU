@@ -77,7 +77,7 @@
                 int barcaY = Generator.GeneraMossaY(Campo.GetLength(1));
                 bool orrizontale = Generator.GeneraOrientamentoBarca();
 
-                if (barcaX + grand < Campo.GetLength(0) || barcaY + grand < Campo.GetLength(1))
+                if (barcaX + grand < Campo.GetLength(0) && barcaY + grand < Campo.GetLength(1))
                 {
                     for (int i = 0; i < grand; i++)
                     {
