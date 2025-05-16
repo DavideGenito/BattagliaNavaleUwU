@@ -16,8 +16,6 @@ namespace BattagliaNavale.ViewModels
         private const int GrigliaDimensione = 10;
         private readonly INavigation _navigation;
 
-        public ObservableCollection<ObservableCollection<StatoCampo>> Campo { get; set; }
-
         [ObservableProperty]
         private int naveCorrente = 0;
 
@@ -78,16 +76,6 @@ namespace BattagliaNavale.ViewModels
         public PosizionaNaviViewModel(INavigation navigation)
         {
             campoLogico = new StatoCampo[GrigliaDimensione, GrigliaDimensione];
-            Campo = new ObservableCollection<ObservableCollection<StatoCampo>>();
-
-            for (int i = 0; i < GrigliaDimensione; i++)
-            {
-                Campo.Add(new ObservableCollection<StatoCampo>());
-                for (int j = 0; j < GrigliaDimensione; j++)
-                {
-                    Campo[i].Add(StatoCampo.ACQUA);
-                }
-            }
 
             _navigation = navigation;
             AggiornaGrigliaTemporanea();
@@ -185,7 +173,6 @@ namespace BattagliaNavale.ViewModels
             {
                 for (int j = 0; j < GrigliaDimensione; j++)
                 {
-                    Campo[i][j] = StatoCampo.ACQUA;
                     campoLogico[i, j] = StatoCampo.ACQUA;
                 }
             }
@@ -200,7 +187,6 @@ namespace BattagliaNavale.ViewModels
                     int posY = orientamento ? y : y + j;
                     if (posX < GrigliaDimensione && posY < GrigliaDimensione)
                     {
-                        Campo[posX][posY] = StatoCampo.NAVE;
                         campoLogico[posX, posY] = StatoCampo.NAVE;
                     }
                 }
