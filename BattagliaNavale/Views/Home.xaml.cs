@@ -22,9 +22,8 @@ public partial class Home : ContentPage
         await Navigation.PushAsync(new PosizionaNavi());
     }
 
-    [RelayCommand]
-    public async Task Esci()
+    private void EsciClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PosizionaNavi());
+        Application.Current.Quit();
     }
 }

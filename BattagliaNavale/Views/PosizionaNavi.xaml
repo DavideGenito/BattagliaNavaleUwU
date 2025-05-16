@@ -10,7 +10,7 @@
             Source="../Resources/Images/sfondo_mare.jpg"
             Aspect="AspectFill" />
 
-        <VerticalStackLayout>
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Grid x:Name="grigliaPosizionaNavi"
                   WidthRequest="400" HeightRequest="400"
                   HorizontalOptions="Center" VerticalOptions="Center">
@@ -20,13 +20,18 @@
                        Grid.Column="{Binding PrimaNaveColumn}"
                        Grid.RowSpan="{Binding PrimaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding PrimaNaveColumnSpan}"
+                       HeightRequest="{Binding PrimaNaveHeight}"
+                       WidthRequest="{Binding PrimaNaveWidth}"
                        Rotation="{Binding PrimaNaveRotation}"
+                       TranslationX="{Binding PrimaNaveTranslationX}"
+                       AnchorX="0"
+                       AnchorY="0"
                        ZIndex="1"
-                       Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
-                                <x:Int32>2</x:Int32>
+                                <x:Int32>0</x:Int32>
                             </TapGestureRecognizer.CommandParameter>
                         </TapGestureRecognizer>
                     </Image.GestureRecognizers>
@@ -38,9 +43,14 @@
                        Grid.Column="{Binding SecondaNaveColumn}"
                        Grid.RowSpan="{Binding SecondaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding SecondaNaveColumnSpan}"
+                       HeightRequest="{Binding SecondaNaveHeight}"
+                       WidthRequest="{Binding SecondaNaveWidth}"
                        Rotation="{Binding SecondaNaveRotation}"
+                       TranslationX="{Binding SecondaNaveTranslationX}"
+                       AnchorX="0"
+                       AnchorY="0"
                        ZIndex="1"
-                       Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
@@ -56,9 +66,14 @@
                        Grid.Column="{Binding TerzaNaveColumn}"
                        Grid.RowSpan="{Binding TerzaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding TerzaNaveColumnSpan}"
+                       HeightRequest="{Binding TerzaNaveHeight}"
+                       WidthRequest="{Binding TerzaNaveWidth}"
                        Rotation="{Binding TerzaNaveRotation}"
+                       TranslationX="{Binding TerzaNaveTranslationX}"
+                       AnchorX="0"
+                       AnchorY="0"
                        ZIndex="1"
-                       Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">            
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">            
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
@@ -74,9 +89,14 @@
                        Grid.Column="{Binding QuartaNaveColumn}"
                        Grid.RowSpan="{Binding QuartaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding QuartaNaveColumnSpan}"
+                       HeightRequest="{Binding QuartaNaveHeight}"
+                       WidthRequest="{Binding QuartaNaveWidth}"
                        Rotation="{Binding QuartaNaveRotation}"
+                       TranslationX="{Binding QuartaNaveTranslationX}"
+                       AnchorX="0"
+                       AnchorY="0"
                        ZIndex="1"
-                       Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
@@ -89,21 +109,40 @@
 
             <Image Source="../Resources/Images/posiziona_navi.png" />
 
-            <HorizontalStackLayout>
-                <Button x:Name="btnSu"
-                        Command="{Binding SpostaNaveCommand}" />
+            <HorizontalStackLayout Margin="0, 20" 
+                                   HorizontalOptions="Center" VerticalOptions="Center">
+                <ImageButton x:Name="btnSu"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             Source="freccia.png"
+                             Command="{Binding SpostaNaveCommand}" />
 
-                <Button x:Name="btnGiu"
-                        Command="{Binding SpostaNaveCommand}" />
+                <ImageButton x:Name="btnGiu"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             Source="freccia.png" 
+                             Rotation="180"
+                             Command="{Binding SpostaNaveCommand}" />
 
-                <Button x:Name="btnSinistra"
-                        Command="{Binding SpostaNaveCommand}" />
+                <ImageButton x:Name="btnSinistra"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             Source="freccia.png"
+                             Rotation="270"
+                             Command="{Binding SpostaNaveCommand}" />
 
-                <Button x:Name="btnDestra"
-                        Command="{Binding SpostaNaveCommand}" />
+                <ImageButton x:Name="btnDestra"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             Rotation="90"
+                             Source="freccia.png"
+                             Command="{Binding SpostaNaveCommand}" />
 
-                <Button Text="Ruota"
-                        Command="{Binding RuotaNaveCommand}" />
+                <ImageButton x:Name="btnRuota"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             Source="freccia_ruota.png"
+                             Command="{Binding RuotaNaveCommand}" />
             </HorizontalStackLayout>
 
             <Button x:Name="btn_gioca"
