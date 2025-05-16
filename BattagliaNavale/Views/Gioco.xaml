@@ -4,9 +4,49 @@
              x:Class="BattagliaNavale.Views.Gioco"
              Title="Gioco">
     <Grid>
-        <Image
-            Source="../Resources/Images/sfondo_mare.jpg"
-            Aspect="AspectFill"
+        <VerticalStackLayout
+            Spacing="20">
+            <Image
+                Source="../Resources/Images/sfondo_mare.jpg"
+                Aspect="AspectFill"
+                />
+            <Grid
+                x:Name="grigliaGiocatore"
+                WidthRequest="200"
+                HeightRequest="200">
+                <Image
+                    x:Name="imgSecondaNave"
+                    Source="../Resources/Images/barca1.png">
+                </Image>
+                <Image
+                    x:Name="imgTerzaNave"
+                    Source="../Resources/Images/barca4.png">
+                </Image>
+                <Image
+                    x:Name="imgQuartaNave"
+                    Source="../Resources/Images/barca2.png">
+                </Image>
+                <Image
+                    x:Name="imgPrimaNave"
+                    Source="../Resources/Images/barca3.png">
+                </Image>
+            </Grid>
+            <Grid
+                x:Name="grigliaBot"
+                WidthRequest="400"
+                HeightRequest="400">
+            </Grid>
+            <Button
+            x:Name="btn_colpisci"
+            HeightRequest="60"
+            BackgroundColor="#92D36E"
+            BorderColor="#629C44"
+            BorderWidth="2"
+            Text="Colpisci!"
+            FontFamily="Poppins"
+            FontSize="17"
+            TextColor="#000000"
             />
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>
