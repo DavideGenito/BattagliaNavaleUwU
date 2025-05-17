@@ -25,7 +25,7 @@ public partial class PosizionaNavi : ContentPage
                 Grid.SetColumn(cella, j);
                 Grid.SetRow(cella, i);
                 cella.Fill = new SolidColorBrush(Colors.LightBlue);
-                cella.Stroke = new SolidColorBrush(Colors.Black);
+                cella.Stroke = new SolidColorBrush(Colors.CadetBlue);
                 cella.StrokeThickness = 1;
                 grigliaPosizionaNavi.Children.Add(cella);
             }

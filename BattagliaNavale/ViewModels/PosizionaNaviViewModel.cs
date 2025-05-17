@@ -146,6 +146,7 @@ namespace BattagliaNavale.ViewModels
             }
         }
 
+
         [RelayCommand]
         private void SpostaNave(Point direzione)
         {
@@ -257,12 +258,15 @@ namespace BattagliaNavale.ViewModels
             terzaNaveRowSpan = NaviPosizionate[2].Item3 ? NaviDisponibili[2] : 1;
             terzaNaveColumnSpan = NaviPosizionate[2].Item3 ? 1 : NaviDisponibili[2];
             
+            
+            
+            quartaNaveRowSpan = NaviPosizionate[3].Item3 ? NaviDisponibili[3] : 1;
+            quartaNaveColumnSpan = NaviPosizionate[3].Item3 ? 1 : NaviDisponibili[3];
             OnPropertyChanged(nameof(QuartaNaveRow));
             OnPropertyChanged(nameof(QuartaNaveColumn));
             OnPropertyChanged(nameof(QuartaNaveRotation));
             OnPropertyChanged(nameof(QuartaNaveTranslationX));
-            quartaNaveRowSpan = NaviPosizionate[3].Item3 ? NaviDisponibili[3] : 1;
-            quartaNaveColumnSpan = NaviPosizionate[3].Item3 ? 1 : NaviDisponibili[3];
+
         }
 
     }
