@@ -1,46 +1,46 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "WorkspaceRootPath": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\",
+  "WorkspaceRootPath": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\models\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\models\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\models\\statocampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\models\\statocampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\giocoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\giocoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\gioco.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\posizionanavi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-=======
-  "WorkspaceRootPath": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\giocoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\giocoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> origin/filomena
     }
   ],
   "DocumentGroupContainers": [
@@ -53,115 +53,142 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
-              "Title": "Gioco.xaml",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
-              "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-16T16:53:25.996Z",
-=======
-              "DocumentIndex": 1,
-              "Title": "GiocoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
-              "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
-              "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
-              "RelativeToolTip": "BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T10:54:04.541Z",
->>>>>>> origin/filomena
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-<<<<<<< HEAD
-              "Title": "Gioco.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml.cs",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
-              "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAxAAAAAAAAAA==",
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\GameManager.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Models\\GameManager.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\GameManager.cs",
+              "RelativeToolTip": "BattagliaNavale\\Models\\GameManager.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T16:53:18.461Z",
+              "WhenOpened": "2025-05-17T06:16:10.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StatoCampo.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\StatoCampo.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Models\\StatoCampo.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\StatoCampo.cs",
+              "RelativeToolTip": "BattagliaNavale\\Models\\StatoCampo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T06:16:09.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GiocoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "RelativeToolTip": "BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T06:16:07.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Home.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml.cs",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
-              "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T16:35:04.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Home.xaml",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
-              "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADIAAAApAAAAAAAAAA==",
+              "Title": "Gioco.xaml",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
+              "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-16T16:28:20.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PosizionaNavi.xaml",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-16T13:25:24.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PosizionaNavi.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
-              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
-              "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T13:22:55.468Z"
+              "WhenOpened": "2025-05-17T06:16:06.122Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Gioco.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
+              "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T06:16:06.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Home.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
+              "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T06:16:06.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
+              "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-17T06:16:06.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PosizionaNavi.xaml",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-17T06:16:06.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PosizionaNavi.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
+              "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T06:16:06.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "PosizionaNaviViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
-              "ToolTip": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
               "RelativeToolTip": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAiwBoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T08:46:22.45Z",
-=======
-              "Title": "PosizionaNaviViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
-              "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
-              "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
-              "RelativeToolTip": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T10:53:52.555Z",
->>>>>>> origin/filomena
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T06:16:06.161Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1669,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }
