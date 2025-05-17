@@ -77,28 +77,35 @@
                 int barcaY = Generator.GeneraMossaY(Campo.GetLength(1));
                 bool orrizontale = Generator.GeneraOrientamentoBarca();
 
-                if (barcaX + grand < Campo.GetLength(0) && barcaY + grand < Campo.GetLength(1))
+
+                if (orrizontale)
                 {
-                    for (int i = 0; i < grand; i++)
+                    if (barcaX + grand >= Campo.GetLength(0)) { errore = true; continue; }
+                }
+                else
+                {
+                    if (barcaY + grand >= Campo.GetLength(1)) { errore = true; continue; }
+                }
+
+                for (int i = 0; i < grand; i++)
+                {
+                    if (orrizontale)
                     {
-                        if (orrizontale)
+                        if (Campo[barcaX + i, barcaY] == StatoCampo.NAVE)
                         {
-                            if (Campo[barcaX + i, barcaY] == StatoCampo.NAVE)
-                            {
-                                errore = true;
-                                break;
-                            }
-                            Campo[barcaX + i, barcaY] = StatoCampo.NAVE;
+                            errore = true;
+                            break;
                         }
-                        else
+                        Campo[barcaX + i, barcaY] = StatoCampo.NAVE;
+                    }
+                    else
+                    {
+                        if (Campo[barcaX, barcaY + i] == StatoCampo.NAVE)
                         {
-                            if (Campo[barcaX, barcaY + i] == StatoCampo.NAVE)
-                            {
-                                errore = true;
-                                break;
-                            }
-                            Campo[barcaX, barcaY + i] = StatoCampo.NAVE;
+                            errore = true;
+                            break;
                         }
+                        Campo[barcaX, barcaY + i] = StatoCampo.NAVE;
                     }
                 }
             }

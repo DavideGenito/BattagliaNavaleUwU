@@ -34,6 +34,15 @@ public partial class Gioco : ContentPage
                 bottone.BackgroundColor = Colors.LightBlue;
                 bottone.BorderColor = Colors.CadetBlue;
                 bottone.CornerRadius = 0;
+                bottone.CommandParameter = new Tuple<int, int>(i, j);
+                bottone.Command = new Command((obj) =>
+                {
+                    var coordinate = (Tuple<int, int>)obj;
+                    var x = coordinate.Item1;
+                    var y = coordinate.Item2;
+                    ((GiocoViewModel)BindingContext).SelezionaCella((x, y));
+                });
+
                 grigliaBot.Children.Add(bottone);
                 Microsoft.Maui.Controls.Shapes.Rectangle cella = new Microsoft.Maui.Controls.Shapes.Rectangle();
                 Grid.SetColumn(cella, j);
@@ -97,6 +106,59 @@ public partial class Gioco : ContentPage
             }
 
             grigliaGiocatore.Children.Add(barca);
+        }
+    }
+
+    private void OnButtonClicked(object sender, EventArgs e)
+    {
+        var vm = (GiocoViewModel)BindingContext;
+        var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
+
+        var imgFeedbackPlayer = new Image
+        {
+            Source = colpoPlayer.colpito
+            ? "../Resources/Gif/fire.gif"
+            : "../Resources/Images/croce_img.png",
+            ZIndex = 2,
+            IsAnimationPlaying = colpoPlayer.colpito
+        };
+        Grid.SetRow(imgFeedbackPlayer, colpoPlayer.x);
+        Grid.SetColumn(imgFeedbackPlayer, colpoPlayer.y);
+        grigliaBot.Children.Add(imgFeedbackPlayer);
+
+
+        foreach (var child in grigliaBot.Children)
+        {
+            if (Grid.GetRow((BindableObject)child) == colpoPlayer.x && Grid.GetColumn((BindableObject)child) == colpoPlayer.y)
+            {
+                if (child is Button button)
+                {
+                    button.IsEnabled = false;
+                }
+            }
+        }
+
+        var colpoBot = vm.ColpiBot.LastOrDefault();
+
+        var imgFeedbackBot = new Image
+        {
+            Source = colpoBot.colpito
+                ? "../Resources/Gif/fire.gif"
+                : "../Resources/Images/croce_img.png",
+            ZIndex = 2,
+            IsAnimationPlaying = colpoBot.colpito
+        };
+        Grid.SetRow(imgFeedbackBot, colpoBot.x);
+        Grid.SetColumn(imgFeedbackBot, colpoBot.y);
+        grigliaGiocatore.Children.Add(imgFeedbackBot);
+
+        if(vm.MessaggioRisultato == Risultato.VINTO_PLAYER)
+        {
+            DisplayAlert("Hai vinto!", "Hai distrutto tutte le navi del bot!", "OK");
+        }
+        else if (vm.MessaggioRisultato == Risultato.VINTO_BOT)
+        {
+            DisplayAlert("Hai perso!", "Il bot ha distrutto tutte le tue navi!", "OK");
         }
     }
 }

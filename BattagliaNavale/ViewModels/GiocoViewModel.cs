@@ -17,6 +17,10 @@ namespace BattagliaNavale.ViewModels
         public ObservableCollection<ObservableCollection<StatoCampo>> CampoBot { get; set; }
         public ObservableCollection<ObservableCollection<StatoCampo>> CampoGiocatore { get; set; }
 
+        public ObservableCollection<(int x, int y, bool colpito)> ColpiPlayer { get; } = new();
+        public ObservableCollection<(int x, int y, bool colpito)> ColpiBot { get; } = new();
+
+
         private GameManager gameManager;
 
         [ObservableProperty]
@@ -26,7 +30,7 @@ namespace BattagliaNavale.ViewModels
         private int? selezioneY;
 
         [ObservableProperty]
-        private string messaggioRisultato;
+        private Risultato messaggioRisultato;
 
         public GiocoViewModel(StatoCampo[,] campoGiocatore)
         {
@@ -52,7 +56,7 @@ namespace BattagliaNavale.ViewModels
         }
 
         [RelayCommand]
-        private void SelezionaCella((int x, int y) cella)
+        public void SelezionaCella((int x, int y) cella)
         {
             SelezioneX = cella.x;
             SelezioneY = cella.y;
@@ -63,21 +67,19 @@ namespace BattagliaNavale.ViewModels
         {
             if (SelezioneX == null || SelezioneY == null) return;
 
+            var stato = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
+            bool colpito = stato == StatoCampo.NAVE ? true : false;
+
+            ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpito));
+
             var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
             AggiornaGriglie();
 
-            switch (risultato)
-            {
-                case Risultato.VINTO_BOT:
-                    MessaggioRisultato = "Hai perso!";
-                    break;
-                case Risultato.VINTO_PLAYER:
-                    MessaggioRisultato = "Hai vinto!";
-                    break;
-                default:
-                    MessaggioRisultato = "Colpo effettuato!";
-                    break;
-            }
+            messaggioRisultato = risultato.Item1;
+
+            var statoBot = gameManager.Giocatore.Campo[risultato.Item2[0], risultato.Item2[1]];
+            bool colpitoBot = stato == StatoCampo.NAVE ? true : false;
+            ColpiBot.Add((risultato.Item2[0], risultato.Item2[1], colpitoBot));
 
             SelezioneX = null;
             SelezioneY = null;

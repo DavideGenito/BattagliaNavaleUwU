@@ -10,18 +10,19 @@
             Giocatore = giocatore;
             Bot = bot;
         }
-        public Risultato VerificaVincitore(int playerX, int playerY)
+        public Tuple<Risultato, int[]> VerificaVincitore(int playerX, int playerY)
         {
             bool mossaGiusta = false;
+            int[] mossaBot = {};
             while (!mossaGiusta)
             {
-                int[] mossaBot = Bot.FaiMossa();
+                mossaBot = Bot.FaiMossa();
                 if (Giocatore.Campo[mossaBot[0], mossaBot[1]] == StatoCampo.NAVE)
                 {
                     mossaGiusta = true;
                     Giocatore.Campo[mossaBot[0], mossaBot[1]] = StatoCampo.NAVE_COLPITA;
                     Bot.Contatore--;
-                    if (Bot.Contatore == 0) return Risultato.VINTO_BOT;
+                    if (Bot.Contatore == 0) return Tuple.Create(Risultato.VINTO_BOT, mossaBot);
                     Bot.ultimaMossa = new int[] { mossaBot[0], mossaBot[1], 0 };
                 }
                 else if (Giocatore.Campo[mossaBot[0], mossaBot[1]] == StatoCampo.ACQUA)
@@ -42,14 +43,14 @@
             {
                 Bot.Campo[mossaPlayer[0], mossaPlayer[1]] = StatoCampo.NAVE_COLPITA;
                 Giocatore.Contatore--;
-                if(Giocatore.Contatore == 0) return Risultato.VINTO_PLAYER;
+                if(Giocatore.Contatore == 0) return Tuple.Create(Risultato.VINTO_PLAYER, mossaBot);
             }
             else if (Bot.Campo[mossaPlayer[0], mossaPlayer[1]] == StatoCampo.ACQUA)
             {
                 Bot.Campo[mossaPlayer[0], mossaPlayer[1]] = StatoCampo.ACQUA_COLPITA;
             }
-        
-            return Risultato.SOSPESO;
+
+            return Tuple.Create(Risultato.SOSPESO, mossaBot);
         }
     }
 }

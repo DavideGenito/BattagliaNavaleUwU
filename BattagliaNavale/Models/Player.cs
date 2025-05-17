@@ -27,8 +27,8 @@ namespace BattagliaNavale.Models
         }
         public int[] FaiMossa(int x, int y)
         {
-            if (x > Campo.GetLength(0) || x < 0) throw new ArgumentOutOfRangeException("immetti una x valida");
-            if (y > Campo.GetLength(1) || y < 0) throw new ArgumentOutOfRangeException("immetti una y valida");
+            if (x > Campo.GetLength(0) - 1 || x < 0) throw new ArgumentOutOfRangeException("immetti una x valida");
+            if (y > Campo.GetLength(1) - 1 || y < 0) throw new ArgumentOutOfRangeException("immetti una y valida");
 
             return new int[] { x, y };
         }
