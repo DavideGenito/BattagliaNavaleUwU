@@ -20,13 +20,13 @@
                        Grid.Column="{Binding PrimaNaveColumn}"
                        Grid.RowSpan="{Binding PrimaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding PrimaNaveColumnSpan}"
-
+                       Scale="{Binding PrimaNaveScale}"
                        Rotation="{Binding PrimaNaveRotation}"
                        TranslationX="{Binding PrimaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
-                       Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
@@ -42,13 +42,13 @@
                        Grid.Column="{Binding SecondaNaveColumn}"
                        Grid.RowSpan="{Binding SecondaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding SecondaNaveColumnSpan}"
-                      
+                       Scale="{Binding SecondaNaveScale}"
                        Rotation="{Binding SecondaNaveRotation}"
                        TranslationX="{Binding SecondaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
-                       Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
@@ -64,13 +64,13 @@
                        Grid.Column="{Binding TerzaNaveColumn}"
                        Grid.RowSpan="{Binding TerzaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding TerzaNaveColumnSpan}"
-                       
+                       Scale="{Binding TerzaNaveScale}"
                        Rotation="{Binding TerzaNaveRotation}"
                        TranslationX="{Binding TerzaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
-                       Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill">            
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">            
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>
@@ -86,13 +86,13 @@
                        Grid.Column="{Binding QuartaNaveColumn}"
                        Grid.RowSpan="{Binding QuartaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding QuartaNaveColumnSpan}"
-                       
+                       Scale="{Binding QuartaNaveScale}"
                        Rotation="{Binding QuartaNaveRotation}"
                        TranslationX="{Binding QuartaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
-                       Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                       Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SelezionaNaveCommand}">
                             <TapGestureRecognizer.CommandParameter>

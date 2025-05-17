@@ -24,52 +24,39 @@ namespace BattagliaNavale.ViewModels
         // Posizioni e orientamenti temporanei delle navi
         private List<Tuple<int, int, bool>> NaviPosizionate = new()
         {
-            new(0, 0, true),
-            new(0, 1, true),
-            new(0, 2, true),
-            new(0, 3, true),
+            new(0, 0, false),
+            new(0, 1, false),
+            new(0, 2, false),
+            new(0, 3, false),
         };
 
         public int PrimaNaveRow => NaviPosizionate[0].Item1;
         public int PrimaNaveColumn => NaviPosizionate[0].Item2;
-
-        [ObservableProperty]
-        private int primaNaveRowSpan = 2;
-        [ObservableProperty]
-        private int primaNaveColumnSpan = 1;
-
         public double PrimaNaveRotation { get; set; } = 0;
-        public int PrimaNaveTranslationX { get; set; } = 0;
+        public int PrimaNaveRowSpan { get; set; } = 2;
+        public int PrimaNaveColumnSpan { get; set; } = 1;
+        public double PrimaNaveScale { get; set; } = 1.0;
 
         public int SecondaNaveRow => NaviPosizionate[1].Item1;
         public int SecondaNaveColumn => NaviPosizionate[1].Item2;
         public double SecondaNaveRotation { get; set; } = 0;
-        public int SecondaNaveTranslationX { get; set; } = 0;
-
-        [ObservableProperty]
-        private int secondaNaveRowSpan = 3;
-        [ObservableProperty]
-        private int secondaNaveColumnSpan = 1;
+        public int SecondaNaveRowSpan { get; set; } = 3;
+        public int SecondaNaveColumnSpan { get; set; } = 1;
+        public double SecondaNaveScale { get; set; } = 1.0;
 
         public int TerzaNaveRow => NaviPosizionate[2].Item1;
         public int TerzaNaveColumn => NaviPosizionate[2].Item2;
         public double TerzaNaveRotation { get; set; } = 0;
-        public int TerzaNaveTranslationX { get; set; } = 0;
-
-        [ObservableProperty]
-        private int terzaNaveRowSpan = 3;
-        [ObservableProperty]
-        private int terzaNaveColumnSpan = 1;
+        public int TerzaNaveRowSpan { get; set; } = 3;
+        public int TerzaNaveColumnSpan { get; set; } = 1;
+        public double TerzaNaveScale { get; set; } = 1.0;
 
         public int QuartaNaveRow => NaviPosizionate[3].Item1;
         public int QuartaNaveColumn => NaviPosizionate[3].Item2;
         public double QuartaNaveRotation { get; set; } = 0;
-        public int QuartaNaveTranslationX { get; set; } = 0;
-
-        [ObservableProperty]
-        private int quartaNaveRowSpan = 4;
-        [ObservableProperty]
-        private int quartaNaveColumnSpan = 1;
+        public int QuartaNaveRowSpan { get; set; } = 4;
+        public int QuartaNaveColumnSpan { get; set; } = 1;
+        public double QuartaNaveScale { get; set; } = 1.0;
 
         private StatoCampo[,] campoLogico;
 
@@ -79,6 +66,12 @@ namespace BattagliaNavale.ViewModels
 
             _navigation = navigation;
             AggiornaGrigliaTemporanea();
+        }
+
+        [RelayCommand]
+        private async Task ConfermaPosizionamentoAsync()
+        {
+            await _navigation.PushAsync(new Gioco(campoLogico));
         }
 
         [RelayCommand]
@@ -92,30 +85,38 @@ namespace BattagliaNavale.ViewModels
         [RelayCommand]
         private void RuotaNave()
         {
-            var (x, y, orientamento) = NaviPosizionate[NaveCorrente];
+            var (x, y, orientamentoOrizzontale) = NaviPosizionate[NaveCorrente];
 
-            if (PuoPosizionarsi(x, y, NaviDisponibili[NaveCorrente], !orientamento))
+            if (PuoPosizionarsi(x, y, NaviDisponibili[NaveCorrente], !orientamentoOrizzontale))
             {
-                NaviPosizionate[NaveCorrente] = new Tuple<int, int, bool>(x, y, !orientamento);
-                if(orientamento)
+                NaviPosizionate[NaveCorrente] = new Tuple<int, int, bool>(x, y, !orientamentoOrizzontale);
+                if(!orientamentoOrizzontale)
                 {
                     switch (NaveCorrente)
                     {
                         case 0:
                             PrimaNaveRotation = 90;
-                            PrimaNaveTranslationX = 80;
+                            PrimaNaveRowSpan = 1;
+                            PrimaNaveColumnSpan = NaviDisponibili[0];
+                            PrimaNaveScale = 2.0;
                             break;
                         case 1:
                             SecondaNaveRotation = 90;
-                            SecondaNaveTranslationX = 120;
+                            SecondaNaveRowSpan = 1;
+                            SecondaNaveColumnSpan = NaviDisponibili[1];
+                            SecondaNaveScale = 3;
                             break;
                         case 2:
                             TerzaNaveRotation = 90;
-                            TerzaNaveTranslationX = 120;
+                            TerzaNaveRowSpan = 1;
+                            TerzaNaveColumnSpan = NaviDisponibili[2];
+                            TerzaNaveScale = 2.7;
                             break;
                         case 3:
                             QuartaNaveRotation = 90;
-                            QuartaNaveTranslationX = 160;
+                            QuartaNaveRowSpan = 1;
+                            QuartaNaveColumnSpan = NaviDisponibili[3];
+                            QuartaNaveScale = 3.7;
                             break;
                     }
                 }
@@ -125,19 +126,27 @@ namespace BattagliaNavale.ViewModels
                     {
                         case 0:
                             PrimaNaveRotation = 0;
-                            PrimaNaveTranslationX = 0;
+                            PrimaNaveRowSpan = NaviDisponibili[0];
+                            PrimaNaveColumnSpan = 1;
+                            PrimaNaveScale = 1.0;
                             break;
                         case 1:
                             SecondaNaveRotation = 0;
-                            SecondaNaveTranslationX = 0;
+                            SecondaNaveRowSpan = NaviDisponibili[1];
+                            SecondaNaveColumnSpan = 1;
+                            SecondaNaveScale = 1.0;
                             break;
                         case 2:
                             TerzaNaveRotation = 0;
-                            TerzaNaveTranslationX = 0;
+                            TerzaNaveRowSpan = NaviDisponibili[2];
+                            TerzaNaveColumnSpan = 1;
+                            TerzaNaveScale = 1.0;
                             break;
                         case 3:
                             QuartaNaveRotation = 0;
-                            QuartaNaveTranslationX = 0;
+                            QuartaNaveRowSpan = NaviDisponibili[3];
+                            QuartaNaveColumnSpan = 1;
+                            QuartaNaveScale = 1.0;
                             break;
                     }
                 }
@@ -150,22 +159,16 @@ namespace BattagliaNavale.ViewModels
         [RelayCommand]
         private void SpostaNave(Point direzione)
         {
-            var (x, y, orientamento) = NaviPosizionate[NaveCorrente];
+            var (x, y, orientamentoOrizzontale) = NaviPosizionate[NaveCorrente];
             int nuovaX = x + (int)direzione.X;
             int nuovaY = y + (int)direzione.Y;
 
-            if (PuoPosizionarsi(nuovaX, nuovaY, NaviDisponibili[NaveCorrente], orientamento))
+            if (PuoPosizionarsi(nuovaX, nuovaY, NaviDisponibili[NaveCorrente], orientamentoOrizzontale))
             {
-                NaviPosizionate[NaveCorrente] = new Tuple<int, int, bool>(nuovaX, nuovaY, orientamento);
+                NaviPosizionate[NaveCorrente] = new Tuple<int, int, bool>(nuovaX, nuovaY, orientamentoOrizzontale);
                 NotificaPosizioniNavi();
                 AggiornaGrigliaTemporanea();
             }
-        }
-
-        [RelayCommand]
-        private async Task ConfermaPosizionamentoAsync()
-        {
-            await _navigation.PushAsync(new Gioco(campoLogico));
         }
 
         private void AggiornaGrigliaTemporanea()
@@ -180,12 +183,12 @@ namespace BattagliaNavale.ViewModels
                 
             for(int i = 0; i < NaviPosizionate.Count; i++)
             {
-                var (x, y, orientamento) = NaviPosizionate[i];
+                var (x, y, orientamentoOrizzontale) = NaviPosizionate[i];
                 int lunghezza = NaviDisponibili[i];
                 for (int j = 0; j < lunghezza; j++)
                 {
-                    int posX = orientamento ? x + j : x;
-                    int posY = orientamento ? y : y + j;
+                    int posX = orientamentoOrizzontale ? x + j : x;
+                    int posY = orientamentoOrizzontale ? y : y + j;
                     if (posX < GrigliaDimensione && posY < GrigliaDimensione)
                     {
                         campoLogico[posX, posY] = StatoCampo.NAVE;
@@ -194,36 +197,36 @@ namespace BattagliaNavale.ViewModels
             }
         }
 
-        private bool PuoPosizionarsi(int x, int y, int lunghezza, bool orientamento)
+        private bool PuoPosizionarsi(int x, int y, int lunghezza, bool orientamentoOrizzontale)
         {
             // Controllo che la nave stia dentro la griglia
-            if (orientamento)
+            if (orientamentoOrizzontale)
             {
-                if (x < 0 || x + lunghezza > GrigliaDimensione || y < 0 || y >= GrigliaDimensione)
+                if (y < 0 || y + lunghezza > GrigliaDimensione || x < 0 || x >= GrigliaDimensione)
                     return false;
             }
             else
             {
-                if (y < 0 || y + lunghezza > GrigliaDimensione || x < 0 || x >= GrigliaDimensione)
+                if (x < 0 || x + lunghezza > GrigliaDimensione || y < 0 || y >= GrigliaDimensione)
                     return false;
             }
 
             // Controllo sovrapposizione con altre navi (escludendo la nave corrente)
             for (int i = 0; i < lunghezza; i++)
             {
-                int posX = orientamento ? x + i : x;
-                int posY = orientamento ? y : y + i;
+                int posX = orientamentoOrizzontale ? x : x + i;
+                int posY = orientamentoOrizzontale ? y + i : y;
 
                 // Trova l'indice della nave corrente
                 for (int n = 0; n < NaviPosizionate.Count; n++)
                 {
                     if (n == NaveCorrente) continue;
-                    var (nx, ny, norientamento) = NaviPosizionate[n];
+                    var (nx, ny, norientamentoOrizzontale) = NaviPosizionate[n];
                     int nlunghezza = NaviDisponibili[n];
                     for (int j = 0; j < nlunghezza; j++)
                     {
-                        int nposX = norientamento ? nx + j : nx;
-                        int nposY = norientamento ? ny : ny + j;
+                        int nposX = norientamentoOrizzontale ? nx : nx + j;
+                        int nposY = norientamentoOrizzontale ? ny + j : ny;
                         if (posX == nposX && posY == nposY)
                             return false;
                     }
@@ -240,33 +243,30 @@ namespace BattagliaNavale.ViewModels
             OnPropertyChanged(nameof(PrimaNaveRow));
             OnPropertyChanged(nameof(PrimaNaveColumn));
             OnPropertyChanged(nameof(PrimaNaveRotation));
-            OnPropertyChanged(nameof(PrimaNaveTranslationX));
-            primaNaveRowSpan = NaviPosizionate[0].Item3 ? NaviDisponibili[0] : 1;
-            primaNaveColumnSpan = NaviPosizionate[0].Item3 ? 1 : NaviDisponibili[0];
+            OnPropertyChanged(nameof(PrimaNaveRowSpan));
+            OnPropertyChanged(nameof(PrimaNaveColumnSpan));
+            OnPropertyChanged(nameof(PrimaNaveScale));
 
             OnPropertyChanged(nameof(SecondaNaveRow));
             OnPropertyChanged(nameof(SecondaNaveColumn));
             OnPropertyChanged(nameof(SecondaNaveRotation));
-            OnPropertyChanged(nameof(SecondaNaveTranslationX));
-            secondaNaveRowSpan = NaviPosizionate[1].Item3 ? NaviDisponibili[1] : 1;
-            secondaNaveColumnSpan = NaviPosizionate[1].Item3 ? 1 : NaviDisponibili[1];
-            
+            OnPropertyChanged(nameof(SecondaNaveRowSpan));
+            OnPropertyChanged(nameof(SecondaNaveColumnSpan));
+            OnPropertyChanged(nameof(SecondaNaveScale));
+
             OnPropertyChanged(nameof(TerzaNaveRow));
             OnPropertyChanged(nameof(TerzaNaveColumn));
             OnPropertyChanged(nameof(TerzaNaveRotation));
-            OnPropertyChanged(nameof(TerzaNaveTranslationX));
-            terzaNaveRowSpan = NaviPosizionate[2].Item3 ? NaviDisponibili[2] : 1;
-            terzaNaveColumnSpan = NaviPosizionate[2].Item3 ? 1 : NaviDisponibili[2];
-            
-            
-            
-            quartaNaveRowSpan = NaviPosizionate[3].Item3 ? NaviDisponibili[3] : 1;
-            quartaNaveColumnSpan = NaviPosizionate[3].Item3 ? 1 : NaviDisponibili[3];
+            OnPropertyChanged(nameof(TerzaNaveRowSpan));
+            OnPropertyChanged(nameof(TerzaNaveColumnSpan));
+            OnPropertyChanged(nameof(TerzaNaveScale));
+
             OnPropertyChanged(nameof(QuartaNaveRow));
             OnPropertyChanged(nameof(QuartaNaveColumn));
             OnPropertyChanged(nameof(QuartaNaveRotation));
-            OnPropertyChanged(nameof(QuartaNaveTranslationX));
-
+            OnPropertyChanged(nameof(QuartaNaveRowSpan));
+            OnPropertyChanged(nameof(QuartaNaveColumnSpan));
+            OnPropertyChanged(nameof(QuartaNaveScale));
         }
 
     }
