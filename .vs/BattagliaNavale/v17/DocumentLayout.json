@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\",
   "Documents": [
     {
@@ -29,6 +30,17 @@
     {
       "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\david\\desktop\\informatica\\c#\\battaglianavaleuwu\\battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\posizionanavi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\giocoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\giocoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> origin/filomena
     }
   ],
   "DocumentGroupContainers": [
@@ -42,6 +54,7 @@
           "Children": [
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "Gioco.xaml",
               "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml",
@@ -51,11 +64,23 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-16T16:53:25.996Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "GiocoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "RelativeToolTip": "BattagliaNavale\\ViewModels\\GiocoViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T10:54:04.541Z",
+>>>>>>> origin/filomena
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Gioco.xaml.cs",
               "DocumentMoniker": "C:\\Users\\david\\Desktop\\Informatica\\c#\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml.cs",
@@ -126,6 +151,16 @@
               "ViewState": "AgIAADwAAAAAAAAAAAAiwBoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T08:46:22.45Z",
+=======
+              "Title": "PosizionaNaviViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
+              "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
+              "RelativeToolTip": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T10:53:52.555Z",
+>>>>>>> origin/filomena
               "EditorCaption": ""
             }
           ]

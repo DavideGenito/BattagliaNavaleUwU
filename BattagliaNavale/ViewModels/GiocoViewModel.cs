@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿using BattagliaNavale.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+=======
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+>>>>>>> origin/filomena
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace BattagliaNavale.ViewModels
 {
+<<<<<<< HEAD
     public partial class GiocoViewModel : ObservableObject
     {
         public ObservableCollection<ObservableCollection<StatoCampo>> CampoBot { get; set; }
@@ -88,5 +93,10 @@ namespace BattagliaNavale.ViewModels
             OnPropertyChanged(nameof(CampoBot));
             OnPropertyChanged(nameof(CampoGiocatore));
         }
+=======
+    public partial class GiocoViewModel:ObservableObject
+    {
+
+>>>>>>> origin/filomena
     }
 }

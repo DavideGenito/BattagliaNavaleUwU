@@ -11,6 +11,7 @@ using Microsoft.Maui.Controls;
 
 namespace BattagliaNavale.ViewModels
 {
+<<<<<<< HEAD
     public partial class PosizionaNaviViewModel : ObservableObject
     {
         private const int GrigliaDimensione = 10;
@@ -278,6 +279,10 @@ namespace BattagliaNavale.ViewModels
             quartaNaveRowSpan = NaviPosizionate[3].Item3 ? NaviDisponibili[3] : 1;
             quartaNaveColumnSpan = NaviPosizionate[3].Item3 ? 1 : NaviDisponibili[3];
         }
+=======
+    public partial class PosizionaNaviViewModel
+    {
+>>>>>>> origin/filomena
 
     }
 }

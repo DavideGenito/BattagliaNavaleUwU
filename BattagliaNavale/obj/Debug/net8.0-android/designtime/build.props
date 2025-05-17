@@ -24,8 +24,15 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
+<<<<<<< HEAD
 _nugetassetsfilehash=6162f5d49bd7c002dadd70855030831d55b7aca737d78344c3b41ae7e22fe503
 typemapkind=strings-asm
 androidmanifestplaceholders=
 projectfullpath=c:\users\david\desktop\informatica\c#\battaglianavaleuwu\battaglianavale\battaglianavale.csproj
+=======
+_nugetassetstimestamp=638828188834953471
+typemapkind=strings-asm
+androidmanifestplaceholders=
+projectfullpath=c:\users\raffaele.filomena\desktop\battaglianavaleuwu\battaglianavale\battaglianavale.csproj
+>>>>>>> origin/filomena
 androidusedesignerassembly=true
