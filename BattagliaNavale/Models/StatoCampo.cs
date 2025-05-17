@@ -9,8 +9,8 @@ namespace BattagliaNavale.Models
     public enum StatoCampo
     {
         ACQUA,
-        ACQUA_COLPITA,
-        NAVE_COLPITA,
         NAVE,
+        NAVE_COLPITA,
+        ACQUA_COLPITA
     }
 }

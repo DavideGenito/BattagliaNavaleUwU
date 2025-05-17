@@ -1,12 +1,13 @@
 using CommunityToolkit.Mvvm.Input;
 using BattagliaNavale.ViewModels;
 using Microsoft.Maui.Controls.Shapes;
+using Plugin.Maui.Audio;
 
 namespace BattagliaNavale.Views;
 
 public partial class PosizionaNavi : ContentPage
 {
-	const int LUNGHEZZA = 10;
+    const int LUNGHEZZA = 10;
 	public PosizionaNavi()
 	{
 		InitializeComponent();
@@ -37,5 +38,7 @@ public partial class PosizionaNavi : ContentPage
         btnDestra.CommandParameter = new Point(0, 1);
 
         BindingContext = new ViewModels.PosizionaNaviViewModel(this.Navigation);
+
     }
+
 }

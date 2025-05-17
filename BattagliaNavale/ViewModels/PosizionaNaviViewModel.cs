@@ -71,7 +71,7 @@ namespace BattagliaNavale.ViewModels
         [RelayCommand]
         private async Task ConfermaPosizionamentoAsync()
         {
-            await _navigation.PushAsync(new Gioco(campoLogico));
+            await _navigation.PushAsync(new Gioco(campoLogico, NaviPosizionate));
         }
 
         [RelayCommand]
@@ -90,7 +90,7 @@ namespace BattagliaNavale.ViewModels
             if (PuoPosizionarsi(x, y, NaviDisponibili[NaveCorrente], !orientamentoOrizzontale))
             {
                 NaviPosizionate[NaveCorrente] = new Tuple<int, int, bool>(x, y, !orientamentoOrizzontale);
-                if(!orientamentoOrizzontale)
+                if (!orientamentoOrizzontale)
                 {
                     switch (NaveCorrente)
                     {
@@ -180,8 +180,8 @@ namespace BattagliaNavale.ViewModels
                     campoLogico[i, j] = StatoCampo.ACQUA;
                 }
             }
-                
-            for(int i = 0; i < NaviPosizionate.Count; i++)
+
+            for (int i = 0; i < NaviPosizionate.Count; i++)
             {
                 var (x, y, orientamentoOrizzontale) = NaviPosizionate[i];
                 int lunghezza = NaviDisponibili[i];

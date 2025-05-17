@@ -2,6 +2,7 @@
 using CommunityToolkit.Maui;
 using MauiIcons.FontAwesome.Solid;
 using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 
 namespace BattagliaNavale
 {
@@ -21,6 +22,8 @@ namespace BattagliaNavale
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddSingleton(AudioManager.Current);
 
 #if DEBUG
             builder.Logging.AddDebug();
