@@ -11,6 +11,7 @@ using Microsoft.Maui.Controls;
 
 namespace BattagliaNavale.ViewModels
 {
+
     public partial class PosizionaNaviViewModel : ObservableObject
     {
         private const int GrigliaDimensione = 10;
@@ -109,7 +110,7 @@ namespace BattagliaNavale.ViewModels
             if (PuoPosizionarsi(x, y, NaviDisponibili[NaveCorrente], !orientamento))
             {
                 NaviPosizionate[NaveCorrente] = new Tuple<int, int, bool>(x, y, !orientamento);
-                if(orientamento)
+                if (orientamento)
                 {
                     switch (NaveCorrente)
                     {
@@ -189,8 +190,8 @@ namespace BattagliaNavale.ViewModels
                     campoLogico[i, j] = StatoCampo.ACQUA;
                 }
             }
-                
-            for(int i = 0; i < NaviPosizionate.Count; i++)
+
+            for (int i = 0; i < NaviPosizionate.Count; i++)
             {
                 var (x, y, orientamento) = NaviPosizionate[i];
                 int lunghezza = NaviDisponibili[i];
@@ -246,8 +247,6 @@ namespace BattagliaNavale.ViewModels
             return true;
         }
 
-
-
         private void NotificaPosizioniNavi()
         {
             OnPropertyChanged(nameof(PrimaNaveRow));
@@ -263,14 +262,14 @@ namespace BattagliaNavale.ViewModels
             OnPropertyChanged(nameof(SecondaNaveTranslationX));
             secondaNaveRowSpan = NaviPosizionate[1].Item3 ? NaviDisponibili[1] : 1;
             secondaNaveColumnSpan = NaviPosizionate[1].Item3 ? 1 : NaviDisponibili[1];
-            
+
             OnPropertyChanged(nameof(TerzaNaveRow));
             OnPropertyChanged(nameof(TerzaNaveColumn));
             OnPropertyChanged(nameof(TerzaNaveRotation));
             OnPropertyChanged(nameof(TerzaNaveTranslationX));
             terzaNaveRowSpan = NaviPosizionate[2].Item3 ? NaviDisponibili[2] : 1;
             terzaNaveColumnSpan = NaviPosizionate[2].Item3 ? 1 : NaviDisponibili[2];
-            
+
             OnPropertyChanged(nameof(QuartaNaveRow));
             OnPropertyChanged(nameof(QuartaNaveColumn));
             OnPropertyChanged(nameof(QuartaNaveRotation));
@@ -278,6 +277,5 @@ namespace BattagliaNavale.ViewModels
             quartaNaveRowSpan = NaviPosizionate[3].Item3 ? NaviDisponibili[3] : 1;
             quartaNaveColumnSpan = NaviPosizionate[3].Item3 ? 1 : NaviDisponibili[3];
         }
-
     }
 }

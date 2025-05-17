@@ -10,7 +10,6 @@
             Giocatore = giocatore;
             Bot = bot;
         }
-
         public Risultato VerificaVincitore(int playerX, int playerY)
         {
             bool mossaGiusta = false;

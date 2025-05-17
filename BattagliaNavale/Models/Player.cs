@@ -25,7 +25,6 @@ namespace BattagliaNavale.Models
                 Generator = new RandomGenerator();
             }
         }
-
         public int[] FaiMossa(int x, int y)
         {
             if (x > Campo.GetLength(0) || x < 0) throw new ArgumentOutOfRangeException("immetti una x valida");

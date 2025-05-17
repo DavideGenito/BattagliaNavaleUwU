@@ -1,5 +1,6 @@
 using BattagliaNavale.Models;
 using BattagliaNavale.ViewModels;
+using CommunityToolkit.Mvvm.Input;
 
 namespace BattagliaNavale.Views;
 
@@ -28,17 +29,17 @@ public partial class Gioco : ContentPage
                 Button bottone = new Button();
                 Grid.SetColumn(bottone, j);
                 Grid.SetRow(bottone, i);
-                bottone.Fill = new SolidColorBrush(Colors.LightBlue);
-                bottone.Stroke = new SolidColorBrush(Colors.Black);
-                bottone.StrokeThickness = 1;
+                bottone.BorderWidth = 0.5;
+                bottone.BackgroundColor = Colors.LightBlue;
+                bottone.BorderColor = Colors.CadetBlue;
+                bottone.CornerRadius = 0;
                 grigliaBot.Children.Add(bottone);
-
                 Microsoft.Maui.Controls.Shapes.Rectangle cella = new Microsoft.Maui.Controls.Shapes.Rectangle();
                 Grid.SetColumn(cella, j);
                 Grid.SetRow(cella, i);
                 cella.Fill = new SolidColorBrush(Colors.LightBlue);
-                cella.Stroke = new SolidColorBrush(Colors.Black);
-                cella.StrokeThickness = 1;
+                cella.Stroke = new SolidColorBrush(Colors.CadetBlue);
+                cella.StrokeThickness = 0.5;
                 grigliaGiocatore.Children.Add(cella);
             }
         }
