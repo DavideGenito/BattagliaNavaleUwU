@@ -18,10 +18,10 @@ namespace BattagliaNavale.ViewModels
         private GameManager gameManager;
 
         [ObservableProperty]
-        private int? selezioneX;
+        private int? selezioneX = 0;
 
         [ObservableProperty]
-        private int? selezioneY;
+        private int? selezioneY = 0;
 
         [ObservableProperty]
         private Risultato messaggioRisultato;
@@ -57,36 +57,44 @@ namespace BattagliaNavale.ViewModels
         }
 
         [RelayCommand]
-        private void ConfermaColpo()
+        private async Task ConfermaColpoAsync()
         {
-            // Verifica se la cella è già stata colpita
-            foreach (var colpo in ColpiPlayer)
+            try
             {
-                if (colpo.x == SelezioneX.Value && colpo.y == SelezioneY.Value)
+                // Verifica se la cella è già stata colpita
+                foreach (var colpo in ColpiPlayer)
                 {
-                    return;
+                    if (colpo.x == SelezioneX.Value && colpo.y == SelezioneY.Value)
+                        return;
                 }
+
+                var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
+
+                var statoPlayer = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
+                bool colpitoPlayer = statoPlayer == StatoCampo.NAVE_COLPITA;
+                ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpitoPlayer));
+
+                var mossaBot = risultato.Item2;
+                var statoBot = gameManager.Giocatore.Campo[mossaBot[0], mossaBot[1]];
+                bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
+                ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
+
+                MessaggioRisultato = risultato.Item1;
+                AggiornaGriglie();
+
+                OnPropertyChanged(nameof(ColpiPlayer));
+                OnPropertyChanged(nameof(ColpiBot));
             }
-
-            var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
-
-            var statoPlayer = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
-            bool colpitoPlayer = statoPlayer == StatoCampo.NAVE_COLPITA;
-            ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpitoPlayer));
-
-            var mossaBot = risultato.Item2;
-            var statoBot = gameManager.Giocatore.Campo[mossaBot[0], mossaBot[1]];
-            bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
-            ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
-
-            MessaggioRisultato = risultato.Item1;
-            AggiornaGriglie();
-
-            OnPropertyChanged(nameof(ColpiPlayer));
-            OnPropertyChanged(nameof(ColpiBot));
-
-            SelezioneX = null;
-            SelezioneY = null;
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
+                await Shell.Current.DisplayAlert("Errore", "Si è verificato un errore durante il colpo. Riprova.", "OK");
+            }
+            finally
+            {
+                SelezioneX = null;
+                SelezioneY = null;
+            }
         }
 
         private void AggiornaGriglie()
