@@ -4,6 +4,7 @@ using BattagliaNavale.ViewModels;
 using System;
 using System.Collections.Generic;
 using CommunityToolkit.Mvvm.Input;
+using System.Diagnostics;
 
 namespace BattagliaNavale.Views
 {
@@ -119,24 +120,35 @@ namespace BattagliaNavale.Views
 
         private void OnButtonClicked(object sender, EventArgs e)
         {
-            var vm = (GiocoViewModel)BindingContext;
 
-            if (vm.ColpiPlayer.Count == 0 || vm.ColpiBot.Count == 0)
+
+            try
             {
-                return;
+                var vm = (GiocoViewModel)BindingContext;
+
+                if (vm.ColpiPlayer.Count == 0 || vm.ColpiBot.Count == 0)
+                {
+                    return;
+                }
+
+                var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
+
+                MostraFeedbackColpo(grigliaBot, colpoPlayer.x, colpoPlayer.y, colpoPlayer.colpito);
+
+                DisabilitaBottone(colpoPlayer.x, colpoPlayer.y);
+
+                var colpoBot = vm.ColpiBot.LastOrDefault();
+
+                MostraFeedbackColpo(grigliaGiocatore, colpoBot.x, colpoBot.y, colpoBot.colpito);
+
+                CheckRisultato(vm.MessaggioRisultato);
             }
-
-            var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
-
-            MostraFeedbackColpo(grigliaBot, colpoPlayer.x, colpoPlayer.y, colpoPlayer.colpito);
-
-            DisabilitaBottone(colpoPlayer.x, colpoPlayer.y);
-
-            var colpoBot = vm.ColpiBot.LastOrDefault();
-
-            MostraFeedbackColpo(grigliaGiocatore, colpoBot.x, colpoBot.y, colpoBot.colpito);
-
-            CheckRisultato(vm.MessaggioRisultato);
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
+                //await Shell.Current.DisplayAlert("Errore", "Si è verificato un errore durante il colpo. Riprova.", "OK");
+            }
+            
         }
 
         private void MostraFeedbackColpo(Grid griglia, int riga, int colonna, bool colpito)

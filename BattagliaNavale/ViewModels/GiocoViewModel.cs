@@ -92,8 +92,8 @@ namespace BattagliaNavale.ViewModels
             }
             finally
             {
-                SelezioneX = null;
-                SelezioneY = null;
+                SelezioneX = 0;
+                SelezioneY = 0;
             }
         }
 
