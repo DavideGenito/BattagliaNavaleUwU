@@ -55,7 +55,8 @@
                         />
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="20" Margin="10">
+                <HorizontalStackLayout Spacing="20" Margin="10"
+                                       HorizontalOptions="Center">
                     <Image Source="../Resources/Images/conversazione_img.png"
                            HeightRequest="120"
                            WidthRequest="120"
@@ -78,7 +79,8 @@
                     </Grid>
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="20" Margin="10">
+                <HorizontalStackLayout Spacing="20" Margin="10"
+                                       HorizontalOptions="Center">
                     <Grid>
                         <Label Grid.Row="0" Grid.Column="0" 
                                Text="Ogni tentativo verrà accompagnato da un risultato, che può essere: acqua, nave colpita e nave affondata."
