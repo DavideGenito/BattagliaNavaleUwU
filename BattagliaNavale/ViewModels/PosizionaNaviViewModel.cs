@@ -187,8 +187,8 @@ namespace BattagliaNavale.ViewModels
                 int lunghezza = NaviDisponibili[i];
                 for (int j = 0; j < lunghezza; j++)
                 {
-                    int posX = orientamentoOrizzontale ? x + j : x;
-                    int posY = orientamentoOrizzontale ? y : y + j;
+                    int posX = orientamentoOrizzontale ? x : x + j;
+                    int posY = orientamentoOrizzontale ? y + j : y;
                     if (posX < GrigliaDimensione && posY < GrigliaDimensione)
                     {
                         campoLogico[posX, posY] = StatoCampo.NAVE;

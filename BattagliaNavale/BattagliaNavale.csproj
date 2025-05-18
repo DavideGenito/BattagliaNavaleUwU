@@ -83,5 +83,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <Folder Include="Resources\Gif\" />
+	</ItemGroup>
 
 </Project>

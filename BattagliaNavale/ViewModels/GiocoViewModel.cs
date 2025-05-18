@@ -1,25 +1,19 @@
 using BattagliaNavale.Models;
-using BattagliaNavale.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
+using System.Diagnostics;
 
 namespace BattagliaNavale.ViewModels
 {
-
     public partial class GiocoViewModel : ObservableObject
     {
-        public ObservableCollection<ObservableCollection<StatoCampo>> CampoBot { get; set; }
-        public ObservableCollection<ObservableCollection<StatoCampo>> CampoGiocatore { get; set; }
+        public ObservableCollection<ObservableCollection<StatoCampo>> CampoBot { get; private set; }
+        public ObservableCollection<ObservableCollection<StatoCampo>> CampoGiocatore { get; private set; }
 
         public ObservableCollection<(int x, int y, bool colpito)> ColpiPlayer { get; } = new();
         public ObservableCollection<(int x, int y, bool colpito)> ColpiBot { get; } = new();
-
 
         private GameManager gameManager;
 
@@ -36,7 +30,6 @@ namespace BattagliaNavale.ViewModels
         {
             var player = new Player(campoGiocatore);
             var bot = new Bot(new StatoCampo[10, 10]);
-
             gameManager = new GameManager(player, bot);
 
             CampoBot = ConvertiCampo(bot.Campo);
@@ -49,37 +42,48 @@ namespace BattagliaNavale.ViewModels
             for (int i = 0; i < campo.GetLength(0); i++)
             {
                 var row = new ObservableCollection<StatoCampo>();
-                for (int j = 0; j < campo.GetLength(1); j++) row.Add(campo[i, j]);
+                for (int j = 0; j < campo.GetLength(1); j++)
+                    row.Add(campo[i, j]);
                 grid.Add(row);
             }
             return grid;
         }
 
         [RelayCommand]
-        public void SelezionaCella((int x, int y) cella)
+        public void SelezionaCella(Tuple<int, int> cella)
         {
-            SelezioneX = cella.x;
-            SelezioneY = cella.y;
+            SelezioneX = cella.Item1;
+            SelezioneY = cella.Item2;
         }
 
         [RelayCommand]
         private void ConfermaColpo()
         {
-            if (SelezioneX == null || SelezioneY == null) return;
-
-            var stato = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
-            bool colpito = stato == StatoCampo.NAVE ? true : false;
-
-            ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpito));
+            // Verifica se la cella è già stata colpita
+            foreach (var colpo in ColpiPlayer)
+            {
+                if (colpo.x == SelezioneX.Value && colpo.y == SelezioneY.Value)
+                {
+                    return;
+                }
+            }
 
             var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
+
+            var statoPlayer = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
+            bool colpitoPlayer = statoPlayer == StatoCampo.NAVE_COLPITA;
+            ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpitoPlayer));
+
+            var mossaBot = risultato.Item2;
+            var statoBot = gameManager.Giocatore.Campo[mossaBot[0], mossaBot[1]];
+            bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
+            ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
+
+            MessaggioRisultato = risultato.Item1;
             AggiornaGriglie();
 
-            messaggioRisultato = risultato.Item1;
-
-            var statoBot = gameManager.Giocatore.Campo[risultato.Item2[0], risultato.Item2[1]];
-            bool colpitoBot = stato == StatoCampo.NAVE ? true : false;
-            ColpiBot.Add((risultato.Item2[0], risultato.Item2[1], colpitoBot));
+            OnPropertyChanged(nameof(ColpiPlayer));
+            OnPropertyChanged(nameof(ColpiBot));
 
             SelezioneX = null;
             SelezioneY = null;

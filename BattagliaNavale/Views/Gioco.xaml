@@ -48,7 +48,7 @@
                 FontFamily="Poppins"
                 FontSize="17"
                 TextColor="#000000"
-                Command="{Binding ConfermaColpo}"
+                Command="{Binding ConfermaColpoCommand}"
                 Clicked="OnButtonClicked"
                 />
         </VerticalStackLayout>

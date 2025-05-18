@@ -1,11 +1,15 @@
-﻿namespace BattagliaNavale.Models
+﻿
+namespace BattagliaNavale.Models
 {
     public class Bot
     {
         public int Contatore { get; set; }
         public IGenerator Generator;
         public StatoCampo[,] Campo { get; private set; }
+
         public int[]? ultimaMossa = null;
+       
+
         public Bot(StatoCampo[,] campo, IGenerator? generator = null)
         {
             Campo = campo;
@@ -26,89 +30,116 @@
             PosizionaBarca(3);
             PosizionaBarca(4);
         }
+
         public int[] FaiMossa()
-        { 
+        {
             if (ultimaMossa != null)
             {
-                while (true)
+                for (int i = 0; i < 4; i++)
                 {
-                    int orientamento = ultimaMossa[2];
-                    if (orientamento == 0 && ultimaMossa[1] + 1 < Campo.GetLength(1)
-                        || orientamento == 2 && ultimaMossa[1] - 1 >= 0
-                        || orientamento == 1 && ultimaMossa[0] + 1 < Campo.GetLength(0)
-                        || orientamento == 3 && ultimaMossa[0] - 1 >= 0)
+                    int direzione = (ultimaMossa[2] + i) % 4;
+                    int newX = ultimaMossa[0];
+                    int newY = ultimaMossa[1];
+
+                    switch (direzione)
                     {
-                        switch (orientamento)
-                        {
-                            case 0:
-                                return new int[] { ultimaMossa[0], ultimaMossa[1] + 1 };
-
-                            case 1:
-                                return new int[] { ultimaMossa[0] + 1, ultimaMossa[1] };
-
-                            case 2:
-                                return new int[] { ultimaMossa[0], ultimaMossa[1] - 1 };
-
-                            case 3:
-                                return new int[] { ultimaMossa[0] - 1, ultimaMossa[1] };
-
-                        }
+                        case 0:
+                            newY++;
+                            break;
+                        case 1: 
+                            newX++;
+                            break;
+                        case 2: 
+                            newY--;
+                            break;
+                        case 3: 
+                            newX--;
+                            break;
                     }
-                    ultimaMossa[2]++;
-                    if (ultimaMossa[2] > 3) ultimaMossa = null;
+
+                    if (newX >= 0 && newX < Campo.GetLength(0) &&
+                        newY >= 0 && newY < Campo.GetLength(1) &&
+                        Campo[newX, newY] != StatoCampo.NAVE_COLPITA &&
+                        Campo[newX, newY] != StatoCampo.ACQUA_COLPITA)
+                    {
+                        ultimaMossa[2] = direzione;
+                        return new int[] { newX, newY };
+                    }
                 }
+
+                ultimaMossa = null;
             }
-            else
+
+            int maxAttempts = 100;
+            int attempts = 0;
+            while (attempts < maxAttempts)
             {
                 int x = Generator.GeneraMossaX(Campo.GetLength(0));
                 int y = Generator.GeneraMossaY(Campo.GetLength(1));
 
-                return new int[] { x, y };
-            }    
+                if (Campo[x, y] != StatoCampo.NAVE_COLPITA &&
+                    Campo[x, y] != StatoCampo.ACQUA_COLPITA)
+                {
+                    return new int[] { x, y };
+                }
+                attempts++;
+            }
+
+            for (int i = 0; i < Campo.GetLength(0); i++)
+            {
+                for (int j = 0; j < Campo.GetLength(1); j++)
+                {
+                    if (Campo[i, j] != StatoCampo.NAVE_COLPITA &&
+                        Campo[i, j] != StatoCampo.ACQUA_COLPITA)
+                    {
+                        return new int[] { i, j };
+                    }
+                }
+            }
+
+            return new int[] { 0, 0 };
         }
 
-        private void PosizionaBarca(int grand)
+        private void PosizionaBarca(int lunghezza)
         {
-            bool errore = true;
-            while (errore)
+            bool errore;
+            do
             {
                 errore = false;
                 int barcaX = Generator.GeneraMossaX(Campo.GetLength(0));
                 int barcaY = Generator.GeneraMossaY(Campo.GetLength(1));
-                bool orrizontale = Generator.GeneraOrientamentoBarca();
+                bool orizzontale = Generator.GeneraOrientamentoBarca();
 
-
-                if (orrizontale)
+                if (orizzontale)
                 {
-                    if (barcaX + grand >= Campo.GetLength(0)) { errore = true; continue; }
+                    if (barcaX + lunghezza > Campo.GetLength(0)) { errore = true; continue; }
                 }
                 else
                 {
-                    if (barcaY + grand >= Campo.GetLength(1)) { errore = true; continue; }
+                    if (barcaY + lunghezza > Campo.GetLength(1)) { errore = true; continue; }
                 }
 
-                for (int i = 0; i < grand; i++)
+                for (int i = 0; i < lunghezza; i++)
                 {
-                    if (orrizontale)
+                    int x = orizzontale ? barcaX + i : barcaX;
+                    int y = orizzontale ? barcaY : barcaY + i;
+                    if (Campo[x, y] == StatoCampo.NAVE)
                     {
-                        if (Campo[barcaX + i, barcaY] == StatoCampo.NAVE)
-                        {
-                            errore = true;
-                            break;
-                        }
-                        Campo[barcaX + i, barcaY] = StatoCampo.NAVE;
-                    }
-                    else
-                    {
-                        if (Campo[barcaX, barcaY + i] == StatoCampo.NAVE)
-                        {
-                            errore = true;
-                            break;
-                        }
-                        Campo[barcaX, barcaY + i] = StatoCampo.NAVE;
+                        errore = true;
+                        break;
                     }
                 }
-            }
+
+                if (!errore)
+                {
+                    for (int i = 0; i < lunghezza; i++)
+                    {
+                        int x = orizzontale ? barcaX + i : barcaX;
+                        int y = orizzontale ? barcaY : barcaY + i;
+                        Campo[x, y] = StatoCampo.NAVE;
+                    }
+                }
+            } while (errore);
         }
     }
 }

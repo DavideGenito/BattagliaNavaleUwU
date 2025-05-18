@@ -1,164 +1,199 @@
+using Microsoft.Maui.Controls;
 using BattagliaNavale.Models;
 using BattagliaNavale.ViewModels;
+using System;
+using System.Collections.Generic;
 using CommunityToolkit.Mvvm.Input;
-using Plugin.Maui.Audio;
 
-namespace BattagliaNavale.Views;
-
-public partial class Gioco : ContentPage
+namespace BattagliaNavale.Views
 {
-    const int LUNGHEZZA = 10;
-    public Gioco(StatoCampo[,] campoLogico, List<Tuple<int, int, bool>> barchePosizione)
+    public partial class Gioco : ContentPage
     {
-        InitializeComponent();
+        const int LUNGHEZZA = 10;
 
-        BindingContext = new ViewModels.GiocoViewModel(campoLogico);
-
-        for (int i = 0; i < LUNGHEZZA; i++)
+        public Gioco(StatoCampo[,] campoLogico, List<Tuple<int, int, bool>> barchePosizione)
         {
-            grigliaBot.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            grigliaBot.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            InitializeComponent();
+            BindingContext = new GiocoViewModel(campoLogico);
 
-            grigliaGiocatore.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            grigliaGiocatore.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            CreaGriglie();
+            PosizionaBarche(barchePosizione);
         }
 
-        for (int i = 0; i < LUNGHEZZA; i++)
+        private void CreaGriglie()
         {
-            for (int j = 0; j < LUNGHEZZA; j++)
+            // Crea righe e colonne per le griglie
+            for (int i = 0; i < LUNGHEZZA; i++)
             {
-                Button bottone = new Button();
-                Grid.SetColumn(bottone, j);
-                Grid.SetRow(bottone, i);
-                bottone.BorderWidth = 0.5;
-                bottone.BackgroundColor = Colors.LightBlue;
-                bottone.BorderColor = Colors.CadetBlue;
-                bottone.CornerRadius = 0;
-                bottone.CommandParameter = new Tuple<int, int>(i, j);
-                bottone.Command = new Command((obj) =>
+                grigliaBot.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                grigliaBot.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                grigliaGiocatore.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                grigliaGiocatore.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            }
+
+            // Crea bottoni per la griglia del bot
+            for (int i = 0; i < LUNGHEZZA; i++)
+            {
+                for (int j = 0; j < LUNGHEZZA; j++)
                 {
-                    var coordinate = (Tuple<int, int>)obj;
-                    var x = coordinate.Item1;
-                    var y = coordinate.Item2;
-                    ((GiocoViewModel)BindingContext).SelezionaCella((x, y));
-                });
+                    var bottone = new Button
+                    {
+                        BorderWidth = 0.5,
+                        BackgroundColor = Colors.LightBlue,
+                        BorderColor = Colors.CadetBlue,
+                        CornerRadius = 0,
+                        CommandParameter = new Tuple<int, int>(i, j)
+                    };
 
-                grigliaBot.Children.Add(bottone);
-                Microsoft.Maui.Controls.Shapes.Rectangle cella = new Microsoft.Maui.Controls.Shapes.Rectangle();
-                Grid.SetColumn(cella, j);
-                Grid.SetRow(cella, i);
-                cella.Fill = new SolidColorBrush(Colors.LightBlue);
-                cella.Stroke = new SolidColorBrush(Colors.CadetBlue);
-                cella.StrokeThickness = 0.5;
-                grigliaGiocatore.Children.Add(cella);
-            }
-        }
+                    bottone.AutomationId = $"btn_{i}_{j}";
 
-        for(int i = 0; i < barchePosizione.Count; i++)
-        {
-            int lunghezza = 2;
-            string source = "";
-            double scale = 1.0;
-            switch (i) 
-            {
-                case 0:
-                    lunghezza = 2;
-                    source = "../Resources/Images/barca3.png";
-                    scale = 2.0;
-                    break;
+                    bottone.Command = ((GiocoViewModel)BindingContext).SelezionaCellaCommand;
 
-                case 1:
-                    lunghezza = 3;
-                    source = "../Resources/Images/barca1.png";
-                    scale = 3.0;
-                    break;
+                    Grid.SetRow(bottone, i);
+                    Grid.SetColumn(bottone, j);
+                    grigliaBot.Children.Add(bottone);
 
-                case 2:
-                    lunghezza = 3;
-                    source = "../Resources/Images/barca4.png";
-                    scale = 2.7;
-                    break;
-
-                case 3:
-                    lunghezza = 4;
-                    source = "../Resources/Images/barca2.png";
-                    scale = 3.7;
-                    break;
-            }
-
-            Image barca = new Image
-            {
-                Source = source,
-                ZIndex = 1,
-                Rotation = barchePosizione[i].Item3 ? 90 : 0,
-                Scale = barchePosizione[i].Item3 ? scale : 1.0
-            };
-
-            Grid.SetRow(barca, barchePosizione[i].Item1);
-            Grid.SetColumn(barca, barchePosizione[i].Item2);
-            if(barchePosizione[i].Item3)
-            {
-                Grid.SetColumnSpan(barca, lunghezza);
-            }
-            else
-            {
-                Grid.SetRowSpan(barca, lunghezza);
-            }
-
-            grigliaGiocatore.Children.Add(barca);
-        }
-    }
-
-    private void OnButtonClicked(object sender, EventArgs e)
-    {
-        var vm = (GiocoViewModel)BindingContext;
-        var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
-
-        var imgFeedbackPlayer = new Image
-        {
-            Source = colpoPlayer.colpito
-            ? "../Resources/Gif/fire.gif"
-            : "../Resources/Images/croce_img.png",
-            ZIndex = 2,
-            IsAnimationPlaying = colpoPlayer.colpito
-        };
-        Grid.SetRow(imgFeedbackPlayer, colpoPlayer.x);
-        Grid.SetColumn(imgFeedbackPlayer, colpoPlayer.y);
-        grigliaBot.Children.Add(imgFeedbackPlayer);
-
-
-        foreach (var child in grigliaBot.Children)
-        {
-            if (Grid.GetRow((BindableObject)child) == colpoPlayer.x && Grid.GetColumn((BindableObject)child) == colpoPlayer.y)
-            {
-                if (child is Button button)
-                {
-                    button.IsEnabled = false;
+                    var cella = new Microsoft.Maui.Controls.Shapes.Rectangle
+                    {
+                        Fill = new SolidColorBrush(Colors.LightBlue),
+                        Stroke = new SolidColorBrush(Colors.CadetBlue),
+                        StrokeThickness = 0.5
+                    };
+                    Grid.SetRow(cella, i);
+                    Grid.SetColumn(cella, j);
+                    grigliaGiocatore.Children.Add(cella);
                 }
             }
         }
 
-        var colpoBot = vm.ColpiBot.LastOrDefault();
-
-        var imgFeedbackBot = new Image
+        private void PosizionaBarche(List<Tuple<int, int, bool>> barchePosizione)
         {
-            Source = colpoBot.colpito
-                ? "../Resources/Gif/fire.gif"
-                : "../Resources/Images/croce_img.png",
-            ZIndex = 2,
-            IsAnimationPlaying = colpoBot.colpito
-        };
-        Grid.SetRow(imgFeedbackBot, colpoBot.x);
-        Grid.SetColumn(imgFeedbackBot, colpoBot.y);
-        grigliaGiocatore.Children.Add(imgFeedbackBot);
+            for (int i = 0; i < barchePosizione.Count; i++)
+            {
+                int lunghezza = 2;
+                string source = "";
+                double scale = 1.0;
+                switch (i)
+                {
+                    case 0:
+                        lunghezza = 2;
+                        source = "../Resources/Images/barca3.png";
+                        scale = 2.0;
+                        break;
+                    case 1:
+                        lunghezza = 3;
+                        source = "../Resources/Images/barca1.png";
+                        scale = 3.0;
+                        break;
+                    case 2:
+                        lunghezza = 3;
+                        source = "../Resources/Images/barca4.png";
+                        scale = 2.7;
+                        break;
+                    case 3:
+                        lunghezza = 4;
+                        source = "../Resources/Images/barca2.png";
+                        scale = 3.7;
+                        break;
+                }
 
-        if(vm.MessaggioRisultato == Risultato.VINTO_PLAYER)
-        {
-            DisplayAlert("Hai vinto!", "Hai distrutto tutte le navi del bot!", "OK");
+                var barca = new Image
+                {
+                    Source = ImageSource.FromFile(source),
+                    ZIndex = 1,
+                    Rotation = barchePosizione[i].Item3 ? 90 : 0,
+                    Scale = barchePosizione[i].Item3 ? scale : 1.0
+                };
+
+                Grid.SetRow(barca, barchePosizione[i].Item1);
+                Grid.SetColumn(barca, barchePosizione[i].Item2);
+                if (barchePosizione[i].Item3)
+                    Grid.SetColumnSpan(barca, lunghezza);
+                else
+                    Grid.SetRowSpan(barca, lunghezza);
+
+                grigliaGiocatore.Children.Add(barca);
+            }
         }
-        else if (vm.MessaggioRisultato == Risultato.VINTO_BOT)
+
+        private void OnButtonClicked(object sender, EventArgs e)
         {
-            DisplayAlert("Hai perso!", "Il bot ha distrutto tutte le tue navi!", "OK");
+            var vm = (GiocoViewModel)BindingContext;
+
+            if (vm.ColpiPlayer.Count == 0 || vm.ColpiBot.Count == 0)
+            {
+                return;
+            }
+
+            var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
+
+            MostraFeedbackColpo(grigliaBot, colpoPlayer.x, colpoPlayer.y, colpoPlayer.colpito);
+
+            DisabilitaBottone(colpoPlayer.x, colpoPlayer.y);
+
+            var colpoBot = vm.ColpiBot.LastOrDefault();
+
+            MostraFeedbackColpo(grigliaGiocatore, colpoBot.x, colpoBot.y, colpoBot.colpito);
+
+            CheckRisultato(vm.MessaggioRisultato);
+        }
+
+        private void MostraFeedbackColpo(Grid griglia, int riga, int colonna, bool colpito)
+        {
+
+            var imgFeedback = new Image
+            {
+                Source = colpito
+                    ? ImageSource.FromFile("../Resources/Images/fire.gif")
+                    : ImageSource.FromFile("../Resources/Images/croce_img.png"),
+                ZIndex = 10,
+                IsAnimationPlaying = colpito,
+                WidthRequest = 30,
+                HeightRequest = 30,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            Grid.SetRow(imgFeedback, riga);
+            Grid.SetColumn(imgFeedback, colonna);
+            griglia.Children.Add(imgFeedback);
+
+            
+        }
+
+        private void DisabilitaBottone(int riga, int colonna)
+        {
+            foreach (var child in grigliaBot.Children)
+            {
+                if (child is Button button &&
+                    Grid.GetRow(button) == riga &&
+                    Grid.GetColumn(button) == colonna)
+                {
+                    button.IsEnabled = false;
+                    break;
+                }
+            }
+        }
+
+        private void CheckRisultato(Risultato risultato)
+        {
+            if (risultato == Risultato.VINTO_PLAYER)
+            {
+                DisplayAlert("Hai vinto!", "Hai distrutto tutte le navi del bot!", "OK");
+                Esci();
+            }
+            else if (risultato == Risultato.VINTO_BOT)
+            {
+                DisplayAlert("Hai perso!", "Il bot ha distrutto tutte le tue navi!", "OK");
+                Esci();
+            }
+        }
+
+        [RelayCommand]
+        public async Task Esci()
+        {
+            await Navigation.PopAsync();
         }
     }
 }
