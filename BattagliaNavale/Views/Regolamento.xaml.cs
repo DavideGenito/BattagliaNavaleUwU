@@ -13,7 +13,7 @@ public partial class Regolamento : ContentPage
     [RelayCommand]
     public async Task OpenHome()
     {
-        await Navigation.PushAsync(new Home());
+        await Navigation.PopAsync();
     }
 
 }
