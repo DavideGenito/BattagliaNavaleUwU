@@ -11,6 +11,11 @@
             Aspect="AspectFill" />
 
         <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Image
+                Source="../Resources/Images/posiziona_navi_img.png"
+                HeightRequest="250"
+                WidthRequest="250"/>
+
             <Grid x:Name="grigliaPosizionaNavi"
                   WidthRequest="400" HeightRequest="400"
                   HorizontalOptions="Center" VerticalOptions="Center">
