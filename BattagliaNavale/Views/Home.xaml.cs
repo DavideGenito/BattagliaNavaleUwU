@@ -19,8 +19,6 @@ public partial class Home : ContentPage
 
     private async void PlayBackgroundMusic()
     {
-        _player?.Stop();
-
         if (_player == null)
         {
             var file = await FileSystem.OpenAppPackageFileAsync("jack_sparrow.mp3");
@@ -29,6 +27,11 @@ public partial class Home : ContentPage
         }
 
         _player.Play();
+    }
+
+    private void StopBackgroundMusic()
+    {
+        _player?.Stop();
     }
 
     [RelayCommand]

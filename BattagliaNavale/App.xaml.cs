@@ -10,5 +10,12 @@ namespace BattagliaNavale
 
             MainPage = new NavigationPage(new Home());
         }
+
+        protected override void OnSleep()
+        {
+            base.OnSleep();
+
+            MainPage.Stop
+        }
     }
 }
