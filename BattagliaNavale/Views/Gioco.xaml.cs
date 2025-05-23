@@ -47,8 +47,6 @@ namespace BattagliaNavale.Views
                         CommandParameter = new Tuple<int, int>(i, j)
                     };
 
-                    bottone.AutomationId = $"btn_{i}_{j}";
-
                     bottone.Command = ((GiocoViewModel)BindingContext).SelezionaCellaCommand;
 
                     Grid.SetRow(bottone, i);
@@ -146,7 +144,6 @@ namespace BattagliaNavale.Views
             catch (Exception ex)
             {
                 Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
-                //await Shell.Current.DisplayAlert("Errore", "Si è verificato un errore durante il colpo. Riprova.", "OK");
             }
             
         }
