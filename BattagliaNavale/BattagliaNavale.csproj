@@ -78,6 +78,9 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+	  <MauiXaml Update="Views\CronologiaPartite.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Gioco.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

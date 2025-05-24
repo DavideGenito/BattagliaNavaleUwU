@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:BattagliaNavale.Models"
+             x:Class="BattagliaNavale.Views.CronologiaPartite"
+             Title="CronologiaPartite">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" 
+                                        Command="{Binding AppearingCommand}" 
+                                        />
+    </ContentPage.Behaviors>
+
+    <VerticalStackLayout>
+        <CollectionView ItemsSource="{Binding ListaPartite}"
+                        EmptyView="Non hai ancora fatto nessuna partita"
+                        >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:PartitaStatistiche">
+                    <VerticalStackLayout Spacing="10"
+                                         Margin="10"
+                                         >
+                        <HorizontalStackLayout>
+                            <Label Text="Partita n."
+                                   FontAttributes="Bold"
+                                   TextColor="CadetBlue"
+                                   />
+                            <Label Text="{Binding Id}"
+                                   FontAttributes="Bold"
+                                   TextColor="CadetBlue"
+                                   />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>                    
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
