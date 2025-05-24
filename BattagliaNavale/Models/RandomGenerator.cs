@@ -19,5 +19,23 @@ namespace BattagliaNavale.Models
         {
             return random.Next(0, maxY);
         }
+
+        public bool GeneraOrientamentoBarca()
+        {
+            int booleano = random.Next(0, 2);
+            if(booleano == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public int GeneraOrientamentoMossa()
+        {
+            return random.Next(0, 4);
+        }
     }
 }

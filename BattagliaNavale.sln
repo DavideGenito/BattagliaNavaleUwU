@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattagliaNavale", "BattagliaNavale\BattagliaNavale.csproj", "{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattagliaNavale", "BattagliaNavale\BattagliaNavale.csproj", "{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "Elementi di soluzione", "{8269BD94-353E-43D5-A772-3A8568B1574E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Downloads\jack-sparrow_dFQte8NI.mp3 = ..\..\Downloads\jack-sparrow_dFQte8NI.mp3
+		..\..\Downloads\jack-sparrow_DVwcYAwc.mp3 = ..\..\Downloads\jack-sparrow_DVwcYAwc.mp3
+		..\..\Downloads\The Legend Of Monkey Island (Main Theme) - Sea Of Thieves Soundtrack.mp3 = ..\..\Downloads\The Legend Of Monkey Island (Main Theme) - Sea Of Thieves Soundtrack.mp3
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

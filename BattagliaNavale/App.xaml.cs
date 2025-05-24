@@ -8,7 +8,7 @@ namespace BattagliaNavale
         {
             InitializeComponent();
 
-            MainPage = new Gioco();
+            MainPage = new NavigationPage(new Home());
         }
     }
 }

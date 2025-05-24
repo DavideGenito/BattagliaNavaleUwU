@@ -1,12 +1,141 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:local="clr-namespace:BattagliaNavale"
+             xmlns:models="clr-namespace:BattagliaNavale.Models"
+             xmlns:views="clr-namespace:BattagliaNavale.Views"
              x:Class="BattagliaNavale.Views.Regolamento"
              Title="Regolamento">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid>
+        <Image
+            Source="../Resources/Images/sfondo_mare.jpg"
+            Aspect="AspectFill"
+            />
+
+        <ScrollView>
+            <StackLayout
+                Margin="0, 0"
+                Spacing="10"
+                VerticalOptions="Start"
+                HorizontalOptions="Center">
+
+                <Image
+                    Source="../Resources/Images/regolamento_img.png"
+                    Margin="30,30"
+                    Aspect="AspectFit"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    />
+                
+                <HorizontalStackLayout 
+                    Spacing="20" Margin="10"
+                    HorizontalOptions="Center">
+                    <Grid>
+                        <Label Grid.Row="0" Grid.Column="0" 
+                               Text="Per prima cosa posiziona le tue navi nel campo da gioco. Attento a non piazzarle vicine!"
+                               WidthRequest="200"
+                               ZIndex="1"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               Margin="15"/>
+
+                        <Rectangle Opacity="0.7"
+                                   Background="White"
+                                   Stroke="Black"
+                                   StrokeThickness="2"
+                                   Grid.Row="0" Grid.Column="0"
+                                   Aspect="Fill"
+                                   RadiusX="10" RadiusY="10"/>      
+                    </Grid>
+                    <Image
+                        Source="../Resources/Images/esempio_img.png"
+                        HeightRequest="120"
+                        WidthRequest="120"
+                        />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="20" Margin="10"
+                                       HorizontalOptions="Center">
+                    <Image Source="../Resources/Images/conversazione_img.png"
+                           HeightRequest="120"
+                           WidthRequest="120"
+                           />
+                    <Grid>
+                        <Label Grid.Row="0" Grid.Column="0" 
+                               Text="A turni tu e il computer dovrete fare un tentativo per trovare le navi avversarie, indicando un paio di coordinate."
+                               WidthRequest="200"
+                               ZIndex="1"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               Margin="15"/>
+
+                        <Rectangle Opacity="0.7"
+                                   Background="White"
+                                   Stroke="Black"
+                                   StrokeThickness="2"
+                                   Grid.Row="0" Grid.Column="0"
+                                   Aspect="Fill"
+                                   RadiusX="10" RadiusY="10"/>
+                    </Grid>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="20" Margin="10"
+                                       HorizontalOptions="Center">
+                    <Grid>
+                        <Label Grid.Row="0" Grid.Column="0" 
+                               Text="Ogni tentativo verrà accompagnato da un risultato, che può essere: acqua, nave colpita e nave affondata."
+                               WidthRequest="200"
+                               ZIndex="1"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               Margin="15"/>
+
+                        <Rectangle Opacity="0.7"
+                                   Background="White"
+                                   Stroke="Black"
+                                   StrokeThickness="2"
+                                   Grid.Row="0" Grid.Column="0"
+                                   Aspect="Fill"
+                                   RadiusX="10" RadiusY="10"/>
+                    </Grid>
+                    <Image
+                        Source="../Resources/Images/esempio2_img.png"
+                        HeightRequest="120"
+                        WidthRequest="120"
+                        />
+                </HorizontalStackLayout>
+                <Grid>
+                    <Label 
+                        x:Name="lblIndicazioni4"
+                        Text="Vince il primo che affonda tutte le navi nemiche!"
+                        VerticalOptions="Center"
+                        ZIndex="1"
+                        Margin="10"
+                        HorizontalOptions="Center"
+                        />
+                    <Rectangle 
+                        Opacity="0.7"
+                        Background="White"
+                        Stroke="Black"
+                        StrokeThickness="2"
+                        Grid.Row="0" Grid.Column="0"
+                        Aspect="Fill"
+                        RadiusX="10" RadiusY="10"
+                        Margin="10,0"/>
+                </Grid>
+                <Button
+                    x:Name="btn_tornaAllaHome"
+                    Margin="20"
+                    HeightRequest="60"
+                    BackgroundColor="#92D36E"
+                    BorderColor="#629C44"
+                    BorderWidth="2"
+                    Text="Torna alla home"
+                    FontFamily="Poppins"
+                    FontSize="14"
+                    TextColor="#000000"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type views:Regolamento}}, Path=OpenHomeCommand}"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
