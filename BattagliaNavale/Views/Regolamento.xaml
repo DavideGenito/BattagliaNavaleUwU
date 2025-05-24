@@ -36,7 +36,7 @@
                             Stroke="Black" 
                             StrokeThickness="3" 
                             RadiusX="15" RadiusY="15" 
-                            Opacity="0.95" />
+                            Opacity="0.7" />
                         <Label 
                             Text="Per prima cosa posiziona le tue navi nel campo da gioco. Attento a non piazzarle vicine!"
                             HorizontalOptions="Center" 
@@ -79,7 +79,7 @@
                             Stroke="Black" 
                             StrokeThickness="3" 
                             RadiusX="15" RadiusY="15" 
-                            Opacity="0.95" />
+                            Opacity="0.7" />
                         <Label 
                             Text="A turni tu e il computer dovrete fare un tentativo per trovare le navi avversarie, indicando un paio di coordinate."
                             HorizontalOptions="Center" 
@@ -104,7 +104,7 @@
                             Stroke="Black" 
                             StrokeThickness="3" 
                             RadiusX="15" RadiusY="15" 
-                            Opacity="0.95" />
+                            Opacity="0.7" />
                         <Label 
                             Text="Ogni tentativo verrà accompagnato da un risultato, che può essere: acqua, nave colpita e nave affondata."
                             HorizontalOptions="Center" 
@@ -132,7 +132,7 @@
                         Stroke="DarkGreen" 
                         StrokeThickness="3" 
                         RadiusX="15" RadiusY="15" 
-                        Opacity="0.95" />
+                        Opacity="0.7" />
                     <Label 
                         x:Name="lblIndicazioni4"
                         Text="🏆 Vince il primo che affonda tutte le navi nemiche! 🏆"
@@ -159,9 +159,6 @@
                     TextColor="#000000"
                     HorizontalOptions="Fill"
                     Command="{Binding Source={RelativeSource AncestorType={x:Type views:Regolamento}}, Path=OpenHomeCommand}" />
-
-                <!-- Spazio finale -->
-                <BoxView HeightRequest="20" IsVisible="False" />
             </StackLayout>
         </ScrollView>
     </Grid>
