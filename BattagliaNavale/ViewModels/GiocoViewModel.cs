@@ -1,41 +1,35 @@
-<<<<<<< HEAD
-ï»¿using BattagliaNavale.Models;
+using BattagliaNavale.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-=======
-ï»¿using CommunityToolkit.Mvvm.ComponentModel;
->>>>>>> origin/filomena
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace BattagliaNavale.ViewModels
 {
-<<<<<<< HEAD
     public partial class GiocoViewModel : ObservableObject
     {
-        public ObservableCollection<ObservableCollection<StatoCampo>> CampoBot { get; set; }
-        public ObservableCollection<ObservableCollection<StatoCampo>> CampoGiocatore { get; set; }
+        public ObservableCollection<ObservableCollection<StatoCampo>> CampoBot { get; private set; }
+        public ObservableCollection<ObservableCollection<StatoCampo>> CampoGiocatore { get; private set; }
+
+        public ObservableCollection<(int x, int y, bool colpito)> ColpiPlayer { get; } = new();
+        public ObservableCollection<(int x, int y, bool colpito)> ColpiBot { get; } = new();
 
         private GameManager gameManager;
 
         [ObservableProperty]
-        private int? selezioneX;
+        private int? selezioneX = 0;
 
         [ObservableProperty]
-        private int? selezioneY;
+        private int? selezioneY = 0;
 
         [ObservableProperty]
-        private string messaggioRisultato;
+        private Risultato messaggioRisultato;
 
         public GiocoViewModel(StatoCampo[,] campoGiocatore)
         {
             var player = new Player(campoGiocatore);
             var bot = new Bot(new StatoCampo[10, 10]);
-
             gameManager = new GameManager(player, bot);
 
             CampoBot = ConvertiCampo(bot.Campo);
@@ -48,42 +42,59 @@ namespace BattagliaNavale.ViewModels
             for (int i = 0; i < campo.GetLength(0); i++)
             {
                 var row = new ObservableCollection<StatoCampo>();
-                for (int j = 0; j < campo.GetLength(1); j++) row.Add(campo[i, j]);
+                for (int j = 0; j < campo.GetLength(1); j++)
+                    row.Add(campo[i, j]);
                 grid.Add(row);
             }
             return grid;
         }
 
         [RelayCommand]
-        private void SelezionaCella((int x, int y) cella)
+        public void SelezionaCella(Tuple<int, int> cella)
         {
-            SelezioneX = cella.x;
-            SelezioneY = cella.y;
+            SelezioneX = cella.Item1;
+            SelezioneY = cella.Item2;
         }
 
         [RelayCommand]
-        private void ConfermaColpo()
+        private async Task ConfermaColpoAsync()
         {
-            if (SelezioneX == null || SelezioneY == null) return;
-
-            var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
-            AggiornaGriglie();
-
-            switch (risultato)
+            try
             {
-                case Risultato.VINTO_BOT:
-                    MessaggioRisultato = "Hai perso!";
-                    break;
-                case Risultato.VINTO_PLAYER:
-                    MessaggioRisultato = "Hai vinto!";
-                    break;
-                default:
-                    MessaggioRisultato = "Colpo effettuato!";
-                    break;
-            }
+                // Verifica se la cella è già stata colpita
+                foreach (var colpo in ColpiPlayer)
+                {
+                    if (colpo.x == SelezioneX.Value && colpo.y == SelezioneY.Value)
+                        return;
+                }
 
-            SelezioneX = null;
-            SelezioneY = null;
+                var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
+
+                var statoPlayer = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
+                bool colpitoPlayer = statoPlayer == StatoCampo.NAVE_COLPITA;
+                ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpitoPlayer));
+
+                var mossaBot = risultato.Item2;
+                var statoBot = gameManager.Giocatore.Campo[mossaBot[0], mossaBot[1]];
+                bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
+                ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
+
+                MessaggioRisultato = risultato.Item1;
+                AggiornaGriglie();
+
+                OnPropertyChanged(nameof(ColpiPlayer));
+                OnPropertyChanged(nameof(ColpiBot));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
+                await Shell.Current.DisplayAlert("Errore", "Si è verificato un errore durante il colpo. Riprova.", "OK");
+            }
+            finally
+            {
+                SelezioneX = 0;
+                SelezioneY = 0;
+            }
         }
 
         private void AggiornaGriglie()
@@ -93,10 +104,5 @@ namespace BattagliaNavale.ViewModels
             OnPropertyChanged(nameof(CampoBot));
             OnPropertyChanged(nameof(CampoGiocatore));
         }
-=======
-    public partial class GiocoViewModel:ObservableObject
-    {
-
->>>>>>> origin/filomena
     }
 }

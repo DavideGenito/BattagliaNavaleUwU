@@ -20,12 +20,11 @@
                        Grid.Column="{Binding PrimaNaveColumn}"
                        Grid.RowSpan="{Binding PrimaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding PrimaNaveColumnSpan}"
-                       HeightRequest="{Binding PrimaNaveHeight}"
-                       WidthRequest="{Binding PrimaNaveWidth}"
+                       Scale="{Binding PrimaNaveScale}"
                        Rotation="{Binding PrimaNaveRotation}"
                        TranslationX="{Binding PrimaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
                        Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
@@ -43,12 +42,11 @@
                        Grid.Column="{Binding SecondaNaveColumn}"
                        Grid.RowSpan="{Binding SecondaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding SecondaNaveColumnSpan}"
-                       HeightRequest="{Binding SecondaNaveHeight}"
-                       WidthRequest="{Binding SecondaNaveWidth}"
+                       Scale="{Binding SecondaNaveScale}"
                        Rotation="{Binding SecondaNaveRotation}"
                        TranslationX="{Binding SecondaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
                        Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
@@ -66,12 +64,11 @@
                        Grid.Column="{Binding TerzaNaveColumn}"
                        Grid.RowSpan="{Binding TerzaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding TerzaNaveColumnSpan}"
-                       HeightRequest="{Binding TerzaNaveHeight}"
-                       WidthRequest="{Binding TerzaNaveWidth}"
+                       Scale="{Binding TerzaNaveScale}"
                        Rotation="{Binding TerzaNaveRotation}"
                        TranslationX="{Binding TerzaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
                        Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">            
                     <Image.GestureRecognizers>
@@ -89,12 +86,11 @@
                        Grid.Column="{Binding QuartaNaveColumn}"
                        Grid.RowSpan="{Binding QuartaNaveRowSpan}"
                        Grid.ColumnSpan="{Binding QuartaNaveColumnSpan}"
-                       HeightRequest="{Binding QuartaNaveHeight}"
-                       WidthRequest="{Binding QuartaNaveWidth}"
+                       Scale="{Binding QuartaNaveScale}"
                        Rotation="{Binding QuartaNaveRotation}"
                        TranslationX="{Binding QuartaNaveTranslationX}"
-                       AnchorX="0"
-                       AnchorY="0"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
                        ZIndex="1"
                        Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
@@ -112,40 +108,41 @@
             <HorizontalStackLayout Margin="0, 20" 
                                    HorizontalOptions="Center" VerticalOptions="Center">
                 <ImageButton x:Name="btnSu"
-                             WidthRequest="80"
-                             HeightRequest="80"
+                             WidthRequest="70"
+                             HeightRequest="70"
                              Source="freccia.png"
                              Command="{Binding SpostaNaveCommand}" />
 
                 <ImageButton x:Name="btnGiu"
-                             WidthRequest="80"
-                             HeightRequest="80"
+                             WidthRequest="70"
+                             HeightRequest="70"
                              Source="freccia.png" 
                              Rotation="180"
                              Command="{Binding SpostaNaveCommand}" />
 
                 <ImageButton x:Name="btnSinistra"
-                             WidthRequest="80"
-                             HeightRequest="80"
+                             WidthRequest="70"
+                             HeightRequest="70"
                              Source="freccia.png"
                              Rotation="270"
                              Command="{Binding SpostaNaveCommand}" />
 
                 <ImageButton x:Name="btnDestra"
-                             WidthRequest="80"
-                             HeightRequest="80"
+                             WidthRequest="70"
+                             HeightRequest="70"
                              Rotation="90"
                              Source="freccia.png"
                              Command="{Binding SpostaNaveCommand}" />
 
                 <ImageButton x:Name="btnRuota"
-                             WidthRequest="80"
-                             HeightRequest="80"
+                             WidthRequest="70"
+                             HeightRequest="70"
                              Source="freccia_ruota.png"
                              Command="{Binding RuotaNaveCommand}" />
             </HorizontalStackLayout>
 
             <Button x:Name="btn_gioca"
+                    Margin="20"
                     HeightRequest="60"
                     BackgroundColor="#92D36E"
                     BorderColor="#629C44"

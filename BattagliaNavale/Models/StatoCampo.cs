@@ -10,8 +10,7 @@ namespace BattagliaNavale.Models
     {
         ACQUA,
         NAVE,
-        NAVECOLPITA,
-        NAVEAFFONDATA,
-
+        NAVE_COLPITA,
+        ACQUA_COLPITA
     }
 }
