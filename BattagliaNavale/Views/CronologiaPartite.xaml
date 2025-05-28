@@ -14,12 +14,6 @@
 
     <VerticalStackLayout>
 
-        <VerticalStackLayout.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type views:ListPage}}, Path=OpenPartitaCommand}"
-                          CommandParameter="{Binding Id}" 
-                          />
-        </VerticalStackLayout.GestureRecognizers>
-
         <CollectionView ItemsSource="{Binding ListaPartite}"
                         EmptyView="Non hai ancora fatto nessuna partita"
                         >
@@ -28,6 +22,13 @@
                     <VerticalStackLayout Spacing="10"
                                          Margin="10"
                                          >
+
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type views:ListPage}}, Path=OpenPartitaCommand}"
+                                                  CommandParameter="{Binding Id}" 
+                                                  />
+                        </VerticalStackLayout.GestureRecognizers>
+
                         <HorizontalStackLayout>
                             <Label Text="Partita n."
                                    FontAttributes="Bold"
