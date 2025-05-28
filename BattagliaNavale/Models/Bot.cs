@@ -1,5 +1,4 @@
-﻿
-namespace BattagliaNavale.Models
+﻿namespace BattagliaNavale.Models
 {
     public class Bot
     {
@@ -11,6 +10,8 @@ namespace BattagliaNavale.Models
 
         public List<Tuple<int, int, bool>> BarchePosizione { get; private set; } = new List<Tuple<int, int, bool>> { };
 
+        // Aggiunta: Lista per tracciare le barche affondate
+        public List<bool> BarcheAffondate { get; private set; } = new List<bool>();
 
         public Bot(StatoCampo[,] campo, IGenerator? generator = null)
         {
@@ -31,6 +32,11 @@ namespace BattagliaNavale.Models
             PosizionaBarca(3);
             PosizionaBarca(3);
             PosizionaBarca(4);
+
+            for (int i = 0; i < BarchePosizione.Count; i++)
+            {
+                BarcheAffondate.Add(false);
+            }
         }
 
         public int[] FaiMossa()
@@ -48,13 +54,13 @@ namespace BattagliaNavale.Models
                         case 0:
                             newY++;
                             break;
-                        case 1: 
+                        case 1:
                             newX++;
                             break;
-                        case 2: 
+                        case 2:
                             newY--;
                             break;
-                        case 3: 
+                        case 3:
                             newX--;
                             break;
                     }
@@ -100,6 +106,67 @@ namespace BattagliaNavale.Models
             }
 
             return new int[] { 0, 0 };
+        }
+
+        public int VerificaBarcaAffondata(int x, int y)
+        {
+            for (int i = 0; i < BarchePosizione.Count; i++)
+            {
+                if (BarcheAffondate[i]) continue;
+
+                var barca = BarchePosizione[i];
+                int startX = barca.Item1;
+                int startY = barca.Item2;
+                bool verticale = barca.Item3;
+
+                int lunghezza = GetLunghezzaBarca(i);
+
+                bool appartieneBarca = false;
+                if (verticale)
+                {
+                    appartieneBarca = (x == startX && y >= startY && y < startY + lunghezza);
+                }
+                else
+                {
+                    appartieneBarca = (y == startY && x >= startX && x < startX + lunghezza);
+                }
+
+                if (appartieneBarca)
+                {
+                    bool tuttoAffondata = true;
+                    for (int j = 0; j < lunghezza; j++)
+                    {
+                        int checkX = verticale ? startX : startX + j;
+                        int checkY = verticale ? startY + j : startY;
+
+                        if (Campo[checkX, checkY] != StatoCampo.NAVE_COLPITA)
+                        {
+                            tuttoAffondata = false;
+                            break;
+                        }
+                    }
+
+                    if (tuttoAffondata)
+                    {
+                        BarcheAffondate[i] = true;
+                        return i;
+                    }
+                    break;
+                }
+            }
+            return -1;
+        }
+
+        private int GetLunghezzaBarca(int indice)
+        {
+            switch (indice)
+            {
+                case 0: return 2;
+                case 1: return 3;
+                case 2: return 3;
+                case 3: return 4;
+                default: return 2;
+            }
         }
 
         private void PosizionaBarca(int lunghezza)

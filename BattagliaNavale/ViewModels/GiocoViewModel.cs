@@ -16,7 +16,7 @@ namespace BattagliaNavale.ViewModels
         public ObservableCollection<(int x, int y, bool colpito)> ColpiPlayer { get; } = new();
         public ObservableCollection<(int x, int y, bool colpito)> ColpiBot { get; } = new();
 
-        private GameManager gameManager;
+        public GameManager gameManager;
 
         [ObservableProperty]
         private int? selezioneX = 0;
@@ -27,6 +27,9 @@ namespace BattagliaNavale.ViewModels
         [ObservableProperty]
         private Risultato messaggioRisultato;
 
+        [ObservableProperty]
+        private int ultimaBarcaAffondata = -1;
+
         public List<Tuple<int, int, bool>> BarchePlayer { get; } = new();
 
         public Stopwatch stopwatch = new Stopwatch();
@@ -34,7 +37,6 @@ namespace BattagliaNavale.ViewModels
         [ObservableProperty]
         private string stopwatchText = "00:00:00";
 
-        // Timer per aggiornare il cronometro
         private System.Timers.Timer timer;
 
         public GiocoViewModel(StatoCampo[,] campoGiocatore, List<Tuple<int, int, bool>> barchePlayer)
@@ -50,7 +52,6 @@ namespace BattagliaNavale.ViewModels
 
             stopwatch.Start();
 
-            // Inizializza e avvia il timer per aggiornare il cronometro ogni secondo
             timer = new System.Timers.Timer(1000);
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
@@ -58,7 +59,6 @@ namespace BattagliaNavale.ViewModels
 
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            // Aggiorna il testo del cronometro sul thread UI
             Microsoft.Maui.Controls.Application.Current.Dispatcher.Dispatch(() =>
             {
                 StopwatchText = stopwatch.Elapsed.ToString(@"mm\:ss");
@@ -106,6 +106,8 @@ namespace BattagliaNavale.ViewModels
             ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
 
             messaggioRisultato = risultato.Item1;
+            ultimaBarcaAffondata = risultato.Item3; 
+
             CheckVincitore();
             AggiornaGriglie();
 
@@ -129,7 +131,7 @@ namespace BattagliaNavale.ViewModels
             if (messaggioRisultato != Risultato.SOSPESO)
             {
                 stopwatch.Stop();
-                timer?.Stop(); // Ferma il timer quando il gioco finisce
+                timer?.Stop(); 
 
                 PreferencesUtilities.SaveField(
                     messaggioRisultato,
@@ -141,7 +143,6 @@ namespace BattagliaNavale.ViewModels
             }
         }
 
-        // Metodo per pulire le risorse quando il ViewModel viene distrutto
         public void Cleanup()
         {
             timer?.Stop();

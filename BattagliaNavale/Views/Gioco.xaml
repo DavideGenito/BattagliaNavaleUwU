@@ -4,7 +4,8 @@
              x:Class="BattagliaNavale.Views.Gioco"
              xmlns:vm="clr-namespace:BattagliaNavale.ViewModels"
              Title="Gioco">
-    <Grid>
+    <Grid
+        x:Name="MainGrid">
         <Image
             Source="../Resources/Images/sfondo_mare.jpg"
             Aspect="AspectFill"

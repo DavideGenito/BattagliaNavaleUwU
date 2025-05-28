@@ -1,4 +1,4 @@
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
 using BattagliaNavale.Models;
 using BattagliaNavale.ViewModels;
 using BattagliaNavale.Services;
@@ -127,6 +127,59 @@ namespace BattagliaNavale.Views
             }
         }
 
+        private void MostraBarcaAffondata(int indiceBarca)
+        {
+            var vm = (GiocoViewModel)BindingContext;
+            var barcaPosizione = vm.gameManager.Bot.BarchePosizione[indiceBarca];
+
+            int lunghezza = 2;
+            string source = "";
+            double scale = 1.0;
+
+            switch (indiceBarca)
+            {
+                case 0:
+                    lunghezza = 2;
+                    source = "../Resources/Images/barca3.png";
+                    scale = 2.0;
+                    break;
+                case 1:
+                    lunghezza = 3;
+                    source = "../Resources/Images/barca1.png";
+                    scale = 3.0;
+                    break;
+                case 2:
+                    lunghezza = 3;
+                    source = "../Resources/Images/barca4.png";
+                    scale = 2.7;
+                    break;
+                case 3:
+                    lunghezza = 4;
+                    source = "../Resources/Images/barca2.png";
+                    scale = 3.7;
+                    break;
+            }
+
+            var barcaAffondata = new Image
+            {
+                Source = ImageSource.FromFile(source),
+                ZIndex = 5,
+                Opacity = 0.8,
+                Rotation = barcaPosizione.Item3 ? 90 : 0,
+                Scale = barcaPosizione.Item3 ? scale : 1.0
+            };
+
+            Grid.SetRow(barcaAffondata, barcaPosizione.Item1);
+            Grid.SetColumn(barcaAffondata, barcaPosizione.Item2);
+
+            if (barcaPosizione.Item3)
+                Grid.SetColumnSpan(barcaAffondata, lunghezza);
+            else
+                Grid.SetRowSpan(barcaAffondata, lunghezza);
+
+            grigliaBot.Children.Add(barcaAffondata);
+        }
+
         private void OnButtonClicked(object sender, EventArgs e)
         {
             var vm = (GiocoViewModel)BindingContext;
@@ -142,12 +195,16 @@ namespace BattagliaNavale.Views
 
             DisabilitaBottone(colpoPlayer.x, colpoPlayer.y);
 
+            if (vm.UltimaBarcaAffondata != -1)
+            {
+                MostraBarcaAffondata(vm.UltimaBarcaAffondata);
+            }
+
             var colpoBot = vm.ColpiBot.LastOrDefault();
 
             MostraFeedbackColpo(grigliaGiocatore, colpoBot.x, colpoBot.y, colpoBot.colpito);
 
             CheckRisultato(vm.MessaggioRisultato);
-
         }
 
         private void MostraFeedbackColpo(Grid griglia, int riga, int colonna, bool colpito)
@@ -191,13 +248,11 @@ namespace BattagliaNavale.Views
         {
             if (risultato == Risultato.PLAYER)
             {
-                DisplayAlert("Hai vinto!", "Hai distrutto tutte le navi del bot!", "OK");
-                Esci();
+                ShowVictoryOverlay();
             }
             else if (risultato == Risultato.BOT)
             {
-                DisplayAlert("Hai perso!", "Il bot ha distrutto tutte le tue navi!", "OK");
-                Esci();
+                ShowDefeatOverlay();
             }
         }
 
@@ -209,9 +264,179 @@ namespace BattagliaNavale.Views
         }
 
         [RelayCommand]
-        public async Task Esci()
+        public async Task NuovoGioco()
         {
             await Navigation.PopAsync();
+        }
+
+        [RelayCommand]
+        public async Task Esci()
+        {
+            await Navigation.PopToRootAsync();
+        }
+
+
+        // LOGICA PER VINCITORE
+
+
+        private Grid overlayGrid;
+        private bool isOverlayVisible = false;
+
+        public async void ShowVictoryOverlay()
+        {
+            if (isOverlayVisible) return;
+
+            CreateOverlay(true);
+            await ShowOverlayWithAnimation();
+        }
+
+        public async void ShowDefeatOverlay()
+        {
+            if (isOverlayVisible) return;
+
+            CreateOverlay(false);
+            await ShowOverlayWithAnimation();
+        }
+
+        private void CreateOverlay(bool isVictory)
+        {
+            overlayGrid = new Grid
+            {
+                BackgroundColor = Color.FromArgb("#80000000"),
+                IsVisible = false,
+                Opacity = 0
+            };
+
+            var contentFrame = new Frame
+            {
+                BackgroundColor = isVictory ? Color.FromArgb("#1a237e") : Color.FromArgb("#b71c1c"),
+                BorderColor = isVictory ? Colors.Gold : Colors.Red,
+                CornerRadius = 20,
+                HasShadow = true,
+                Padding = 30,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                MaximumWidthRequest = 350
+            };
+
+            var stackLayout = new StackLayout
+            {
+                Spacing = 20,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            var iconLabel = new Label
+            {
+                Text = isVictory ? "🏆" : "💥",
+                FontSize = 60,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            var titleLabel = new Label
+            {
+                Text = isVictory ? "VITTORIA!" : "SCONFITTA!",
+                FontSize = 36,
+                FontAttributes = FontAttributes.Bold,
+                TextColor = isVictory ? Colors.Gold : Colors.White,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            var messageLabel = new Label
+            {
+                Text = isVictory ? "Hai affondato tutta la flotta nemica!" : "La tua flotta è stata distrutta!",
+                FontSize = 16,
+                TextColor = Colors.White,
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center
+            };
+
+            var buttonStackLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Center,
+                Spacing = 15
+            };
+
+            var newGameButton = new Button
+            {
+                Text = "Nuova Partita",
+                BackgroundColor = isVictory ? Colors.Green : Colors.Orange,
+                TextColor = Colors.White,
+                CornerRadius = 10,
+                FontAttributes = FontAttributes.Bold
+            };
+            newGameButton.Clicked += OnNewGameClicked;
+
+            var closeButton = new Button
+            {
+                Text = "Chiudi",
+                BackgroundColor = Colors.Gray,
+                TextColor = Colors.White,
+                CornerRadius = 10
+            };
+            closeButton.Clicked += OnCloseOverlayClicked;
+
+            buttonStackLayout.Children.Add(newGameButton);
+            buttonStackLayout.Children.Add(closeButton);
+
+            stackLayout.Children.Add(iconLabel);
+            stackLayout.Children.Add(titleLabel);
+            stackLayout.Children.Add(messageLabel);
+            stackLayout.Children.Add(buttonStackLayout);
+
+            contentFrame.Content = stackLayout;
+            overlayGrid.Children.Add(contentFrame);
+
+            if (MainGrid != null)
+            {
+                MainGrid.Children.Add(overlayGrid);
+            }
+        }
+
+        private async Task ShowOverlayWithAnimation()
+        {
+            isOverlayVisible = true;
+            overlayGrid.IsVisible = true;
+
+            await overlayGrid.FadeTo(1, 300, Easing.CubicOut);
+
+            var contentFrame = overlayGrid.Children[0] as Frame;
+            if (contentFrame != null)
+            {
+                contentFrame.Scale = 0.8;
+                await contentFrame.ScaleTo(1, 200, Easing.BounceOut);
+            }
+        }
+
+        private async void OnCloseOverlayClicked(object sender, EventArgs e)
+        {
+            await HideOverlay();
+
+            Esci();
+        }
+
+        private async void OnNewGameClicked(object sender, EventArgs e)
+        {
+            await HideOverlay();
+
+            NuovoGioco();
+        }
+
+        private async Task HideOverlay()
+        {
+            if (!isOverlayVisible || overlayGrid == null) return;
+
+            await overlayGrid.FadeTo(0, 200, Easing.CubicIn);
+
+            overlayGrid.IsVisible = false;
+
+            if (MainGrid != null && MainGrid.Children.Contains(overlayGrid))
+            {
+                MainGrid.Children.Remove(overlayGrid);
+            }
+
+            overlayGrid = null;
+            isOverlayVisible = false;
         }
     }
 }

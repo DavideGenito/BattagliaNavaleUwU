@@ -12,28 +12,33 @@
             Bot = bot;
         }
 
-        public Tuple<Risultato, int[]> VerificaVincitore(int playerX, int playerY)
+        public Tuple<Risultato, int[], int> VerificaVincitore(int playerX, int playerY)
         {
             if (playerX < 0 || playerX >= Bot.Campo.GetLength(0) ||
                 playerY < 0 || playerY >= Bot.Campo.GetLength(1))
             {
-                return Tuple.Create(Risultato.SOSPESO, UltimaMossaBot);
+                return Tuple.Create(Risultato.SOSPESO, UltimaMossaBot, -1);
             }
 
             if (Bot.Campo[playerX, playerY] == StatoCampo.NAVE_COLPITA ||
                 Bot.Campo[playerX, playerY] == StatoCampo.ACQUA_COLPITA)
             {
-                return Tuple.Create(Risultato.SOSPESO, UltimaMossaBot);
+                return Tuple.Create(Risultato.SOSPESO, UltimaMossaBot, -1);
             }
 
             int[] mossaPlayer = new int[] { playerX, playerY };
+            int barcaAffondata = -1;
 
             if (Bot.Campo[mossaPlayer[0], mossaPlayer[1]] == StatoCampo.NAVE)
             {
                 Bot.Campo[mossaPlayer[0], mossaPlayer[1]] = StatoCampo.NAVE_COLPITA;
                 Bot.Contatore--;
+
+                // Verifica se una barca è completamente affondata
+                barcaAffondata = Bot.VerificaBarcaAffondata(mossaPlayer[0], mossaPlayer[1]);
+
                 if (Bot.Contatore == 0)
-                    return Tuple.Create(Risultato.PLAYER, mossaPlayer);
+                    return Tuple.Create(Risultato.PLAYER, mossaPlayer, barcaAffondata);
             }
             else if (Bot.Campo[mossaPlayer[0], mossaPlayer[1]] == StatoCampo.ACQUA)
             {
@@ -46,9 +51,9 @@
 
             // Controllo game over
             if (Giocatore.Contatore == 0)
-                return Tuple.Create(Risultato.BOT, mossaBot);
+                return Tuple.Create(Risultato.BOT, mossaBot, barcaAffondata);
 
-            return Tuple.Create(Risultato.SOSPESO, mossaBot);
+            return Tuple.Create(Risultato.SOSPESO, mossaBot, barcaAffondata);
         }
 
         private int[] ProcessaBotMossa()
