@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\posizionanavi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\models\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,11 +27,7 @@
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\models\\statocampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\viewmodels\\posizionanaviviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\raffaele.filomena\\desktop\\battaglianavaleuwu\\battaglianavale\\models\\diagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\battaglianavale\\models\\diagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\models\\diagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
     },
     {
@@ -54,12 +54,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -68,7 +64,7 @@
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
               "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
               "RelativeToolTip": "BattagliaNavale\\Views\\PosizionaNavi.xaml.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAQwEEAAAAgAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T06:16:06.16Z",
               "EditorCaption": ""
@@ -81,27 +77,27 @@
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml.cs",
               "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml.cs",
               "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAQwCwAAAAFAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T06:16:06.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Gioco.xaml.cs",
               "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml.cs",
               "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
               "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml.cs",
-              "ViewState": "AQIAAMwAAAAAAAAAAAAAAOQAAAAkAAAA",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAAAOEAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T06:16:06.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\GameManager.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Models\\GameManager.cs",
@@ -114,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "StatoCampo.cs",
               "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\StatoCampo.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Models\\StatoCampo.cs",
@@ -146,7 +142,7 @@
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Home.xaml",
               "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Home.xaml",
               "RelativeToolTip": "BattagliaNavale\\Views\\Home.xaml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAABBwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-17T06:16:06.157Z",
               "EditorCaption": ""
@@ -166,13 +162,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "PosizionaNaviViewModel.cs",
               "DocumentMoniker": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
               "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
               "RelativeToolTip": "BattagliaNavale\\ViewModels\\PosizionaNaviViewModel.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAEoAAAAMAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T06:16:06.161Z",
               "EditorCaption": ""
@@ -186,8 +182,7 @@
               "ToolTip": "C:\\Users\\raffaele.filomena\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\diagram.cd",
               "RelativeToolTip": "BattagliaNavale\\Models\\diagram.cd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2025-05-24T06:21:37.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T06:21:37.293Z"
             },
             {
               "$type": "Document",
@@ -201,16 +196,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T06:22:37.295Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1669,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

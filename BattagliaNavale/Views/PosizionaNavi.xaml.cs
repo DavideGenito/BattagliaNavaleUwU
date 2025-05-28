@@ -40,10 +40,10 @@ public partial class PosizionaNavi : ContentPage
         btnDestra.CommandParameter = new Point(0, 1);
 
         BindingContext = new ViewModels.PosizionaNaviViewModel(this.Navigation);
-        
+
     }
     private readonly IAudioManager _audioManager;
-    public  IAudioPlayer? Player1;
+    public IAudioPlayer? Player1;
 
     private async void PlayBackgroundMusic()
     {
@@ -57,13 +57,13 @@ public partial class PosizionaNavi : ContentPage
         }
 
         Player1.Play();
+        [RelayCommand]
+        async Task GiocaOra()
+        {  
+         await Navigation.PushAsync(new PosizionaNavi());
+        }
     }
+    
 
-    [RelayCommand]
-    public async Task Gioco()
-    {
-        PosizionaNavi _player1 = new PosizionaNavi();
-        _player1.Player1.Stop();
-        await Navigation.PushAsync(new PosizionaNavi());
-    }
+
 }
