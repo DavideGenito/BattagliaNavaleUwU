@@ -10,8 +10,6 @@ namespace BattagliaNavale
             InitializeComponent();
 
             MainPage = new NavigationPage(new Home());
-
-            AudioPlayerService.Instance.Play();
         }
 
         protected override void OnResume()
@@ -23,7 +21,7 @@ namespace BattagliaNavale
         protected override void OnSleep()
         {
             base.OnSleep();
-            AudioPlayerService.Instance.Stop();
+            AudioPlayerService.Instance.Pause();
         }
     }
 }

@@ -80,42 +80,5 @@ namespace BattagliaNavale.Infrastucture
             var serializedOrders = JsonSerializer.Serialize(savedOrders, _defaultJsonSerializerOptions);
             Preferences.Default.Set("fields", serializedOrders);
         }
-
-        public static void SaveFieldsToJsonFile()
-        {
-            try
-            {
-                var fields = GetFields();
-                var jsonString = JsonSerializer.Serialize(fields, new JsonSerializerOptions
-                {
-                    WriteIndented = true,
-                    PropertyNameCaseInsensitive = true
-                });
-
-                var fileName = $"battaglia_navale_debug_{DateTime.Now:yyyyMMdd_HHmmss}.json";
-                var filePath = Path.Combine(FileSystem.AppDataDirectory, fileName);
-
-                File.WriteAllText(filePath, jsonString);
-
-                System.Diagnostics.Debug.WriteLine($"File JSON salvato in: {filePath}");
-
-                // Per copiare anche nella cartella Documents (se accessibile)
-                try
-                {
-                    var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    var documentsFile = Path.Combine(documentsPath, fileName);
-                    File.WriteAllText(documentsFile, jsonString);
-                    System.Diagnostics.Debug.WriteLine($"Copia salvata anche in: {documentsFile}");
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Non è stato possibile salvare in Documents: {ex.Message}");
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Errore nel salvare il file JSON: {ex.Message}");
-            }
-        }
     }
 }

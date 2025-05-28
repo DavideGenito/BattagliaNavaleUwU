@@ -8,6 +8,7 @@
              xmlns:views="clr-namespace:BattagliaNavale.Views"
              x:Class="BattagliaNavale.Views.Home"
              Title="Home">
+
     <Grid>
         <Image
             Source="../Resources/Images/sfondo_mare.jpg"

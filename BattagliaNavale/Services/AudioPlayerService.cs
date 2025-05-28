@@ -17,8 +17,17 @@ namespace BattagliaNavale.Services
         private bool _isMuted = false;
         public bool IsMuted => _isMuted;
 
+        private bool _isPaused = false;
+
         public void Play(string file = "jack_sparrow.mp3")
         {
+            if(_isPaused)
+            {
+                _isPaused = false;
+                _player.Play();
+                return;
+            }
+
             if (_player == null || !_player.IsPlaying)
             {
                 var audioFile = FileSystem.OpenAppPackageFileAsync(file).Result;
@@ -32,6 +41,12 @@ namespace BattagliaNavale.Services
         public void Stop()
         {
             _player?.Stop();
+        }
+
+        public void Pause()
+        {
+            _isPaused = true;
+            _player?.Pause();
         }
 
         public void Mute()

@@ -1,6 +1,7 @@
 using Microsoft.Maui.Controls;
 using BattagliaNavale.Models;
 using BattagliaNavale.ViewModels;
+using BattagliaNavale.Services;
 using System;
 using System.Collections.Generic;
 using CommunityToolkit.Mvvm.Input;
@@ -128,31 +129,24 @@ namespace BattagliaNavale.Views
 
         private void OnButtonClicked(object sender, EventArgs e)
         {
-            try
+            var vm = (GiocoViewModel)BindingContext;
+
+            if (vm.ColpiPlayer.Count == 0 || vm.ColpiBot.Count == 0)
             {
-                var vm = (GiocoViewModel)BindingContext;
-
-                if (vm.ColpiPlayer.Count == 0 || vm.ColpiBot.Count == 0)
-                {
-                    return;
-                }
-
-                var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
-
-                MostraFeedbackColpo(grigliaBot, colpoPlayer.x, colpoPlayer.y, colpoPlayer.colpito);
-
-                DisabilitaBottone(colpoPlayer.x, colpoPlayer.y);
-
-                var colpoBot = vm.ColpiBot.LastOrDefault();
-
-                MostraFeedbackColpo(grigliaGiocatore, colpoBot.x, colpoBot.y, colpoBot.colpito);
-
-                CheckRisultato(vm.MessaggioRisultato);
+                return;
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
-            }
+
+            var colpoPlayer = vm.ColpiPlayer.LastOrDefault();
+
+            MostraFeedbackColpo(grigliaBot, colpoPlayer.x, colpoPlayer.y, colpoPlayer.colpito);
+
+            DisabilitaBottone(colpoPlayer.x, colpoPlayer.y);
+
+            var colpoBot = vm.ColpiBot.LastOrDefault();
+
+            MostraFeedbackColpo(grigliaGiocatore, colpoBot.x, colpoBot.y, colpoBot.colpito);
+
+            CheckRisultato(vm.MessaggioRisultato);
 
         }
 
@@ -205,6 +199,13 @@ namespace BattagliaNavale.Views
                 DisplayAlert("Hai perso!", "Il bot ha distrutto tutte le tue navi!", "OK");
                 Esci();
             }
+        }
+
+        [RelayCommand]
+        protected override void OnAppearing()
+        {
+            AudioPlayerService.Instance.Stop();
+            AudioPlayerService.Instance.Play("jack-sparrow_dFQte8NI.mp3");
         }
 
         [RelayCommand]

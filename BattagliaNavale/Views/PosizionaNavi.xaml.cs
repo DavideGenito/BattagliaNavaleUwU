@@ -1,5 +1,6 @@
 using CommunityToolkit.Mvvm.Input;
 using BattagliaNavale.ViewModels;
+using BattagliaNavale.Services;
 using Microsoft.Maui.Controls.Shapes;
 using Plugin.Maui.Audio;
 
@@ -39,6 +40,13 @@ public partial class PosizionaNavi : ContentPage
 
         BindingContext = new ViewModels.PosizionaNaviViewModel(this.Navigation);
 
+    }
+
+    [RelayCommand]
+    protected override void OnAppearing()
+    {
+        AudioPlayerService.Instance.Stop();
+        AudioPlayerService.Instance.Play("jack-sparrow_DVwcYAwc.mp3");
     }
 
 }

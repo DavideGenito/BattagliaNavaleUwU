@@ -11,8 +11,13 @@ public partial class Home : ContentPage
     public Home()
 	{
 		InitializeComponent();
+    }
 
-        PreferencesUtilities.SaveFieldsToJsonFile();
+    [RelayCommand]
+    protected override void OnAppearing()
+    {
+        AudioPlayerService.Instance.Stop();
+        AudioPlayerService.Instance.Play("The Legend Of Monkey Island (Main Theme) - Sea Of Thieves Soundtrack.mp3");
     }
 
     [RelayCommand]
