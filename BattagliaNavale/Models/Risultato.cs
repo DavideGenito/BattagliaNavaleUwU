@@ -8,8 +8,8 @@ namespace BattagliaNavale.Models
 {
     public enum Risultato
     {
-        VINTO_BOT,
-        VINTO_PLAYER,
+        BOT,
+        PLAYER,
         SOSPESO
     }
 }

@@ -1,3 +1,5 @@
+using CommunityToolkit.Mvvm.Input;
+
 namespace BattagliaNavale.Views;
 
 public partial class CronologiaPartite : ContentPage
@@ -6,4 +8,10 @@ public partial class CronologiaPartite : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    [RelayCommand]
+    public async Task OpenPartita()
+    {
+        await Navigation.PushAsync(new ());
+    }
 }

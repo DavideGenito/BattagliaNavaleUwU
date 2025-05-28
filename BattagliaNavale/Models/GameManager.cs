@@ -33,7 +33,7 @@
                 Bot.Campo[mossaPlayer[0], mossaPlayer[1]] = StatoCampo.NAVE_COLPITA;
                 Bot.Contatore--;
                 if (Bot.Contatore == 0)
-                    return Tuple.Create(Risultato.VINTO_PLAYER, mossaPlayer);
+                    return Tuple.Create(Risultato.PLAYER, mossaPlayer);
             }
             else if (Bot.Campo[mossaPlayer[0], mossaPlayer[1]] == StatoCampo.ACQUA)
             {
@@ -46,7 +46,7 @@
 
             // Controllo game over
             if (Giocatore.Contatore == 0)
-                return Tuple.Create(Risultato.VINTO_BOT, mossaBot);
+                return Tuple.Create(Risultato.BOT, mossaBot);
 
             return Tuple.Create(Risultato.SOSPESO, mossaBot);
         }

@@ -13,6 +13,13 @@
     </ContentPage.Behaviors>
 
     <VerticalStackLayout>
+
+        <VerticalStackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type views:ListPage}}, Path=OpenPartitaCommand}"
+                          CommandParameter="{Binding Id}" 
+                          />
+        </VerticalStackLayout.GestureRecognizers>
+
         <CollectionView ItemsSource="{Binding ListaPartite}"
                         EmptyView="Non hai ancora fatto nessuna partita"
                         >
@@ -29,6 +36,35 @@
                             <Label Text="{Binding Id}"
                                    FontAttributes="Bold"
                                    TextColor="CadetBlue"
+                                   />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="La partita è stata vinta dal "
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   />
+                            <Label Text="{Binding RisultatoPartita}"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   />
+
+                            <Label Text="  |  "
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   />
+
+                            <Label Text="La partita è durata "
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   />
+                            <Label Text="{Binding TempoPartita}"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   />
+                            <Label Text="minuti"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
                                    />
                         </HorizontalStackLayout>
                     </VerticalStackLayout>                    

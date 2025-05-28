@@ -68,3 +68,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.Regolamento.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Regolamento.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Regolamento.xaml
+
+[C:/Users/davide.genito/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/VisualizzatoreCampo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.VisualizzatoreCampo.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VisualizzatoreCampo.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VisualizzatoreCampo.xaml

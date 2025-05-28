@@ -18,5 +18,8 @@
     <MauiXaml Update="Views\CronologiaPartite.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\VisualizzatoreCampo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>

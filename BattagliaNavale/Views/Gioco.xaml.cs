@@ -187,12 +187,12 @@ namespace BattagliaNavale.Views
 
         private void CheckRisultato(Risultato risultato)
         {
-            if (risultato == Risultato.VINTO_PLAYER)
+            if (risultato == Risultato.PLAYER)
             {
                 DisplayAlert("Hai vinto!", "Hai distrutto tutte le navi del bot!", "OK");
                 Esci();
             }
-            else if (risultato == Risultato.VINTO_BOT)
+            else if (risultato == Risultato.BOT)
             {
                 DisplayAlert("Hai perso!", "Il bot ha distrutto tutte le tue navi!", "OK");
                 Esci();
