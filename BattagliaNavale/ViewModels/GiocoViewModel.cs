@@ -1,3 +1,4 @@
+using BattagliaNavale.Infrastucture;
 using BattagliaNavale.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -26,7 +27,17 @@ namespace BattagliaNavale.ViewModels
         [ObservableProperty]
         private Risultato messaggioRisultato;
 
-        public GiocoViewModel(StatoCampo[,] campoGiocatore)
+        public List<Tuple<int, int, bool>> BarchePlayer { get; } = new();
+
+        public Stopwatch stopwatch = new Stopwatch();
+
+        [ObservableProperty]
+        private string stopwatchText = "00:00:00";
+
+        // Timer per aggiornare il cronometro
+        private System.Timers.Timer timer;
+
+        public GiocoViewModel(StatoCampo[,] campoGiocatore, List<Tuple<int, int, bool>> barchePlayer)
         {
             var player = new Player(campoGiocatore);
             var bot = new Bot(new StatoCampo[10, 10]);
@@ -34,6 +45,24 @@ namespace BattagliaNavale.ViewModels
 
             CampoBot = ConvertiCampo(bot.Campo);
             CampoGiocatore = ConvertiCampo(player.Campo);
+
+            this.BarchePlayer = barchePlayer;
+
+            stopwatch.Start();
+
+            // Inizializza e avvia il timer per aggiornare il cronometro ogni secondo
+            timer = new System.Timers.Timer(1000);
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            // Aggiorna il testo del cronometro sul thread UI
+            Microsoft.Maui.Controls.Application.Current.Dispatcher.Dispatch(() =>
+            {
+                StopwatchText = stopwatch.Elapsed.ToString(@"mm\:ss");
+            });
         }
 
         private ObservableCollection<ObservableCollection<StatoCampo>> ConvertiCampo(StatoCampo[,] campo)
@@ -79,7 +108,8 @@ namespace BattagliaNavale.ViewModels
                 bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
                 ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
 
-                MessaggioRisultato = risultato.Item1;
+                messaggioRisultato = risultato.Item1;
+                CheckVincitore();
                 AggiornaGriglie();
 
                 OnPropertyChanged(nameof(ColpiPlayer));
@@ -103,6 +133,31 @@ namespace BattagliaNavale.ViewModels
             CampoGiocatore = ConvertiCampo(gameManager.Giocatore.Campo);
             OnPropertyChanged(nameof(CampoBot));
             OnPropertyChanged(nameof(CampoGiocatore));
+        }
+
+        private void CheckVincitore()
+        {
+            if (messaggioRisultato != Risultato.SOSPESO)
+            {
+                stopwatch.Stop();
+                timer?.Stop(); // Ferma il timer quando il gioco finisce
+
+                PreferencesUtilities.SaveField(
+                    messaggioRisultato,
+                    stopwatch.Elapsed,
+                    gameManager.Bot.BarchePosizione,
+                    BarchePlayer,
+                    gameManager.Giocatore.Campo,
+                    gameManager.Bot.Campo);
+            }
+        }
+
+        // Metodo per pulire le risorse quando il ViewModel viene distrutto
+        public void Cleanup()
+        {
+            timer?.Stop();
+            timer?.Dispose();
+            stopwatch?.Stop();
         }
     }
 }

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BattagliaNavale.Views.Gioco"
+             xmlns:vm="clr-namespace:BattagliaNavale.ViewModels"
              Title="Gioco">
     <Grid>
         <Image
@@ -11,6 +12,26 @@
         <VerticalStackLayout
             VerticalOptions="Center"
             Spacing="20">
+            <Grid>
+                <Label
+                    x:Name="lblCronometro"
+                    Text="{Binding StopwatchText}"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    FontSize="20"
+                    ZIndex="2"
+                    VerticalOptions="Center"/>
+                <Rectangle 
+                    HeightRequest="35"
+                    WidthRequest="80"
+                    Opacity="0.6"
+                    Background="White"
+                    Stroke="CadetBlue"
+                    StrokeThickness="2"
+                    RadiusX="5" RadiusY="5"
+                    />
+            </Grid>
             <Grid
                 x:Name="grigliaBot"
                 WidthRequest="300"

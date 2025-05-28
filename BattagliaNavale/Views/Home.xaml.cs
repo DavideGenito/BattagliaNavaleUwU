@@ -2,6 +2,7 @@ using CommunityToolkit.Mvvm.Input;
 using Plugin.Maui.Audio;
 using BattagliaNavale.Services;
 using System.Runtime.CompilerServices;
+using BattagliaNavale.Infrastucture;
 
 namespace BattagliaNavale.Views;
 
@@ -10,6 +11,8 @@ public partial class Home : ContentPage
     public Home()
 	{
 		InitializeComponent();
+
+        PreferencesUtilities.SaveFieldsToJsonFile();
     }
 
     [RelayCommand]
@@ -17,6 +20,12 @@ public partial class Home : ContentPage
 	{
 		await Navigation.PushAsync(new Regolamento());
 	}
+
+    [RelayCommand]
+    public async Task OpenProfilo()
+    {
+        await Navigation.PushAsync(new CronologiaPartite());
+    }
 
     [RelayCommand]
     public async Task OpenGioco()

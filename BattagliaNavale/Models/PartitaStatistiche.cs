@@ -14,6 +14,14 @@ namespace BattagliaNavale.Models
         
         public TimeSpan TempoPartita { get; set; }
 
+        public string TempoPartitaTesto
+        {
+            get
+            {
+                return TempoPartita.Minutes.ToString() + ":" + TempoPartita.Seconds.ToString();
+            }
+        }
+
         public List<Tuple<int, int, bool>> BarcheBot { get; set; }
 
         public List<Tuple<int, int, bool>> BarchePlayer { get; set; }

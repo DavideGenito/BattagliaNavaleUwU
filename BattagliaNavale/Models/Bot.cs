@@ -8,7 +8,9 @@ namespace BattagliaNavale.Models
         public StatoCampo[,] Campo { get; private set; }
 
         public int[]? ultimaMossa = null;
-       
+
+        public List<Tuple<int, int, bool>> BarchePosizione { get; private set; } = new List<Tuple<int, int, bool>> { };
+
 
         public Bot(StatoCampo[,] campo, IGenerator? generator = null)
         {
@@ -138,6 +140,8 @@ namespace BattagliaNavale.Models
                         int y = orizzontale ? barcaY : barcaY + i;
                         Campo[x, y] = StatoCampo.NAVE;
                     }
+
+                    BarchePosizione.Add(Tuple.Create(barcaX, barcaY, !orizzontale));
                 }
             } while (errore);
         }

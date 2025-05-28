@@ -26,7 +26,7 @@ namespace BattagliaNavale.Infrastucture
             return savedOrders ?? [];
         }
 
-        public static PartitaStatistiche GetOrder(int id)
+        public static PartitaStatistiche GetField(int id)
         {
             var savedOrders = GetFields();
             var order = savedOrders.Where(x => x.Id == id).First();
@@ -38,12 +38,12 @@ namespace BattagliaNavale.Infrastucture
         {
             var savedFields = GetFields();
 
-            List<Tuple<StatoCampo, int, int>> CampoBotListed = new List<Tuple<StatoCampo, int, int>> { };
-            List<Tuple<StatoCampo, int, int>> CampoPlayerListed = new List<Tuple<StatoCampo, int, int>> { };
+            List<Tuple<StatoCampo, int, int>> CampoBotListed = new List<Tuple<StatoCampo, int, int>> ();
+            List<Tuple<StatoCampo, int, int>> CampoPlayerListed = new List<Tuple<StatoCampo, int, int>> ();
 
             for (int i = 0; i < campoBot.GetLength(0); i++)
             {
-                for (int j = 0; i <= campoBot.GetLength(1); j++)
+                for (int j = 0; j < campoBot.GetLength(1); j++)
                 {
                     if (campoBot[i, j] != StatoCampo.ACQUA && campoBot[i, j] != StatoCampo.NAVE) CampoBotListed.Add(Tuple.Create(campoBot[i, j], i, j));
                     if (campoPlayer[i, j] != StatoCampo.ACQUA && campoPlayer[i, j] != StatoCampo.NAVE) CampoPlayerListed.Add(Tuple.Create(campoPlayer[i, j], i, j));
@@ -79,6 +79,43 @@ namespace BattagliaNavale.Infrastucture
 
             var serializedOrders = JsonSerializer.Serialize(savedOrders, _defaultJsonSerializerOptions);
             Preferences.Default.Set("fields", serializedOrders);
+        }
+
+        public static void SaveFieldsToJsonFile()
+        {
+            try
+            {
+                var fields = GetFields();
+                var jsonString = JsonSerializer.Serialize(fields, new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    PropertyNameCaseInsensitive = true
+                });
+
+                var fileName = $"battaglia_navale_debug_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+                var filePath = Path.Combine(FileSystem.AppDataDirectory, fileName);
+
+                File.WriteAllText(filePath, jsonString);
+
+                System.Diagnostics.Debug.WriteLine($"File JSON salvato in: {filePath}");
+
+                // Per copiare anche nella cartella Documents (se accessibile)
+                try
+                {
+                    var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    var documentsFile = Path.Combine(documentsPath, fileName);
+                    File.WriteAllText(documentsFile, jsonString);
+                    System.Diagnostics.Debug.WriteLine($"Copia salvata anche in: {documentsFile}");
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Non è stato possibile salvare in Documents: {ex.Message}");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Errore nel salvare il file JSON: {ex.Message}");
+            }
         }
     }
 }

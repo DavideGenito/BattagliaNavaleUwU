@@ -15,10 +15,20 @@ namespace BattagliaNavale.Views
         public Gioco(StatoCampo[,] campoLogico, List<Tuple<int, int, bool>> barchePosizione)
         {
             InitializeComponent();
-            BindingContext = new GiocoViewModel(campoLogico);
+            BindingContext = new GiocoViewModel(campoLogico, barchePosizione);
 
             CreaGriglie();
             PosizionaBarche(barchePosizione);
+        }
+
+        protected override void OnDisappearing()
+        {
+            // Pulisce le risorse del ViewModel quando la pagina viene chiusa
+            if (BindingContext is GiocoViewModel vm)
+            {
+                vm.Cleanup();
+            }
+            base.OnDisappearing();
         }
 
         private void CreaGriglie()
@@ -118,8 +128,6 @@ namespace BattagliaNavale.Views
 
         private void OnButtonClicked(object sender, EventArgs e)
         {
-
-
             try
             {
                 var vm = (GiocoViewModel)BindingContext;
@@ -145,7 +153,7 @@ namespace BattagliaNavale.Views
             {
                 Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
             }
-            
+
         }
 
         private void MostraFeedbackColpo(Grid griglia, int riga, int colonna, bool colpito)
@@ -168,7 +176,7 @@ namespace BattagliaNavale.Views
             Grid.SetColumn(imgFeedback, colonna);
             griglia.Children.Add(imgFeedback);
 
-            
+
         }
 
         private void DisabilitaBottone(int riga, int colonna)
