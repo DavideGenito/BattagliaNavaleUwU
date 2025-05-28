@@ -18,29 +18,51 @@
                 Margin="40, 5"
                 Spacing="20"
                 VerticalOptions="Start">
-                <Grid
-                    HorizontalOptions="End"
-                    VerticalOptions="Start"
-                    >
-                    <ImageButton
-                        x:Name="btnMusica"
-                        Source="../Resources/Images/musica.png"
-                        HeightRequest="30"
-                        WidthRequest="30"
-                        Clicked="MusicaClicked"
-                        ZIndex="2"
-                        />
-                    <Rectangle 
-                        HeightRequest="35"
-                        WidthRequest="35"
-                        Opacity="0.7"
-                        Background="White"
-                        Stroke="{StaticResource LightGreyBrush}"
-                        StrokeThickness="2"
-                        RadiusX="5" RadiusY="5"
-                        />
-                </Grid>
-                
+                <HorizontalStackLayout>
+                    <Grid
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        >
+                        <ImageButton
+                            x:Name="btnMusica"
+                            Source="../Resources/Images/musica.png"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            Clicked="MusicaClicked"
+                            ZIndex="2"
+                            />
+                        <Rectangle 
+                            HeightRequest="35"
+                            WidthRequest="35"
+                            Opacity="0.7"
+                            Background="White"
+                            Stroke="{StaticResource LightGreyBrush}"
+                            StrokeThickness="2"
+                            RadiusX="5" RadiusY="5"
+                            />
+                    </Grid>
+                    <Grid
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start">
+                        <ImageButton
+                            x:Name="btnProfilo"
+                            Source="../Resources/Images/immagine_profilo.jpg"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            Clicked="MusicaClicked"
+                            ZIndex="2"
+                            />
+                        <Rectangle 
+                            HeightRequest="35"
+                            WidthRequest="35"
+                            Opacity="0.7"
+                            Background="White"
+                            Stroke="{StaticResource LightGreyBrush}"
+                            StrokeThickness="2"
+                            RadiusX="5" RadiusY="5"
+                            />
+                    </Grid>
+                </HorizontalStackLayout>
                 <Image
                     Source="../Resources/Images/battaglia_navale_img.png"
                     Margin="5,20, 5, 60"

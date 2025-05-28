@@ -13,13 +13,24 @@
     </ContentPage.Behaviors>
 
     <VerticalStackLayout>
-
-        <VerticalStackLayout.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type views:ListPage}}, Path=OpenPartitaCommand}"
-                          CommandParameter="{Binding Id}" 
-                          />
-        </VerticalStackLayout.GestureRecognizers>
-
+        <HorizontalStackLayout>
+            <Label
+                x:Name="btnNome"
+                Text="nome"
+                FontSize="20"
+                />
+            <Button
+                x:Name="btnModificaProfilo"
+                HeightRequest="20"
+                BackgroundColor="#D6D6D6"
+                BorderColor="#7A7A7A"
+                BorderWidth="1"
+                Text="Modifica nome"
+                FontFamily="Poppins"
+                FontSize="10"
+                TextColor="#000000"
+                />
+        </HorizontalStackLayout>
         <CollectionView ItemsSource="{Binding ListaPartite}"
                         EmptyView="Non hai ancora fatto nessuna partita"
                         >
@@ -28,6 +39,11 @@
                     <VerticalStackLayout Spacing="10"
                                          Margin="10"
                                          >
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type views:ListPage}}, Path=OpenPartitaCommand}"
+                                                  CommandParameter="{Binding Id}" 
+                                                  />
+                            </VerticalStackLayout.GestureRecognizers>
                         <HorizontalStackLayout>
                             <Label Text="Partita n."
                                    FontAttributes="Bold"
@@ -71,5 +87,16 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button
+            VerticalOptions="End"
+            x:Name="btnTornaAllaHome"
+            HeightRequest="60"
+            BorderWidth="2"
+            BorderColor="#FF5D55"
+            BackgroundColor="#FF8A84"
+            FontFamily="Poppins"
+            FontSize="17"
+            TextColor="#000000"
+            />
     </VerticalStackLayout>
 </ContentPage>

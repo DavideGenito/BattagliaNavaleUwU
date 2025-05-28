@@ -19,6 +19,12 @@ public partial class Home : ContentPage
 	}
 
     [RelayCommand]
+    public async Task Openprofilo()
+    {
+        await Navigation.PushAsync(new CronologiaPartite());
+    }
+
+    [RelayCommand]
     public async Task OpenGioco()
     {
         await Navigation.PushAsync(new PosizionaNavi());
