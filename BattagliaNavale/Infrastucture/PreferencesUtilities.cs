@@ -1,10 +1,6 @@
 ﻿using BattagliaNavale.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace BattagliaNavale.Infrastucture
 {
@@ -13,6 +9,8 @@ namespace BattagliaNavale.Infrastucture
         private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
         {
             PropertyNameCaseInsensitive = true,
+            WriteIndented = false,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
         };
 
 
@@ -20,10 +18,18 @@ namespace BattagliaNavale.Infrastucture
         {
             var serializedSavedOrders = Preferences.Default.Get("fields", "");
 
-            if (string.IsNullOrEmpty(serializedSavedOrders)) return [];
+            if (string.IsNullOrEmpty(serializedSavedOrders)) return new List<PartitaStatistiche>();
 
-            var savedOrders = JsonSerializer.Deserialize<List<PartitaStatistiche>>(serializedSavedOrders, _defaultJsonSerializerOptions);
-            return savedOrders ?? [];
+            try
+            {
+                return JsonSerializer.Deserialize<List<PartitaStatistiche>>(
+                    serializedSavedOrders,
+                    _defaultJsonSerializerOptions) ?? new List<PartitaStatistiche>();
+            }
+            catch (JsonException)
+            {
+                return new List<PartitaStatistiche>();
+            }
         }
 
         public static PartitaStatistiche GetField(int id)
@@ -34,19 +40,27 @@ namespace BattagliaNavale.Infrastucture
             return order;
         }
 
-        public static void SaveField(Risultato risultatoPartita, TimeSpan tempoPartita, List<Tuple<int, int, bool>> barcheBot, List<Tuple<int, int, bool>> barchePlayer, StatoCampo[,] campoPlayer, StatoCampo[,] campoBot)
+        public static void SaveField(Risultato risultatoPartita, TimeSpan tempoPartita,
+                                    List<Tuple<int, int, bool>> barcheBot, List<Tuple<int, int, bool>> barchePlayer,
+                                    StatoCampo[,] campoPlayer, StatoCampo[,] campoBot)
         {
             var savedFields = GetFields();
 
-            List<Tuple<StatoCampo, int, int>> CampoBotListed = new List<Tuple<StatoCampo, int, int>> ();
-            List<Tuple<StatoCampo, int, int>> CampoPlayerListed = new List<Tuple<StatoCampo, int, int>> ();
+            var barcheBotDto = barcheBot.Select(b => new PosizioneBarca(b.Item1, b.Item2, b.Item3)).ToList();
+            var barchePlayerDto = barchePlayer.Select(b => new PosizioneBarca(b.Item1, b.Item2, b.Item3)).ToList();
+
+            var campoBotListed = new List<CellaCampo>();
+            var campoPlayerListed = new List<CellaCampo>();
 
             for (int i = 0; i < campoBot.GetLength(0); i++)
             {
                 for (int j = 0; j < campoBot.GetLength(1); j++)
                 {
-                    if (campoBot[i, j] != StatoCampo.ACQUA && campoBot[i, j] != StatoCampo.NAVE) CampoBotListed.Add(Tuple.Create(campoBot[i, j], i, j));
-                    if (campoPlayer[i, j] != StatoCampo.ACQUA && campoPlayer[i, j] != StatoCampo.NAVE) CampoPlayerListed.Add(Tuple.Create(campoPlayer[i, j], i, j));
+                    if (campoBot[i, j] != StatoCampo.ACQUA && campoBot[i, j] != StatoCampo.NAVE)
+                        campoBotListed.Add(new CellaCampo(campoBot[i, j], i, j));
+
+                    if (campoPlayer[i, j] != StatoCampo.ACQUA && campoPlayer[i, j] != StatoCampo.NAVE)
+                        campoPlayerListed.Add(new CellaCampo(campoPlayer[i, j], i, j));
                 }
             }
 
@@ -55,10 +69,10 @@ namespace BattagliaNavale.Infrastucture
                 Id = savedFields.Count + 1,
                 RisultatoPartita = risultatoPartita,
                 TempoPartita = tempoPartita,
-                BarcheBot = barcheBot,
-                BarchePlayer = barchePlayer,
-                CampoBot = CampoBotListed,
-                CampoPlayer = CampoPlayerListed
+                BarcheBot = barcheBotDto,
+                BarchePlayer = barchePlayerDto,
+                CampoBot = campoBotListed,
+                CampoPlayer = campoPlayerListed
             });
 
             var serializedOrders = JsonSerializer.Serialize(savedFields, _defaultJsonSerializerOptions);

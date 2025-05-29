@@ -1,9 +1,4 @@
 ﻿using Plugin.Maui.Audio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BattagliaNavale.Services
 {
@@ -21,7 +16,7 @@ namespace BattagliaNavale.Services
 
         public void Play(string file = "jack_sparrow.mp3")
         {
-            if(_isPaused)
+            if (_isPaused)
             {
                 _isPaused = false;
                 _player.Play();

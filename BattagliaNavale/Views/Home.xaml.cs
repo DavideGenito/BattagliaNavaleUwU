@@ -1,16 +1,13 @@
-using CommunityToolkit.Mvvm.Input;
-using Plugin.Maui.Audio;
 using BattagliaNavale.Services;
-using System.Runtime.CompilerServices;
-using BattagliaNavale.Infrastucture;
+using CommunityToolkit.Mvvm.Input;
 
 namespace BattagliaNavale.Views;
 
 public partial class Home : ContentPage
 {
     public Home()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
     }
 
     [RelayCommand]
@@ -21,10 +18,10 @@ public partial class Home : ContentPage
     }
 
     [RelayCommand]
-	public async Task OpenRegolamento()
-	{
-		await Navigation.PushAsync(new Regolamento());
-	}
+    public async Task OpenRegolamento()
+    {
+        await Navigation.PushAsync(new Regolamento());
+    }
 
     [RelayCommand]
     public async Task OpenProfilo()

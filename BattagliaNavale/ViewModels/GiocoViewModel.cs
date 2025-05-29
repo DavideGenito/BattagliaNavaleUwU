@@ -2,7 +2,6 @@ using BattagliaNavale.Infrastucture;
 using BattagliaNavale.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -106,7 +105,7 @@ namespace BattagliaNavale.ViewModels
             ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
 
             messaggioRisultato = risultato.Item1;
-            ultimaBarcaAffondata = risultato.Item3; 
+            ultimaBarcaAffondata = risultato.Item3;
 
             CheckVincitore();
             AggiornaGriglie();
@@ -131,7 +130,7 @@ namespace BattagliaNavale.ViewModels
             if (messaggioRisultato != Risultato.SOSPESO)
             {
                 stopwatch.Stop();
-                timer?.Stop(); 
+                timer?.Stop();
 
                 PreferencesUtilities.SaveField(
                     messaggioRisultato,

@@ -1,17 +1,14 @@
-using CommunityToolkit.Mvvm.Input;
-using BattagliaNavale.ViewModels;
 using BattagliaNavale.Services;
-using Microsoft.Maui.Controls.Shapes;
-using Plugin.Maui.Audio;
+using CommunityToolkit.Mvvm.Input;
 
 namespace BattagliaNavale.Views;
 
 public partial class PosizionaNavi : ContentPage
 {
     const int LUNGHEZZA = 10;
-	public PosizionaNavi()
-	{
-		InitializeComponent();
+    public PosizionaNavi()
+    {
+        InitializeComponent();
 
         for (int i = 0; i < LUNGHEZZA; i++)
         {
@@ -20,8 +17,8 @@ public partial class PosizionaNavi : ContentPage
         }
 
         for (int i = 0; i < LUNGHEZZA; i++)
-		{
-			for (int j = 0; j < LUNGHEZZA; j++)
+        {
+            for (int j = 0; j < LUNGHEZZA; j++)
             {
                 Microsoft.Maui.Controls.Shapes.Rectangle cella = new Microsoft.Maui.Controls.Shapes.Rectangle();
                 Grid.SetColumn(cella, j);

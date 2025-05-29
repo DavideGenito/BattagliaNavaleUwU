@@ -63,7 +63,7 @@ public partial class VisualizzatoreCampo : ContentPage
         }
     }
 
-    private void AddShips(Grid grid, List<Tuple<int, int, bool>> barche)
+    private void AddShips(Grid grid, List<PosizioneBarca> barche)
     {
         for (int i = 0; i < barche.Count(); i++)
         {
@@ -75,15 +75,15 @@ public partial class VisualizzatoreCampo : ContentPage
             {
                 Source = ImageSource.FromFile(source),
                 ZIndex = 1,
-                Rotation = barche[i].Item3 ? 90 : 0,
-                Scale = barche[i].Item3 ? scale : 1.0,
+                Rotation = barche[i].Verticale ? 90 : 0,
+                Scale = barche[i].Verticale ? scale : 1.0,
                 Aspect = Aspect.AspectFit
             };
 
-            Grid.SetRow(barca, barche[i].Item1);
-            Grid.SetColumn(barca, barche[i].Item2);
+            Grid.SetRow(barca, barche[i].X);
+            Grid.SetColumn(barca, barche[i].Y);
 
-            if (barche[i].Item3)
+            if (barche[i].Verticale)
                 Grid.SetColumnSpan(barca, lunghezza);
             else
                 Grid.SetRowSpan(barca, lunghezza);
@@ -128,11 +128,11 @@ public partial class VisualizzatoreCampo : ContentPage
         };
     }
 
-    private void AddFeedback(Grid grid, List<Tuple<StatoCampo, int, int>> campo)
+    private void AddFeedback(Grid grid, List<CellaCampo> campo)
     {
         foreach (var cella in campo)
         {
-            if (cella.Item1 == StatoCampo.NAVE_COLPITA)
+            if (cella.Stato == StatoCampo.NAVE_COLPITA)
             {
                 var imgFeedback = new Image
                 {
@@ -145,11 +145,11 @@ public partial class VisualizzatoreCampo : ContentPage
                     VerticalOptions = LayoutOptions.Center
                 };
 
-                Grid.SetRow(imgFeedback, cella.Item2);
-                Grid.SetColumn(imgFeedback, cella.Item3);
+                Grid.SetRow(imgFeedback, cella.X);
+                Grid.SetColumn(imgFeedback, cella.Y);
                 grid.Children.Add(imgFeedback);
             }
-            else if (cella.Item1 == StatoCampo.ACQUA_COLPITA)
+            else if (cella.Stato == StatoCampo.ACQUA_COLPITA)
             {
                 var imgFeedback = new Image
                 {
@@ -161,8 +161,8 @@ public partial class VisualizzatoreCampo : ContentPage
                     VerticalOptions = LayoutOptions.Center
                 };
 
-                Grid.SetRow(imgFeedback, cella.Item2);
-                Grid.SetColumn(imgFeedback, cella.Item3);
+                Grid.SetRow(imgFeedback, cella.X);
+                Grid.SetColumn(imgFeedback, cella.Y);
                 grid.Children.Add(imgFeedback);
             }
         }

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattagliaNavale.Models
+﻿namespace BattagliaNavale.Models
 {
     public class Player
     {
         public int Contatore { get; set; }
         public IGenerator Generator { get; set; }
-        public StatoCampo[,] Campo {  get; private set; }
+        public StatoCampo[,] Campo { get; private set; }
         public Player(StatoCampo[,] campo, IGenerator? generator = null)
         {
             Campo = campo;

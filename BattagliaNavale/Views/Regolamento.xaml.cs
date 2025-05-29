@@ -1,13 +1,12 @@
 using CommunityToolkit.Mvvm.Input;
-using Plugin.Maui.Audio;
 
 namespace BattagliaNavale.Views;
 
 public partial class Regolamento : ContentPage
 {
-	public Regolamento()
-	{
-		InitializeComponent();
+    public Regolamento()
+    {
+        InitializeComponent();
     }
 
     [RelayCommand]
