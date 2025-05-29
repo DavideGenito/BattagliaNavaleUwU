@@ -1,6 +1,8 @@
 using CommunityToolkit.Mvvm.Input;
 using Plugin.Maui.Audio;
+using BattagliaNavale.Services;
 using System.Runtime.CompilerServices;
+using BattagliaNavale.Infrastucture;
 
 namespace BattagliaNavale.Views;
 
@@ -9,26 +11,13 @@ public partial class Home : ContentPage
     public Home()
 	{
 		InitializeComponent();
-
-        _audioManager = AudioManager.Current;
-        PlayBackgroundMusic();
     }
 
-    private readonly IAudioManager _audioManager;
-    private IAudioPlayer? _player;
-
-    private async void PlayBackgroundMusic()
+    [RelayCommand]
+    protected override void OnAppearing()
     {
-        _player?.Stop();
-
-        if (_player == null)
-        {
-            var file = await FileSystem.OpenAppPackageFileAsync("jack_sparrow.mp3");
-            _player = _audioManager.CreatePlayer(file);
-            _player.Loop = true;
-        }
-
-        _player.Play();
+        AudioPlayerService.Instance.Stop();
+        AudioPlayerService.Instance.Play("The Legend Of Monkey Island (Main Theme) - Sea Of Thieves Soundtrack.mp3");
     }
 
     [RelayCommand]
@@ -36,6 +25,12 @@ public partial class Home : ContentPage
 	{
 		await Navigation.PushAsync(new Regolamento());
 	}
+
+    [RelayCommand]
+    public async Task OpenProfilo()
+    {
+        await Navigation.PushAsync(new CronologiaPartite());
+    }
 
     [RelayCommand]
     public async Task OpenGioco()
@@ -46,5 +41,19 @@ public partial class Home : ContentPage
     private void EsciClicked(object sender, EventArgs e)
     {
         Application.Current.Quit();
+    }
+
+    private void MusicaClicked(object sender, EventArgs e)
+    {
+        AudioPlayerService.Instance.Mute();
+
+        if (AudioPlayerService.Instance.IsMuted)
+        {
+            btnMusica.Source = "../Resources/Images/musica_sbarrata.png";
+        }
+        else
+        {
+            btnMusica.Source = "../Resources/Images/musica.png";
+        }
     }
 }

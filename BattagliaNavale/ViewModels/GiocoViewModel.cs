@@ -1,3 +1,4 @@
+using BattagliaNavale.Infrastucture;
 using BattagliaNavale.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -15,7 +16,7 @@ namespace BattagliaNavale.ViewModels
         public ObservableCollection<(int x, int y, bool colpito)> ColpiPlayer { get; } = new();
         public ObservableCollection<(int x, int y, bool colpito)> ColpiBot { get; } = new();
 
-        private GameManager gameManager;
+        public GameManager gameManager;
 
         [ObservableProperty]
         private int? selezioneX = 0;
@@ -26,7 +27,19 @@ namespace BattagliaNavale.ViewModels
         [ObservableProperty]
         private Risultato messaggioRisultato;
 
-        public GiocoViewModel(StatoCampo[,] campoGiocatore)
+        [ObservableProperty]
+        private int ultimaBarcaAffondata = -1;
+
+        public List<Tuple<int, int, bool>> BarchePlayer { get; } = new();
+
+        public Stopwatch stopwatch = new Stopwatch();
+
+        [ObservableProperty]
+        private string stopwatchText = "00:00:00";
+
+        private System.Timers.Timer timer;
+
+        public GiocoViewModel(StatoCampo[,] campoGiocatore, List<Tuple<int, int, bool>> barchePlayer)
         {
             var player = new Player(campoGiocatore);
             var bot = new Bot(new StatoCampo[10, 10]);
@@ -34,6 +47,22 @@ namespace BattagliaNavale.ViewModels
 
             CampoBot = ConvertiCampo(bot.Campo);
             CampoGiocatore = ConvertiCampo(player.Campo);
+
+            this.BarchePlayer = barchePlayer;
+
+            stopwatch.Start();
+
+            timer = new System.Timers.Timer(1000);
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Microsoft.Maui.Controls.Application.Current.Dispatcher.Dispatch(() =>
+            {
+                StopwatchText = stopwatch.Elapsed.ToString(@"mm\:ss");
+            });
         }
 
         private ObservableCollection<ObservableCollection<StatoCampo>> ConvertiCampo(StatoCampo[,] campo)
@@ -59,42 +88,34 @@ namespace BattagliaNavale.ViewModels
         [RelayCommand]
         private async Task ConfermaColpoAsync()
         {
-            try
+            foreach (var colpo in ColpiPlayer)
             {
-                // Verifica se la cella è già stata colpita
-                foreach (var colpo in ColpiPlayer)
-                {
-                    if (colpo.x == SelezioneX.Value && colpo.y == SelezioneY.Value)
-                        return;
-                }
-
-                var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
-
-                var statoPlayer = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
-                bool colpitoPlayer = statoPlayer == StatoCampo.NAVE_COLPITA;
-                ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpitoPlayer));
-
-                var mossaBot = risultato.Item2;
-                var statoBot = gameManager.Giocatore.Campo[mossaBot[0], mossaBot[1]];
-                bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
-                ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
-
-                MessaggioRisultato = risultato.Item1;
-                AggiornaGriglie();
-
-                OnPropertyChanged(nameof(ColpiPlayer));
-                OnPropertyChanged(nameof(ColpiBot));
+                if (colpo.x == SelezioneX.Value && colpo.y == SelezioneY.Value)
+                    return;
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Errore durante la conferma del colpo: {ex.Message}");
-                await Shell.Current.DisplayAlert("Errore", "Si è verificato un errore durante il colpo. Riprova.", "OK");
-            }
-            finally
-            {
-                SelezioneX = 0;
-                SelezioneY = 0;
-            }
+
+            var risultato = gameManager.VerificaVincitore(SelezioneX.Value, SelezioneY.Value);
+
+            var statoPlayer = gameManager.Bot.Campo[SelezioneX.Value, SelezioneY.Value];
+            bool colpitoPlayer = statoPlayer == StatoCampo.NAVE_COLPITA;
+            ColpiPlayer.Add((SelezioneX.Value, SelezioneY.Value, colpitoPlayer));
+
+            var mossaBot = risultato.Item2;
+            var statoBot = gameManager.Giocatore.Campo[mossaBot[0], mossaBot[1]];
+            bool colpitoBot = statoBot == StatoCampo.NAVE_COLPITA;
+            ColpiBot.Add((mossaBot[0], mossaBot[1], colpitoBot));
+
+            messaggioRisultato = risultato.Item1;
+            ultimaBarcaAffondata = risultato.Item3; 
+
+            CheckVincitore();
+            AggiornaGriglie();
+
+            OnPropertyChanged(nameof(ColpiPlayer));
+            OnPropertyChanged(nameof(ColpiBot));
+
+            SelezioneX = 0;
+            SelezioneY = 0;
         }
 
         private void AggiornaGriglie()
@@ -103,6 +124,30 @@ namespace BattagliaNavale.ViewModels
             CampoGiocatore = ConvertiCampo(gameManager.Giocatore.Campo);
             OnPropertyChanged(nameof(CampoBot));
             OnPropertyChanged(nameof(CampoGiocatore));
+        }
+
+        private void CheckVincitore()
+        {
+            if (messaggioRisultato != Risultato.SOSPESO)
+            {
+                stopwatch.Stop();
+                timer?.Stop(); 
+
+                PreferencesUtilities.SaveField(
+                    messaggioRisultato,
+                    stopwatch.Elapsed,
+                    gameManager.Bot.BarchePosizione,
+                    BarchePlayer,
+                    gameManager.Giocatore.Campo,
+                    gameManager.Bot.Campo);
+            }
+        }
+
+        public void Cleanup()
+        {
+            timer?.Stop();
+            timer?.Dispose();
+            stopwatch?.Stop();
         }
     }
 }

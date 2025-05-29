@@ -1,4 +1,5 @@
-﻿using BattagliaNavale.Views;
+﻿using BattagliaNavale.Services;
+using BattagliaNavale.Views;
 
 namespace BattagliaNavale
 {
@@ -9,6 +10,18 @@ namespace BattagliaNavale
             InitializeComponent();
 
             MainPage = new NavigationPage(new Home());
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            AudioPlayerService.Instance.Play();
+        }
+
+        protected override void OnSleep()
+        {
+            base.OnSleep();
+            AudioPlayerService.Instance.Pause();
         }
     }
 }

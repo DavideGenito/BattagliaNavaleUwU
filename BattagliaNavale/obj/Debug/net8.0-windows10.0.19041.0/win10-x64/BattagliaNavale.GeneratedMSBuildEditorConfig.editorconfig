@@ -35,6 +35,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Resources.
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/Users/davide.genito/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/CronologiaPartite.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.CronologiaPartite.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CronologiaPartite.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CronologiaPartite.xaml
+
 [C:/Users/davide.genito/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/Gioco.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.Gioco.xaml
@@ -58,3 +64,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.Regolamento.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Regolamento.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Regolamento.xaml
+
+[C:/Users/davide.genito/Desktop/BattagliaNavaleUwU/BattagliaNavale/Views/VisualizzatoreCampo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BattagliaNavale.Views.VisualizzatoreCampo.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VisualizzatoreCampo.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VisualizzatoreCampo.xaml

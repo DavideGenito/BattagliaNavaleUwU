@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\models\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\models\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|c:\\users\\davide.genito\\desktop\\battaglianavaleuwu\\battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5EC60A-098D-45C6-8631-D97EFC20BCAE}|BattagliaNavale\\BattagliaNavale.csproj|solutionrelative:battaglianavale\\views\\gioco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Bot.cs",
+              "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\Bot.cs",
+              "RelativeDocumentMoniker": "BattagliaNavale\\Models\\Bot.cs",
+              "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Models\\Bot.cs",
+              "RelativeToolTip": "BattagliaNavale\\Models\\Bot.cs",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T08:35:14.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Gioco.xaml.cs",
               "DocumentMoniker": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
               "RelativeDocumentMoniker": "BattagliaNavale\\Views\\Gioco.xaml.cs",
               "ToolTip": "C:\\Users\\davide.genito\\Desktop\\BattagliaNavaleUwU\\BattagliaNavale\\Views\\Gioco.xaml.cs",
               "RelativeToolTip": "BattagliaNavale\\Views\\Gioco.xaml.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAADEAAAA2AAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAADEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T08:27:25.155Z",
               "EditorCaption": ""
