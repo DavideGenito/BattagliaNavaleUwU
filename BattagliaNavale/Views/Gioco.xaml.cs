@@ -24,7 +24,6 @@ namespace BattagliaNavale.Views
 
         protected override void OnDisappearing()
         {
-            // Pulisce le risorse del ViewModel quando la pagina viene chiusa
             if (BindingContext is GiocoViewModel vm)
             {
                 vm.Cleanup();

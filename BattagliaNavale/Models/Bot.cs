@@ -10,7 +10,6 @@
 
         public List<Tuple<int, int, bool>> BarchePosizione { get; private set; } = new List<Tuple<int, int, bool>> { };
 
-        // Aggiunta: Lista per tracciare le barche affondate
         public List<bool> BarcheAffondate { get; private set; } = new List<bool>();
 
         public Bot(StatoCampo[,] campo, IGenerator? generator = null)

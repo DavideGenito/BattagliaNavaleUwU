@@ -37,7 +37,6 @@ public partial class VisualizzatoreCampo : ContentPage
 
     private void SetupGrid(Grid grid)
     {
-        // Definire 10 righe e 10 colonne
         for (int i = 0; i < LUNGHEZZA; i++)
         {
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
