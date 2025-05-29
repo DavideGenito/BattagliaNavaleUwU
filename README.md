@@ -51,12 +51,12 @@ Posiziona le tue navi, attacca e cerca di affondare tutte le navi nemiche prima 
 
 ## 📷 Screenshot
 
-![Screenshot](screen/HomeScreen.png)
-![Screenshot](screen/ProfiloScreen.png)
-![Screenshot](screen/VisualizzatoreCampoScreen.png)
-![Screenshot](screen/RegolamentoScreen.png)
-![Screenshot](screen/PosizionaNaviScreen.png)
-![Screenshot](screen/GiocoScreen.png)
+![Screenshot](Screen/HomeScreen.png)
+![Screenshot](Screen/ProfiloScreen.png)
+![Screenshot](Screen/VisualizzatoreCampoScreen.png)
+![Screenshot](Screen/RegolamentoScreen.png)
+![Screenshot](Screen/PosizionaNaviScreen.png)
+![Screenshot](Screen/GiocoScreen.png)
 
 ---
 
