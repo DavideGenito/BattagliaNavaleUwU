@@ -10,7 +10,7 @@
             Source="../Resources/Images/sfondo_mare.jpg"
             Aspect="AspectFill" />
 
-        <ScrollView>
+        <ScrollView HorizontalOptions="Center">
             <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                 <Image
                 Source="../Resources/Images/posiziona_navi_img.png"
@@ -108,8 +108,6 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Grid>
-
-                <Image Source="../Resources/Images/posiziona_navi.png" />
 
                 <HorizontalStackLayout Margin="0, 20" 
                                    HorizontalOptions="Center" VerticalOptions="Center">

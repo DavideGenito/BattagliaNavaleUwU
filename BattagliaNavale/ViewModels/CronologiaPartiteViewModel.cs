@@ -1,14 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BattagliaNavale.Infrastucture;
 using BattagliaNavale.Models;
-using BattagliaNavale.Infrastucture;
-using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 namespace BattagliaNavale.ViewModels
 {
@@ -31,7 +25,7 @@ namespace BattagliaNavale.ViewModels
         }
 
         [RelayCommand]
-        public void OnAppearing() 
+        public void OnAppearing()
         {
             CaricaNomeUtente();
 
@@ -39,7 +33,7 @@ namespace BattagliaNavale.ViewModels
 
             var partite = PreferencesUtilities.GetFields();
 
-            foreach ( var field in partite )
+            foreach (var field in partite)
             {
                 ListaPartite.Add(field);
             }

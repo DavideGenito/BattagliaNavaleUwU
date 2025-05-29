@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattagliaNavale.Models
+﻿namespace BattagliaNavale.Models
 {
     internal class RandomGenerator : IGenerator
     {
@@ -23,7 +17,7 @@ namespace BattagliaNavale.Models
         public bool GeneraOrientamentoBarca()
         {
             int booleano = random.Next(0, 2);
-            if(booleano == 0)
+            if (booleano == 0)
             {
                 return false;
             }

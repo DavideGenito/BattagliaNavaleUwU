@@ -1,13 +1,13 @@
-using CommunityToolkit.Mvvm.Input;
 using BattagliaNavale.ViewModels;
+using CommunityToolkit.Mvvm.Input;
 
 namespace BattagliaNavale.Views;
 
 public partial class CronologiaPartite : ContentPage
 {
-	public CronologiaPartite()
-	{
-		InitializeComponent();
+    public CronologiaPartite()
+    {
+        InitializeComponent();
         BindingContext = new CronologiaPartiteViewModel();
     }
 

@@ -1,11 +1,7 @@
-﻿using Microsoft.Maui.Controls;
-using BattagliaNavale.Models;
-using BattagliaNavale.ViewModels;
+﻿using BattagliaNavale.Models;
 using BattagliaNavale.Services;
-using System;
-using System.Collections.Generic;
+using BattagliaNavale.ViewModels;
 using CommunityToolkit.Mvvm.Input;
-using System.Diagnostics;
 
 namespace BattagliaNavale.Views
 {

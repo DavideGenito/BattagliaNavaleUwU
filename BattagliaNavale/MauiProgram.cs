@@ -1,5 +1,4 @@
-﻿using BattagliaNavale;
-using CommunityToolkit.Maui;
+﻿using CommunityToolkit.Maui;
 using MauiIcons.FontAwesome.Solid;
 using Microsoft.Extensions.Logging;
 using Plugin.Maui.Audio;
