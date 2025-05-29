@@ -11,7 +11,7 @@ Affronta un bot nemico in scontri strategici per il dominio dei sette mari.
 
 Puoi scaricare e installare l'applicazione direttamente da questo link:
 
-🔗 [Download APK via Google Drive](https://drive.google.com/file/d/1m-8rhNaWm29dKJKBxkd1Vf6LxERBUJFP/view?usp=sharing)
+🔗 [Download APK via Google Drive](https://drive.google.com/file/d/1lCkjrD2ZJCD4b7f0J8blEs814RoVf7vT/view?usp=sharing)
 
 📦 **Assicurati di abilitare l'installazione da origini sconosciute** sul tuo dispositivo Android.
 
