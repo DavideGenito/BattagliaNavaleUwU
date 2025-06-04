@@ -58,16 +58,3 @@ Posiziona le tue navi, attacca e cerca di affondare tutte le navi nemiche prima 
 ![Screenshot](Screen/PosizionaNaviScreen.png)
 ![Screenshot](Screen/GiocoScreen.png)
 
----
-
-## 📁 Struttura del progetto (semplificata)
-
-BattagliaNavale/
-│
-├── Platforms/
-├── Resources/
-├── Views/
-├── ViewModels/
-├── Models/
-├── App.xaml
-└── MainPage.xaml.cs
